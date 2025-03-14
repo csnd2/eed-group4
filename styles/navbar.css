@@ -1,6 +1,6 @@
 :root{
-  --background: #ffc900;
-  --color: black;
+  --background: #ff9100;
+  --color: rgb(0, 0, 0);
   --brand-font: "Roboto", sans-serif;
   --banner-color: #2e3a6e ;
 }
@@ -28,9 +28,8 @@ header{
   background-color: var(--background);
   color: var(--banner-color);
 }
-.brand{
+
   /* width: 400px; */
-}
 .brand a {
   text-decoration: none;
   font-size: 26px;
@@ -45,16 +44,50 @@ header{
 .brand img{
   width:70px;
 }
-/* .mobile-logo{
-  display: none;
-} */
-.logo{
-  font-family: var(--brand-font);
-  font-weight: 600;
-  font-style: normal;
-  font-size: 35px;
-  /* color: var(--banner-color);  */
+/* 🔥 3D Effect for EDC (Smaller & More Bold Shadow) 🔥 */
+/* ✨ EDC LOGO MOVES UP AND DOWN ✨ */
+/* 🔻 EDC MOVES CONTINUOUSLY 🔻 */
+@keyframes moveEDC {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(150px); } /* Adjust distance */
+  100% { transform: translateX(0); }
 }
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #21084b;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5), 
+               2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+  position: relative;
+  animation: moveEDC 6s infinite linear;
+  text-shadow: #21084b;
+}
+
+/* 🔥 FIRE TRAIL HOVERS AROUND NAV 🔥 */
+.fire-trail {
+  position: absolute;
+  top: 80px; /* Adjusted under the nav links */
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, orange, red, yellow, orange);
+  box-shadow: 0 4px 8px rgba(255, 69, 0, 0.8);
+  animation: fireHover 4s infinite alternate ease-in-out;
+}
+
+/* 🔥 FIRE TRAIL MOVEMENT 🔥 */
+@keyframes fireHover {
+  0% { transform: translateY(5px) scaleX(1); }
+  50% { transform: translateY(10px) scaleX(1.1); }
+  100% { transform: translateY(5px) scaleX(1); }
+}
+
+
+
+
 .menu-icon,
 .cancel-icon{
   display:none;
