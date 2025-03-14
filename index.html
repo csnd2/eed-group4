@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDC FPN0</title>
+  <link rel="icon" href="images/dunav logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/swiper.css">
+
+  <!-- for google font  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+      color: white;
+      /* position: absolute; */
+      /* margin-top: 600px; */
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      /* background: #fff0; */
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    @media only screen and (max-width: 768px) {
+      /* homepg */
+      /* .swiper-slide h2 {
+        text-align: center;
+        font-size: 30px;
+      } */
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <!-- the header/navigation of this website -->
+  <header>
+    <div class="brand">
+      <a href="index.html">
+        <!-- <img src="images/dunav logo.svg" alt=""> -->
+        <span class="logo">EDC</span>
+        <span class="mobile-logo"> FPN0</span>
+      </a>
+    </div>
+
+    <div class="menu-icon" id="js-menu-icon">
+      <i class="fa-solid fa-bars fa-2x " style="color: #051924"></i>
+    </div>
+
+    <nav id="js-navbar" >
+      <div class="cancel-icon" id="js-cancel-icon">
+        <i class="fa-solid fa-xmark fa-3x" style="color: #051924;" ></i>
+      </div>
+      <ul id="navbar">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" id="product-link"> Services</a></li>
+        <li><a href="gallery.html" id="product-link">Gallery</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    
+  </header>
+
+  <!-- main content of this work -->
+  <main>
+    <!-- Hero Section  -->
+    <section class="home-page">
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" >
+
+            <div style="width: 100%; height: 100%;"  class="vd-container" style="overflow: hidden;">
+              <img src="images/hero.jpg" alt="">
+              <!-- <video width="100%" height="100%"  autoplay loop>
+                <source  src="images/hero.mp4" type="video/mp4">  
+              </video> -->
+            </div>
+            
+
+            <div class="overlay">
+              <h2 class="hero-h2">Welcome to EDC,
+                <br>
+                <span>Empowering Future Entrepreneurs At</span>
+                <br>
+                <span style="color: #ffc900">Federal Polytechnic Nekede</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        
+    <!-- Why Choose us Section  -->
+    <section class="why-choose-us-container">
+      <div class="why-choose-us-row">
+        <div class="why-choose-us-col why-choose-us-contents">
+          <h2 >
+            Guiding Students Toward Successful Entrepreneurship
+          </h2>
+
+          <p class="p-why-choose-us" >
+            The Entrepreneurship Development Center at Federal Polytechnic Nekede is committed to cultivating entrepreneurial talent and equipping students with the practical skills needed for business success.
+          </p>
+          <br>
+          <br>
+          <button onclick="window.location.href='about.html'">Learn More</button>
+        </div>
+
+
+        <div class="why-choose-us-col">
+          <!-- <div class="refinery-img-div"> -->
+            
+            <div style="width: 100%;">
+              <img src="images/hero2.jpg" class="why-choose-us-img">
+          </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="features-container">
+      <div class="features-contents">
+        <h2>Our Key Services</h2>
+        <p class="features-p">Explore the variety of skills and training programs available at the Entrepreneurship Development Center.</p>
+      </div>
+
+      <div class="features-cards">
+        <div class="card1">
+          <div class="icon-div">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <h3>Digital Skills Training</h3>
+          <p>Learn modern digital skills including web development, digital marketing, and data analysis to succeed in today's digital economy.
+          </p>
+        </div>
+
+        <div class="card2">
+          <div class="icon-div">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <h3>Business Management</h3>
+          <p>Master the essentials of business management, including planning, marketing, accounting, and operational strategies.</p>
+        </div>
+
+        <div class="card3">
+          <div class="icon-div">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h3>Entrepreneurship Workshops</h3>
+          <p>Participate in hands-on workshops designed to develop your entrepreneurial mindset and prepare you for business success.</p>
+        </div>
+      </div>
+
+      <div class="services-link">
+        <a href="services.html">View All</a>
+        <!-- <i class="fa-solid fa-arrow-right" fill="#58b7ee"></i> -->
+      </div>
+    </section>
+
+    <!-- section six support page  -->
+    <section class="support-container" id="contact">
+      <div class="support-div">
+        <h2>
+          Ready to Start Your Entrepreneurial Journey?
+        </h2>
+        <button onclick="window.location.href='contact.html'" >
+          <!-- <img src="images/msg.png" alt="" width="15px"> -->
+          <span>Get Started</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer section of this page  -->
+  <footer class="footer-container">
+    <div class="footer-div">
+      <div class="footer-card1">
+        <h1 data-aos="fade-down"> 
+         EDC FPNO
+        </h1>
+        <p class="footer-contact-p">
+          The Entrepreneurship Development Center at Federal Polytechnic Nekede empowers students with practical skills and knowledge for successful business ventures.
+        </p>
+      </div>
+
+      <div class="footer-card2">
+        <h1 data-aos="fade-down"> 
+          Quick Links
+        </h1>
+        <p class="footer-contact-p">
+          <a href="index.html"> Home</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="about.html"> About Us</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="services.html"> Services</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="gallery.html"> Gallery</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="faq.html"> FAQ</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="contact.html"> Contact</a>
+        </p>
+      </div>
+
+      <div class="footer-card3">
+        <h1 data-aos="fade-down"> 
+          Our Services
+        </h1>
+        <p class="footer-contact-p">
+          <a href="#"> Digital Skills Training</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Web Development</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Business Management
+          </a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Graphic Design</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Entrepreneurship Training</a>
+        </p>
+      </div>
+
+      <div class="footer-card4">
+        <h1 data-aos="fade-down"> 
+          Contact Us
+        </h1>
+        <p class="footer-contact-p">
+          <div class="footer-contact-div">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Federal Polytechnic Nekede, Owerri, Imo State, Nigeria</p>
+          </div>
+        </p>
+        <p class="footer-contact-p">
+          <div class="footer-contact-div">
+            <i class="fa-solid fa-phone"></i>
+            <p>+234 900 000 0000 </p>
+          </div>
+        </p>
+        <p class="footer-contact-p">
+          <div class="footer-contact-div">
+            <i class="fa-solid fa-message"></i>
+            <p>contact@edcfpno.edu.ng</p>
+          </div>
+        </p>
+      </div>
+    </div>
+    <div>
+
+    </div>
+    <hr style="width: 100%;">
+    <div class="copyright-div">
+      <p class="copyright">
+        © 2025 | All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+
+  <script src="scripts/navbar.js"></script>
+  <script src="scripts/index.js"></script>
+
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67cc8dc96edcd71910a35623/1ilricrij';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+  <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
+  <div class="elfsight-app-52ec13b8-24dc-4194-9d05-109fa68e6cb7" data-elfsight-app-lazy></div>
+</body>
+</html>
