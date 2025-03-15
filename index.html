@@ -118,52 +118,56 @@ body {
   height: 100vh;
   object-fit: cover;
 }
-
 @media only screen and (max-width: 768px) {
-}
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* Make Images Fit Full Screen on Any Device */
-.swiper {
-  width: 100%;
-  height: 100vh;
-}
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-}
+  nav ul li a {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
 
-.swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures image covers full screen */
-  position: absolute;
-}
+  /* Fire Hover Animation for Mobile */
+  nav ul li a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 200%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+    transform: translateX(-50%) scale(0.8);
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.2s ease-out;
+  }
 
-/* Mixed Animations */
-.animate-roll-right {
-  animation: rollInRight 1.5s ease-in-out;
-}
+  nav ul li a:hover::before,
+  nav ul li a:focus::before,
+  nav ul li a:active::before {
+    top: -50%;
+    opacity: 1;
+    animation: fireBurn 0.5s forwards ease-out;
+  }
 
-.animate-zoom-out {
-  animation: zoomOut 1.5s ease-in-out;
-}
-
-.animate-fade-top {
-  animation: fadeTop 1.5s ease-in-out;
-}
-
-.animate-slide-left {
-  animation: slideLeft 1.5s ease-in-out;
-}
-
-.animate-flip-bottom {
-  animation: flipBottom 1.5s ease-in-out;
+  nav ul li a:hover,
+  nav ul li a:focus,
+  nav ul li a:active {
+    color: yellow;
+    text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+    animation: flicker 0.2s infinite alternate;
+  }
 }
 
 /* Rolling effect for Slide 1 */
