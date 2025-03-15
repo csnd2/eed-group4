@@ -17,51 +17,234 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  html,
+body {
+  position: relative;
+  height: 100%;
+  scroll-behavior: smooth;
+}
 
-  <style>
-    html,
-    body {
-      position: relative;
-      height: 100%;
-      scroll-behavior: smooth;
-    }
+/* === SLIDER IMAGE EFFECTS === */
+.slider img {
+  opacity: 0.2; /* Very transparent */
+  filter: brightness(50%);
+  transition: transform 2s ease-in-out, opacity 1s ease-in-out;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  animation: moveImages 10s infinite alternate;
+  z-index: 1; /* Behind the text */
+}
 
-    .swiper {
-      width: 100%;
-      height: 100%;
-      color: white;
-      /* position: absolute; */
-      /* margin-top: 600px; */
-    }
+/* Animation for smooth image movement */
+@keyframes moveImages {
+  0% { transform: translateX(-10px) scale(1); }
+  50% { transform: translateX(10px) scale(1.05); opacity: 0.3; }
+  100% { transform: translateX(-10px) scale(1); opacity: 0.2; }
+}
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      /* background: #fff0; */
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-    }
+/* === BURNING TEXT (STATIC) === */
+.burning-text {
+  position: absolute;
+  top: 50%;
+  left: 5%; /* Moved text to the left */
+  transform: translateY(-50%); /* Adjust vertical alignment */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffc900;
+  text-shadow: 0 0 5px #ff4500, 0 0 10px #ff4500, 0 0 20px #ff6347;
+  z-index: 10; /* Always in front */
+  pointer-events: none;
+  text-align: left; /* Align text to the left */
+}
 
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-    }
+/* Hover Effect (Brighter Flames) */
+.burning-text:hover {
+  text-shadow: 0 0 15px #ff4500, 0 0 25px #ff6347, 0 0 35px #ff4500;
+}
 
-    @media only screen and (max-width: 768px) {
-      /* homepg */
-      /* .swiper-slide h2 {
-        text-align: center;
-        font-size: 30px;
-      } */
-    }
-  </style>
+.slider img {
+  opacity: 0.5; /* Adjust transparency (0 = fully transparent, 1 = fully visible) */
+  filter: brightness(80%); /* Make the images lighter */
+  transition: opacity 0.5s ease-in-out;
+}
 
+/* Ensure images are behind the burning text */
+.slider {
+  position: relative;
+  z-index: 1; /* Lower layer */
+}
 
+.burning-text {
+  position: absolute;
+  top: 50%;
+  left: 5%; /* Moved text to the left */
+  transform: translateY(-50%);
+  font-size: 2rem; /* Adjust size */
+  font-weight: bold;
+  color: #ffc900;
+  text-shadow: 0 0 5px #ff4500, 0 0 10px #ff4500, 0 0 20px #ff6347;
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  z-index: 10;
+  text-align: left; /* Align text to the left */
+}
+
+/* 🔥 Hover effect - makes text glow more */
+.burning-text:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #ff4500, 0 0 20px #ff6347, 0 0 30px #ff4500;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+/* Make Images Fit Full Screen on Any Device */
+.swiper {
+  width: 100%;
+  height: 100vh;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers full screen */
+  position: absolute;
+}
+
+/* Mixed Animations */
+.animate-roll-right {
+  animation: rollInRight 1.5s ease-in-out;
+}
+
+.animate-zoom-out {
+  animation: zoomOut 1.5s ease-in-out;
+}
+
+.animate-fade-top {
+  animation: fadeTop 1.5s ease-in-out;
+}
+
+.animate-slide-left {
+  animation: slideLeft 1.5s ease-in-out;
+}
+
+.animate-flip-bottom {
+  animation: flipBottom 1.5s ease-in-out;
+}
+
+/* Rolling effect for Slide 1 */
+@keyframes rollInRight {
+  from { transform: translateX(100%) rotate(360deg); opacity: 0; }
+  to { transform: translateX(0) rotate(0deg); opacity: 1; }
+}
+
+/* Zoom-out effect for Slide 2 */
+@keyframes zoomOut {
+  from { transform: scale(1.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Fading in from Top for Slide 3 */
+@keyframes fadeTop {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Sliding in from Left for Slide 4 */
+@keyframes slideLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Flip-in from Bottom for Slide 5 */
+@keyframes flipBottom {
+  from { transform: rotateX(90deg); opacity: 0; }
+  to { transform: rotateX(0deg); opacity: 1; }
+}
+
+@keyframes fire {
+  0% { text-shadow: 0 0 5px #ff4500, 0 0 10px #ff8c00, 0 0 15px #ff4500; }
+  25% { text-shadow: 0 0 7px #ff0000, 0 0 15px #ff4500, 0 0 20px #ff8c00; }
+  50% { text-shadow: 0 0 5px #ff4500, 0 0 10px #ff8c00, 0 0 20px #ff4500; }
+  75% { text-shadow: 0 0 8px #ff0000, 0 0 15px #ff4500, 0 0 25px #ff8c00; }
+  100% { text-shadow: 0 0 5px #ff4500, 0 0 10px #ff8c00, 0 0 15px #ff4500; }
+}
+
+@keyframes moveLeftToRight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.slider-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0.2; /* Make images more transparent */
+  animation: slideImages 5s infinite linear;
+}
+
+@keyframes slideImages {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Ensures the top of images is always visible */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.slider-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+</style>
 </head>
 
 <body>
@@ -100,20 +283,53 @@
     <!-- Hero Section  -->
     <section class="home-page">
       <!-- Swiper -->
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" >
+<!-- Swiper Container -->
+<!-- Swiper Container -->
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <!-- Slide 1 (Rolling Right) -->
+    <div class="swiper-slide animate-roll-right">
+      <img src="images/hero.jpg" alt="">
+    </div>
 
-            <div style="width: 100%; height: 100%;"  class="vd-container" style="overflow: hidden;">
-              <img src="images/hero.jpg" alt="">
-              <!-- <video width="100%" height="100%"  autoplay loop>
-                <source  src="images/hero.mp4" type="video/mp4">  
-              </video> -->
-            </div>
-            
+    <!-- Slide 2 (Zoom Out from Center) -->
+    <div class="swiper-slide animate-zoom-out">
+      <img src="images/IMG-20250315-WA0001.jpg" alt="">
+    </div>
 
-            <div class="overlay">
-              <h2 class="hero-h2">Welcome to EDC,
+    <!-- Slide 5 (Flip In from Bottom) -->
+    <div class="swiper-slide animate-flip-bottom">
+      <img src="images/IMG-20250315-WA0003.jpg" alt="">
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true, // ✅ Infinite Looping
+    autoplay: {
+      delay: 5000, // ⏳ Slower Auto-slide every 5 seconds
+      disableOnInteraction: false,
+    },
+    speed: 1500, // ⏳ Smooth and slower transitions
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    }
+  });
+</script>
+
+          <div class="overlay">
+              <h2 class="hero-h2 burning-text" style="color: 5rgb(203, 203, 65);">Welcome to EDC,
                 <br>
                 <span>Empowering Future Entrepreneurs At</span>
                 <br>
@@ -324,5 +540,8 @@
   <script src="https://static.elfsight.com/platform/platform.js" async></script>
 
   <div class="elfsight-app-52ec13b8-24dc-4194-9d05-109fa68e6cb7" data-elfsight-app-lazy></div>
+
+
+  
 </body>
 </html>
