@@ -118,57 +118,57 @@ body {
   height: 100vh;
   object-fit: cover;
 }
+
+
+
+
+
+
 @media only screen and (max-width: 768px) {
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
   nav ul li a {
-    display: block;
-    width: 100%;
-    padding: 12px 0;
     position: relative;
-    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    overflow: hidden;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Black shadow */
   }
 
-  /* Fire Hover Animation for Mobile */
+  /* Fire Animation */
   nav ul li a::before {
     content: "";
     position: absolute;
-    top: 100%;
-    left: 50%;
-    width: 200%;
-    height: 300%;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Make sure it covers only the text */
+    height: 2px; /* Thin line effect instead of a full background */
     background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
-    transform: translateX(-50%) scale(0.8);
-    border-radius: 50%;
-    opacity: 0;
-    transition: 0.2s ease-out;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
   }
 
-  nav ul li a:hover::before,
-  nav ul li a:focus::before,
-  nav ul li a:active::before {
-    top: -50%;
-    opacity: 1;
-    animation: fireBurn 0.5s forwards ease-out;
+  nav ul li a:hover::before {
+    transform: scaleX(1);
   }
 
-  nav ul li a:hover,
-  nav ul li a:focus,
-  nav ul li a:active {
+  nav ul li a:hover {
     color: yellow;
     text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
     animation: flicker 0.2s infinite alternate;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
   }
 }
+
+
+
+
+
+
+
 
 /* Rolling effect for Slide 1 */
 @keyframes rollInRight {
@@ -257,6 +257,8 @@ nav ul li a {
   font-size: 18px;
   transition: 0.3s;
   overflow: hidden;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Black shadow */
 }
 
 /* Fire Animation */
@@ -284,6 +286,7 @@ nav ul li a:hover {
   color: yellow;
   text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
   animation: flicker 0.2s infinite alternate;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
 }
 
 /* Fire Burning Animation */
@@ -311,6 +314,74 @@ nav ul li a:hover {
   100% { text-shadow: 0 0 10px yellow, 0 0 15px orange; }
 }
 
+.nav-button {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  color: yellow; /* Yellow text */
+  background: rgb(66, 4, 45); /* Brown background */
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  overflow: hidden;
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5); /* Red shadow at border edges */
+}
+
+.nav-button:hover {
+  color: white; /* White text */
+  text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+  animation: flicker 0.2s infinite alternate;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+  transform: translateY(-2px); /* 3D effect */
+}
+
+.nav-button::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 200%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+  transform: translateX(-50%) scale(0.8);
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.2s ease-out;
+}
+
+.nav-button:hover::before {
+  top: -50%;
+  opacity: 1;
+  animation: fireBurn 0.5s forwards ease-out;
+}
+
+.menu-icon i {
+  color: blue; /* Blue color for mobile menu icon */
+}
+
+@media only screen and (max-width: 768px) {
+  nav ul li a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    overflow: hidden;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Black shadow */
+  }
+
+  nav ul li a:hover {
+    color: yellow;
+    text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+    animation: flicker 0.2s infinite alternate;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+  }
+}
 </style>
 </head>
 
@@ -329,17 +400,17 @@ nav ul li a:hover {
       <i class="fa-solid fa-bars fa-2x " style="color: #051924"></i>
     </div>
 
-    <nav id="js-navbar" >
+    <nav id="js-navbar">
       <div class="cancel-icon" id="js-cancel-icon">
-        <i class="fa-solid fa-xmark fa-3x" style="color: #051924;" ></i>
+        <i class="fa-solid fa-xmark fa-3x" style="color: #051924;"></i>
       </div>
       <ul id="navbar">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html" id="product-link"> Services</a></li>
-        <li><a href="gallery.html" id="product-link">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><button onclick="window.location.href='index.html'" class="nav-button active">Home</button></li>
+        <li><button onclick="window.location.href='about.html'" class="nav-button">About</button></li>
+        <li><button onclick="window.location.href='services.html'" class="nav-button">Services</button></li>
+        <li><button onclick="window.location.href='gallery.html'" class="nav-button">Gallery</button></li>
+        <li><button onclick="window.location.href='faq.html'" class="nav-button">FAQ</button></li>
+        <li><button onclick="window.location.href='contact.html'" class="nav-button">Contact</button></li>
       </ul>
     </nav>
     
