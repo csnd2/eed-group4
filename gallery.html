@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,6 +14,144 @@
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+
+  <style>
+    body {
+      background-color: #011406; /* Changed background color */
+      max-width: 100%;
+      overflow-x: hidden; /* Added overflow-x hidden */
+    }
+    .upload-section {
+      background: linear-gradient(90deg, orange, red, yellow, orange); /* Fire effect background */
+      animation: moveBackground 5s linear infinite, moveLeftRight 10s linear infinite; /* Added background movement and left-right movement */
+      color: white; /* Changed text color to white */
+      text-shadow: 0 0 10px cyan, 0 0 20px cyan; /* Added cyan glow effect */
+      padding: 2rem;
+      text-align: center;
+    }
+    @keyframes moveBackground {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+    @keyframes moveLeftRight {
+      0% {
+        transform: translateX(-100%);
+      }
+      50% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    .three-d-effect {
+      color: #00f; /* Blue color */
+      text-shadow: 
+        0 0 5px #00f, 
+        0 0 10px #00f, 
+        0 0 15px #00f, 
+        0 0 20px #00ffff, /* Cyan shadow */
+        0 0 30px #00ffff, 
+        0 0 40px #00ffff, 
+        0 0 50px #00ffff, 
+        0 0 75px #00ffff;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .gallery-hero {
+      animation: moveUpDown 3s infinite; /* Added up and down animation */
+      padding: 20px; /* Added padding for better mobile view */
+    }
+
+    @keyframes moveUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    nav ul {
+      justify-content: center; /* Center the nav buttons */
+      flex-direction: row; /* Display nav buttons horizontally */
+      align-items: center; /* Center the nav buttons */
+    }
+    nav ul li {
+      margin-bottom: 0; /* Remove spacing between nav buttons */
+    }
+    nav ul li a {
+      color: yellow; /* Changed text color to yellow */
+      text-decoration: none;
+      padding: 10px 15px;
+      position: relative;
+      font-family: var(--brand-font);
+      text-shadow: 0 0 10px rgba(255, 69, 0, 0.7), 2px 2px 4px rgba(0, 0, 0, 0.5); /* Enhanced glow effect and added black shadow */
+      transition: text-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Added box-shadow for visible fire glow */
+      border-radius: 5px; /* Added border-radius for button effect */
+    }
+    nav ul li a.active {
+      background-color: #ff4500; /* Fire color */
+      color: white;
+      border-radius: 5px;
+      text-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Fire hover effect */
+      box-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Fire hover effect */
+      animation: blinkFire 1s infinite; /* Added blink animation */
+    }
+    @media only screen and (max-width: 768px) {
+      nav ul {
+        flex-direction: column; /* Display nav buttons vertically on small screens */
+        align-items: center; /* Center the nav buttons */
+      }
+      nav ul li {
+        margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
+      }
+    }
+    @keyframes blinkFire {
+      0%, 100% {
+        background-color: #ff4500;
+        text-shadow: 0 0 20px rgba(255, 69, 0, 1);
+        box-shadow: 0 0 20px rgba(255, 69, 0, 1);
+      }
+      50% {
+        background-color: #ff6347;
+        text-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
+        box-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
+      }
+    }
+
+    /* Added Gallery Grid */
+    .gallery-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background: #1c1c1c;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .img-div img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-content {
+      padding: 10px;
+      color: white;
+      text-align: center;
+    }
+  </style>
 
   <title>Gallery - Entrepreneurship Development Centre, FEDPONEK, owerri, Imo State</title>
 </head>
@@ -37,12 +175,12 @@
         <i class="fa-solid fa-xmark fa-3x" style="color: #051924;" ></i>
       </div>
       <ul id="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html" id="product-link"> Services</a></li>
-        <li><a href="gallery.html" id="product-link" class="active">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" class="footer-btn">Home</a></li>
+        <li><a href="about.html" class="footer-btn">About Us</a></li>
+        <li><a href="services.html" class="footer-btn">Services</a></li>
+        <li><a href="gallery.html" class="footer-btn">Gallery</a></li>
+        <li><a href="faq.html" class="footer-btn">FAQ</a></li>
+        <li><a href="contact.html" class="footer-btn">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -51,8 +189,8 @@
     <!-- Gallery Hero section  -->
     <section class="gallery-hero-section">
       <div class="gallery-hero">
-        <h2>Our Gallery</h2>
-        <p>Explore photos and videos from our training sessions, workshops, and student projects at the Entrepreneurship Development Center.</p>
+        <h2 class="three-d-effect">Gallery</h2>
+        <p>Explore our gallery to see the various activities and events at the Entrepreneurship Development Center.</p>
       </div>
     </section>
 
@@ -69,81 +207,81 @@
 
         <div class="gallery-cards">
 
-          <div class="card js-filter-img" data-name="digital">
+          <div class="card js-filter-img box-hover-effect" data-name="digital">
             <div class="img-div">
-              <img src="images/digital.jpeg" alt="digital skill"/>
+              <img src="images/digital.jpeg" alt="Digital Skills Training Session"/>
             </div>
             <div class="card-content">
               <p>Digital Skills Training Session</p>
             </div>
           </div>
 
-          <div class="card js-filter-img" data-name="business">
+          <div class="card js-filter-img box-hover-effect" data-name="business">
             <div class="img-div">
-              <img src="images/tailor.jpeg" alt="digital skill"/>
+              <img src="images/tailor.jpeg" alt="Business Workshop"/>
             </div>
             <div class="card-content">
               <p>Business Workshop</p>
             </div>
           </div>
 
-          <div class="card js-filter-img" data-name="entrepreneurship">
+          <div class="card js-filter-img box-hover-effect" data-name="entrepreneurship">
             <div class="img-div">
-              <img src="images/workshop3.jpeg" alt="digital skill"/>
+              <img src="images/workshop3.jpeg" alt="Entrepreneurship Workshop"/>
             </div>
             <div class="card-content">
               <p>Entrepreneurship Workshop</p>
             </div>
           </div>
 
-          <div class="card js-filter-img" data-name="photography">
+          <div class="card js-filter-img box-hover-effect" data-name="photography">
             <div class="img-div">
-              <img src="images/photography1.jpeg" alt="digital skill"/>
+              <img src="images/photography1.jpeg" alt="Photography Training"/>
             </div>
             <div class="card-content">
               <p>Photography Training</p>
             </div>
           </div>
 
-          <div class="card js-filter-img" data-name="design">
+          <div class="card js-filter-img box-hover-effect" data-name="design">
             <div class="img-div">
-              <img src="images/web.jpeg" alt="digital skill"/>
+              <img src="images/web.jpeg" alt="Website Development Class"/>
             </div>
             <div class="card-content">
               <p>Website Development Class</p>
             </div>
           </div>
 
-          <div class="card js-filter-img" data-name="business">
+          <div class="card js-filter-img box-hover-effect" data-name="business">
             <div class="img-div">
-              <img src="images/thread.jpeg" alt="digital skill"/>
+              <img src="images/thread.jpeg" alt="E-commerce Training"/>
             </div>
             <div class="card-content">
               <p>E-commerce Training</p>
             </div>
           </div>
 
-          <div class="card js-filter-img" data-name="business">
+          <div class="card js-filter-img box-hover-effect" data-name="business">
             <div class="img-div">
-              <img src="images/workshop.jpeg" alt="digital skill"/>
+              <img src="images/workshop.jpeg" alt="Business Planning Session"/>
             </div>
             <div class="card-content">
               <p>Business Planning Session</p>
             </div>
           </div>
 
-          <div class="card js-filter-img" data-name="entrepreneurship">
+          <div class="card js-filter-img box-hover-effect" data-name="entrepreneurship">
             <div class="img-div">
-              <img src="images/students.jpeg" alt="digital skill"/>
+              <img src="images/students.jpeg" alt="Student Collaboration"/>
             </div>
             <div class="card-content">
               <p>Student Collaboration</p>
             </div>
           </div>
 
-          <div class="card js-filter-img" data-name="digital">
+          <div class="card js-filter-img box-hover-effect" data-name="digital">
             <div class="img-div">
-              <img src="images/business.jpg" alt="digital skill"/>
+              <img src="images/business.jpg" alt="Business Analysis Training"/>
             </div>
             <div class="card-content">
               <p>Business Analysis Training</p>
@@ -156,8 +294,8 @@
     <section class="upload-section">
       <div class="upload-container">
         <h2>Share Your Success</h2>
-        <p>Are you a department or unit in the Entrepreneurship Development Center? Upload photos and videos of your training sessions, student projects, and success stories.</p>
-        <button onclick="alert('Create Account Before Uploading')">Upload Gallery</button>
+        <p>Contact us today to share your success stories and inspire others with your entrepreneurial journey.</p>
+        <button onclick="window.location.href='/contact.html'">Share Now</button>
       </div>
     </section>
     
@@ -167,8 +305,8 @@
   <footer class="footer-container">
     <div class="footer-div">
       <div class="footer-card1">
-        <h1> 
-        EDC FPNO
+        <h1 data-aos="fade-down"> 
+         EDC FPNO
         </h1>
         <p class="footer-contact-p">
           The Entrepreneurship Development Center at Federal Polytechnic Nekede empowers students with practical skills and knowledge for successful business ventures.
@@ -176,70 +314,51 @@
       </div>
 
       <div class="footer-card2">
-        <h1> 
+        <h1 data-aos="fade-down"> 
           Quick Links
         </h1>
-        <p class="footer-contact-p">
-          <a href="/index.html"> Home</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="about.html"> About Us</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="services.html"> Services</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="gallery.html"> Gallery</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="faq.html"> FAQ</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="contact.html"> Contact</a>
-        </p>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-btn">Home</a></li>
+          <li><a href="about.html" class="footer-btn">About Us</a></li>
+          <li><a href="services.html" class="footer-btn">Services</a></li>
+          <li><a href="gallery.html" class="footer-btn">Gallery</a></li>
+          <li><a href="faq.html" class="footer-btn">FAQ</a></li>
+          <li><a href="contact.html" class="footer-btn">Contact</a></li>
+        </ul>
       </div>
 
       <div class="footer-card3">
-        <h1> 
+        <h1 data-aos="fade-down"> 
           Our Services
         </h1>
-        <p class="footer-contact-p">
-          <a href="#"> Digital Skills Training</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Web Development</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Business Management
-          </a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Graphic Design</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Entrepreneurship Training</a>
-        </p>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-btn">Digital Skills Training</a></li>
+          <li><a href="#" class="footer-btn">Web Development</a></li>
+          <li><a href="#" class="footer-btn">Business Management</a></li>
+          <li><a href="#" class="footer-btn">Graphic Design</a></li>
+          <li><a href="#" class="footer-btn">Entrepreneurship Training</a></li>
+        </ul>
       </div>
 
       <div class="footer-card4">
-        <h1> 
+        <h1 data-aos="fade-down"> 
           Contact Us
         </h1>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
-            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-location-dot" style="color: rgb(0, 244, 228);"></i> <!-- Changed icon color to brown -->
             <p>Federal Polytechnic Nekede, Owerri, Imo State, Nigeria</p>
           </div>
         </p>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" style="color: rgb(0, 255, 229);"></i> <!-- Changed icon color to brown -->
             <p>+234 900 000 0000 </p>
           </div>
         </p>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
-            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-message" style="color: rgb(10, 255, 247);"></i> <!-- Changed icon color to brown -->
             <p>contact@edcfpno.edu.ng</p>
           </div>
         </p>

@@ -20,6 +20,94 @@
 
 
   <script src="https://kit.fontawesome.com/1c8247bb1b.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-color: #011406; /* Changed background color */
+      color: orange; /* Changed main text color to orange */
+      max-width: 100%;
+      overflow-x: hidden; /* Added overflow-x hidden */
+    }
+    input, textarea {
+      background-color: grey; /* Changed background color to grey */
+    }
+    .map-container {
+      background-color: rgb(0, 251, 255); /* Changed background color to yellow */
+    }
+    .contact-info h3 {
+      color: orange; /* Changed text color to orange */
+      text-shadow: 0 0 10px orange, 0 0 20px orange; /* Added orange glow effect */
+      animation: glowingOrange 2s infinite; /* Added glowing orange animation */
+    }
+    .contact-mail {
+      color: white; /* Changed text color to white */
+      text-shadow: 0 0 10px cyan, 0 0 20px cyan; /* Added cyan glow effect */
+      animation: glowingCyan 2s infinite; /* Added glowing cyan animation */
+    }
+    textarea#message {
+      background-color: white; /* Changed background color to white */
+    }
+    @keyframes glowingOrange {
+      0%, 100% {
+        text-shadow: 0 0 10px orange, 0 0 20px orange;
+      }
+      50% {
+        text-shadow: 0 0 20px orange, 0 0 40px orange;
+      }
+    }
+    @keyframes glowingCyan {
+      0%, 100% {
+        text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+      }
+      50% {
+        text-shadow: 0 0 20px cyan, 0 0 40px cyan;
+      }
+    }
+    .three-d-effect {
+      color: #00f; /* Blue color */
+      text-shadow: 
+        0 0 5px #00f, 
+        0 0 10px #00f, 
+        0 0 15px #00f, 
+        0 0 20px #00ffff, /* Cyan shadow */
+        0 0 30px #00ffff, 
+        0 0 40px #00ffff, 
+        0 0 50px #00ffff, 
+        0 0 75px #00ffff;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .gallery-hero {
+      animation: moveUpDown 3s infinite; /* Added up and down animation */
+      padding: 20px; /* Added padding for better mobile view */
+    }
+
+    @keyframes moveUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    nav ul {
+      justify-content: center; /* Center the nav buttons */
+      flex-direction: row; /* Display nav buttons horizontally */
+      align-items: center; /* Center the nav buttons */
+    }
+    nav ul li {
+      margin-bottom: 0; /* Remove spacing between nav buttons */
+    }
+    @media only screen and (max-width: 768px) {
+      nav ul {
+        flex-direction: column; /* Display nav buttons vertically on small screens */
+        align-items: center; /* Center the nav buttons */
+      }
+      nav ul li {
+        margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -43,21 +131,22 @@
         <i class="fa-solid fa-xmark fa-3x" style="color: #051924;" ></i>
       </div>
       <ul id="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html" id="product-link"> Services</a></li>
-        <li><a href="gallery.html" id="product-link">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="index.html" class="footer-btn">Home</a></li>
+        <li><a href="about.html" class="footer-btn">About Us</a></li>
+        <li><a href="services.html" class="footer-btn">Services</a></li>
+        <li><a href="gallery.html" class="footer-btn">Gallery</a></li>
+        <li><a href="faq.html" class="footer-btn">FAQ</a></li>
+        <li><a href="contact.html" class="footer-btn active">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <!-- FAQ Hero section  -->
+    <!-- Contact Hero section  -->
     <section class="gallery-hero-section">
       <div class="gallery-hero">
-        <h2>Contact Us</h2>
+        <h2 class="three-d-effect">Contact Us</h2>
+        <p>Get in touch with the Entrepreneurship Development Center at Federal Polytechnic Nekede.</p>
       </div>
     </section>
 
@@ -72,7 +161,7 @@
           </div>
   
           <div>
-            <img src="images/office.jpg" alt="" class="office-img">
+            <img src="images/contee.jpg" alt="" class="office-img">
           </div>
         </div>
   
@@ -116,7 +205,7 @@
         </div>
       </div>
   
-      <div style="width: 100%;">
+      <div class="map-container" style="width: 100%;">
         <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Federal%20polytechnic%20nekede+(Entrepreneur%20Development%20Center%20)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/collections/drones/">drones ireland</a></iframe></div>
       </div>
     </div>
@@ -140,46 +229,27 @@
         <h1 data-aos="fade-down"> 
           Quick Links
         </h1>
-        <p class="footer-contact-p">
-          <a href="index.html"> Home</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="about.html"> About Us</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="services.html"> Services</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="gallery.html"> Gallery</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="faq.html"> FAQ</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="contact.html"> Contact</a>
-        </p>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-btn">Home</a></li>
+          <li><a href="about.html" class="footer-btn">About Us</a></li>
+          <li><a href="services.html" class="footer-btn">Services</a></li>
+          <li><a href="gallery.html" class="footer-btn">Gallery</a></li>
+          <li><a href="faq.html" class="footer-btn">FAQ</a></li>
+          <li><a href="contact.html" class="footer-btn">Contact</a></li>
+        </ul>
       </div>
 
       <div class="footer-card3">
         <h1 data-aos="fade-down"> 
           Our Services
         </h1>
-        <p class="footer-contact-p">
-          <a href="#"> Digital Skills Training</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Web Development</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Business Management
-          </a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Graphic Design</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Entrepreneurship Training</a>
-        </p>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-btn">Digital Skills Training</a></li>
+          <li><a href="#" class="footer-btn">Web Development</a></li>
+          <li><a href="#" class="footer-btn">Business Management</a></li>
+          <li><a href="#" class="footer-btn">Graphic Design</a></li>
+          <li><a href="#" class="footer-btn">Entrepreneurship Training</a></li>
+        </ul>
       </div>
 
       <div class="footer-card4">

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"="width=device-width, initial-scale=1.0">
 
   <!-- for google font  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,85 @@
   <link rel="stylesheet" href="styles/faq.css">
   <link rel="icon" type="image/x-icon" href="images/g4.ico">
   <title>FAQ - Entrepreneurship Development Centre, FEDPONEK, owerri, Imo State</title>
+  <style>
+    body {
+      background-color: #011406; /* Changed background color */
+      max-width: 100%;
+      overflow-x: hidden; /* Added overflow-x hidden */
+    }
+    .upload-section {
+      background: linear-gradient(90deg, orange, red, yellow, orange); /* Fire effect background */
+      animation: moveBackground 5s linear infinite, moveLeftRight 10s linear infinite; /* Added background movement and left-right movement */
+      color: white; /* Changed text color to white */
+      text-shadow: 0 0 10px cyan, 0 0 20px cyan; /* Added cyan glow effect */
+      padding: 2rem;
+      text-align: center;
+    }
+    @keyframes moveBackground {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
+    @keyframes moveLeftRight {
+      0% {
+        transform: translateX(-100%);
+      }
+      50% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    .three-d-effect {
+      color: #00f; /* Blue color */
+      text-shadow: 
+        0 0 5px #00f, 
+        0 0 10px #00f, 
+        0 0 15px #00f, 
+        0 0 20px #00ffff, /* Cyan shadow */
+        0 0 30px #00ffff, 
+        0 0 40px #00ffff, 
+        0 0 50px #00ffff, 
+        0 0 75px #00ffff;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .gallery-hero {
+      animation: moveUpDown 3s infinite; /* Added up and down animation */
+      padding: 20px; /* Added padding for better mobile view */
+    }
+
+    @keyframes moveUpDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    nav ul {
+      justify-content: center; /* Center the nav buttons */
+      flex-direction: row; /* Display nav buttons horizontally */
+      align-items: center; /* Center the nav buttons */
+    }
+    nav ul li {
+      margin-bottom: 0; /* Remove spacing between nav buttons */
+    }
+    @media only screen and (max-width: 768px) {
+      nav ul {
+        flex-direction: column; /* Display nav buttons vertically on small screens */
+        align-items: center; /* Center the nav buttons */
+      }
+      nav ul li {
+        margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -40,12 +119,12 @@
         <i class="fa-solid fa-xmark fa-3x" style="color: #051924;" ></i>
       </div>
       <ul id="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html" id="product-link"> Services</a></li>
-        <li><a href="gallery.html" id="product-link">Gallery</a></li>
-        <li><a href="faq.html" class="active">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" class="footer-btn">Home</a></li>
+        <li><a href="about.html" class="footer-btn">About Us</a></li>
+        <li><a href="services.html" class="footer-btn">Services</a></li>
+        <li><a href="gallery.html" class="footer-btn">Gallery</a></li>
+        <li><a href="faq.html" class="footer-btn active">FAQ</a></li>
+        <li><a href="contact.html" class="footer-btn">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -54,24 +133,22 @@
     <!-- FAQ Hero section  -->
     <section class="gallery-hero-section">
       <div class="gallery-hero">
-        <h2>FAQ</h2>
-        <p>Discover answers to frequently asked questions regarding the Entrepreneurship Development Center and our offerings.</p>
+        <h2 class="three-d-effect">FAQ</h2>
+        <p>Find answers to the most frequently asked questions about the Entrepreneurship Development Center at Federal Polytechnic Nekede.</p>
       </div>
     </section>
 
     <section class="faq-section">
       <div class="faq-container">
-        <div class="faq-question"> 
-          What is the Entrepreneurship Development Center ?
-
+        <div class="faq-question">
+          <span>What is the Entrepreneurship Development Center?</span>
           <div class="icon-container">
-            <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-chevron-down"></i>
           </div>
         </div>
-        <p class="faq-answer"> 
-          The Entrepreneurship Development Center at Federal Polytechnic Nekede is a specialized facility dedicated to equipping students with entrepreneurial skills, practical training, and resources needed to start and manage successful businesses. We offer training in various skills, mentorship, and support for student entrepreneurs.
-        </p>
-
+        <div class="faq-answer">
+          <p>The Entrepreneurship Development Center (EDC) at Federal Polytechnic Nekede is dedicated to equipping students with the skills and knowledge needed for successful business ventures.</p>
+        </div>
       </div>
 
       <div class="faq-container">
@@ -133,8 +210,8 @@
 
     <section class="upload-section">
       <div class="upload-container">
-        <h2>Still Have Question ?</h2>
-        <p>Can't find the answer you're looking for? Please reach out to our team.</p>
+        <h2>Still Have a Question?</h2>
+        <p>Contact us today if you have any further questions or need more information about our programs.</p>
         <button onclick="window.location.href='/contact.html'">Contact Us</button>
       </div>
     </section>
@@ -145,7 +222,7 @@
     <div class="footer-div">
       <div class="footer-card1">
         <h1 data-aos="fade-down"> 
-        EDC FPNO
+         EDC FPNO
         </h1>
         <p class="footer-contact-p">
           The Entrepreneurship Development Center at Federal Polytechnic Nekede empowers students with practical skills and knowledge for successful business ventures.
@@ -156,46 +233,27 @@
         <h1 data-aos="fade-down"> 
           Quick Links
         </h1>
-        <p class="footer-contact-p">
-          <a href="index.html"> Home</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="about.html"> About Us</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="services.html"> Services</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="gallery.html"> Gallery</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="faq.html"> FAQ</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="contact.html"> Contact</a>
-        </p>
+        <ul class="footer-links">
+          <li><a href="index.html" class="footer-btn">Home</a></li>
+          <li><a href="about.html" class="footer-btn">About Us</a></li>
+          <li><a href="services.html" class="footer-btn">Services</a></li>
+          <li><a href="gallery.html" class="footer-btn">Gallery</a></li>
+          <li><a href="faq.html" class="footer-btn">FAQ</a></li>
+          <li><a href="contact.html" class="footer-btn">Contact</a></li>
+        </ul>
       </div>
 
       <div class="footer-card3">
         <h1 data-aos="fade-down"> 
           Our Services
         </h1>
-        <p class="footer-contact-p">
-          <a href="#"> Digital Skills Training</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Web Development</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Business Management
-          </a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Graphic Design</a>
-        </p>
-        <p class="footer-contact-p">
-          <a href="#"> Entrepreneurship Training</a>
-        </p>
+        <ul class="footer-links">
+          <li><a href="#" class="footer-btn">Digital Skills Training</a></li>
+          <li><a href="#" class="footer-btn">Web Development</a></li>
+          <li><a href="#" class="footer-btn">Business Management</a></li>
+          <li><a href="#" class="footer-btn">Graphic Design</a></li>
+          <li><a href="#" class="footer-btn">Entrepreneurship Training</a></li>
+        </ul>
       </div>
 
       <div class="footer-card4">
@@ -204,19 +262,19 @@
         </h1>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
-            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-location-dot" style="color: rgb(0, 244, 228);"></i> <!-- Changed icon color to brown -->
             <p>Federal Polytechnic Nekede, Owerri, Imo State, Nigeria</p>
           </div>
         </p>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" style="color: rgb(0, 255, 229);"></i> <!-- Changed icon color to brown -->
             <p>+234 900 000 0000 </p>
           </div>
         </p>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
-            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-message" style="color: rgb(10, 255, 247);"></i> <!-- Changed icon color to brown -->
             <p>contact@edcfpno.edu.ng</p>
           </div>
         </p>

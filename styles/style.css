@@ -31,6 +31,7 @@ footer{
 video{
   width: 100% !important;
   height: 100% !important;
+  object-fit: cover; /* Ensure the video covers the entire area */
 }
 /* .home-img{
   display: bl;
@@ -88,7 +89,7 @@ video{
   font-family: var(--font);
   font-style: normal;  
   font-weight: 600;
-  color: var(--bg);
+  color: var (--bg);
   width: 100%;
 }
 #contents-p{
@@ -107,7 +108,7 @@ video{
   font-size: 1.1em;
   letter-spacing: 0.025rem;  
   font-weight: 400; 
-  color: var(--bg);
+  color: var (--bg);
   font-family: var(--font);
   /* margin-bottom: 30px; */
   cursor: pointer;
@@ -124,7 +125,7 @@ video{
 }
 button{
   background-color: var(--banner-color);
-  color: #FFFFFF;
+  color: yellow; /* Changed text color to yellow */
   display: flex;
   align-items: center;
   column-gap:10px;
@@ -135,16 +136,19 @@ button{
   letter-spacing: 0.025rem;
   font-size: 1em;
   font-weight: 600;
-  border-radius: 10px;
-  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+  border-radius: 40px; /* Changed border radius to 40px */
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; /* Added box-shadow transition */
   border: none;
   outline: none;
   font-family: var(--font);
   cursor: pointer;
+  box-shadow: 0 0 10px cyan; /* Added cyan glow effect */
 }
 button:hover{
   /* opacity: 0.8; */
   scale: 1.05;
+  background: linear-gradient(90deg, orange, red, yellow, orange); /* Fire effect inside the button */
+  box-shadow: inset 0 0 10px rgba(255, 69, 0, 0.8), inset 0 0 20px rgba(255, 69, 0, 0.8), 0 0 20px cyan; /* Glowing effect inside the button */
 }
 button:active{
   scale: 0.95;
@@ -161,6 +165,18 @@ button:active{
 }
 .features-container h2{
   text-align: center;
+  color: black; /* Changed text color to black */
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan; /* Added cyan glow effect */
+  animation: glowingCyan 2s infinite; /* Added glowing cyan animation */
+}
+
+@keyframes glowingCyan {
+  0%, 100% {
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  }
+  50% {
+    text-shadow: 0 0 20px cyan, 0 0 40px cyan;
+  }
 }
 .diesel-container{
   /* margin-top: 620px; */
@@ -199,7 +215,7 @@ button:active{
 .features-p{
   text-align: center;
   font-size: 18px;
-  color: var(--color);
+  color: aliceblue; /* Changed text color to aliceblue */
   font-family: var(--font);
   line-height: 1.6;
   font-weight: 400;
@@ -241,7 +257,7 @@ button:active{
 .card3 li{
   font-size: 16px;
   color: var(--color);
-  font-family: var(--font);
+  font-family: var (--font);
   line-height: 1.6;
   font-weight: 400;
   width: 360px;
@@ -258,11 +274,14 @@ button:active{
   font-family: var(--font);
   font-weight: 400;
   font-style: normal;
-  color: var(--banner-color);
+  color: yellow; /* Changed text color to yellow */
   text-decoration: none;
+  text-shadow: 0 0 10px red; /* Added red glow effect */
+  transition: text-shadow 0.3s ease-in-out; /* Added transition for smooth glow effect */
 }
 .services-link a:hover{
   text-decoration: underline;
+  text-shadow: 0 0 20px red; /* Enhanced red glow effect on hover */
 }
 .icon-div{
   background-color:var(--banner-color);
@@ -358,6 +377,7 @@ button:active{
 .why-choose-us-contents,
 .about-txt-contents{
   width: 600px;
+  color: yellow; /* Changed text color to yellow */
 }
 
 .diesel-pic{
@@ -426,7 +446,7 @@ button:active{
 
 /* section five the refinery container  */
 .support-div h2{
-  color: var(--color);
+  color: aliceblue; /* Changed text color to aliceblue */
   font-family: var(--font);
   letter-spacing: 0.025rem;
   width: calc(100% + 0.025rem);
@@ -451,7 +471,7 @@ button:active{
 
 /* section six support page  */
 .footer-container{
-  background-color: var(--banner-color);
+  background-color: rgb(4, 31, 6); /* Changed background color to blue */
   color: var(--color) !important;  
 }
 .support-div{
@@ -486,6 +506,8 @@ button:active{
   font-size: 20px;
   line-height: 1.75;
   font-weight: 700;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan; /* Added cyan glow effect */
+  animation: glowingCyan 2s infinite; /* Added glowing cyan animation */
 }
 
 .footer-contact-p,
@@ -498,8 +520,10 @@ button:active{
   line-height: 2;
   font-weight: 400; 
   width: 335px;
-  text-decoration: none;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan; /* Added cyan glow effect */
+  animation: glowingCyan 2s infinite; /* Added glowing cyan animation */
 }
+
 .footer-contact-p a:hover{
   text-decoration: underline;
 }
@@ -516,14 +540,41 @@ button:active{
 }
 .copyright{
   text-align: center;
-  color: var(--bg);
+  color: rgb(222, 240, 240);
   font-family: var(--font);
   letter-spacing: 0.025rem;
   font-size: 16px;
   line-height: 2;
   font-weight: 400; 
+  text-shadow: #01061a;
 }
 
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-btn {
+  display: inline-block;
+  background-color: rgb(7, 20, 3); /* Green button */
+  color: rgb(234, 234, 0); /* Yellow text */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Make button take full width of list item */
+  text-align: center; /* Center the text */
+  box-shadow: 0 0 10px cyan; /* Added cyan glow effect */
+}
+
+.footer-btn:hover {
+  background-color: rgb(234, 133, 18);
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan; /* Enhanced cyan glow effect on hover */
+}
 
 /* tablet screen size for navigation */
 @media only screen and (max-width: 768px){
@@ -533,8 +584,7 @@ button:active{
     row-gap: 30px;
   }
   .vd-container video {
-    height: 100vh !important;
-    object-fit:cover;
+    height: 50vh !important; /* Make the video smaller for mobile */
   }
   .overlay .hero-h2 {
     width: 500px;
@@ -621,6 +671,7 @@ button:active{
     flex-direction: column-reverse;
   }
   .p-content, 
+  .p-why-choose-us,
   .p-refinery {
     width: 100%;
     font-size: 18px;
@@ -709,7 +760,7 @@ button:active{
     width: 100%;
   }
   .vd-container video {
-    height: 100%;
+    height: 30vh !important; /* Make the video even smaller for smaller screens */
   }
   
   .brand {
@@ -926,18 +977,112 @@ button:active{
   }
 }
 
-/* @media only screen and (max-width: 375px){
-  .p-content, 
-  .p-refinery {
-    width: 52vh;
+/* ...existing code... */
+.shuffle-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  animation: shuffle 10s infinite;
+}
+
+@keyframes shuffle {
+  0%, 100% {
+    transform: translateX(0);
   }
-  .diesel-pic {
-    width: 52vh;
+  50% {
+    transform: translateX(-100%);
   }
-  .table02-col img {
-    width: 52vh;
+}
+/* ...existing code... */
+.cyan-border {
+  border: 5px solid cyan;
+  border-radius: 10px;
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.cyan-border:hover {
+  box-shadow: 0 0 20px cyan, 0 0 40px cyan;
+}
+
+/* ...existing code... */
+.why-choose-us-contents h2 {
+  color: black; /* Changed text color to black */
+  animation: glowingOrange 2s infinite, glowingCyan 2s infinite; /* Added glowing cyan animation */
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan; /* Added cyan glow effect */
+}
+
+@keyframes glowingOrange {
+  0%, 100% {
+    text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px orange, 0 0 20px orange;
   }
-  .refinery-img {
-    width: 52vh;
+  50% {
+    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange;
   }
-} */
+}
+
+@keyframes glowingCyan {
+  0%, 100% {
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  }
+  50% {
+    text-shadow: 0 0 20px cyan, 0 0 40px cyan;
+  }
+}
+/* ...existing code... */
+.p-why-choose-us {
+  color: aliceblue; /* Changed text color to aliceblue */
+}
+/* ...existing code... */
+
+.box-hover-effect {
+  background-color: rgb(48, 35, 20); /* Changed background color to black */
+  color: yellow; /* Changed text color to yellow */
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px orange; /* Added glowing orange border */
+}
+
+.box-hover-effect:hover {
+  background-color: rgb(105, 26, 101)
+  color: rgb(0, 200, 255);
+  box-shadow: 0 0 20px orange, 0 0 40px orange; /* Enhanced glowing orange border on hover */
+}
+
+.box-hover-effect h3,
+.box-hover-effect p {
+  color: yellow; /* Changed text color inside the box to yellow */
+}
+
+/* ...existing code... */
+
+.logo {
+  /* ...existing code... */
+}
+
+nav ul li a {
+  /* ...existing code... */
+}
+
+.why-choose-us-contents h2,
+.why-choose-us-contents p,
+.features-contents h2,
+.features-contents p,
+button {
+}
+
+/* ...existing code... */
+
+.glowing-cyan {
+  color: cyan;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: glowingCyan 2s infinite;
+}
+
+.spaced-text {
+  color: yellow; /* Changed text color to yellow */
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* ...existing code... */
