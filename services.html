@@ -21,9 +21,10 @@
   <style>
     body {
       background-color: #011406; /* Changed background color */
-      max-width: 100%;
+      max-width: 100vw; /* Set max width to 100% of viewport width */
+      max-height: 100vh; /* Set max height to 100% of viewport height */
       overflow-x: hidden; /* Added overflow-x hidden */
-      min-width: 1024px; /* Ensure desktop view on mobile */
+      margin: 0 auto; /* Center content */
     }
     .service-text {
       color: white; /* Changed text color to white */
@@ -153,6 +154,16 @@
       #js-navbar ul li a {
         width: 100%; /* Ensure a takes full width */
       }
+      body {
+        width: 100%; /* Ensure full width on mobile */
+        height: auto; /* Ensure auto height on mobile */
+      }
+    }
+    @media only screen and (min-width: 769px) {
+      body {
+        width: 100%; /* Ensure full width on desktop */
+        height: auto; /* Ensure auto height on desktop */
+      }
     }
     @keyframes blinkFire {
       0%, 100% {
@@ -165,6 +176,10 @@
         text-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
         box-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
       }
+    }
+    body {
+      width: 100%; /* Ensure full width on all devices */
+      height: auto; /* Ensure auto height on all devices */
     }
   </style>
 </head>

@@ -21,13 +21,22 @@
   <style>
     body {
       background-color: #011406; /* Changed background color */
-      max-width: 100%;
+      max-width: 100vw; /* Set max width to 100% of viewport width */
+      max-height: 100vh; /* Set max height to 100% of viewport height */
       overflow-x: hidden; /* Added overflow-x hidden */
-      min-width: 1024px; /* Ensure desktop view on mobile */
-      display: flex; /* Added flex display */
-      justify-content: center; /* Center content horizontally */
-      align-items: center; /* Center content vertically */
-      flex-direction: column; /* Ensure content stacks vertically */
+      margin: 0 auto; /* Center content */
+    }
+    @media only screen and (max-width: 768px) {
+      body {
+        width: 100%; /* Ensure full width on mobile */
+        height: auto; /* Ensure auto height on mobile */
+      }
+    }
+    @media only screen and (min-width: 769px) {
+      body {
+        width: 100%; /* Ensure full width on desktop */
+        height: auto; /* Ensure auto height on desktop */
+      }
     }
     .upload-section {
       background: linear-gradient(90deg, orange, red, yellow, orange); /* Fire effect background */
