@@ -187,6 +187,47 @@ footer{
   .gallery-cards {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for better responsiveness */
   }
+
+  nav ul {
+    flex-direction: column; /* Display nav buttons vertically on small screens */
+    align-items: center; /* Center the nav buttons */
+    width: 100%; /* Ensure nav takes full width */
+  }
+  nav ul li {
+    margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
+    width: 100%; /* Ensure each nav item takes full width */
+    text-align: center; /* Center text in nav items */
+  }
+  nav ul li a {
+    display: block; /* Ensure links are block elements */
+    width: 100%; /* Ensure links take full width */
+    padding: 15px 0; /* Add padding for better touch targets */
+  }
+  .menu-icon, .cancel-icon {
+    display: block; /* Ensure menu and cancel icons are visible */
+  }
+  #js-navbar {
+    display: none; /* Hide navbar by default */
+    position: fixed; /* Fix navbar position */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure navbar takes full width */
+    height: 100%; /* Ensure navbar takes full height */
+    background-color: rgba(0, 0, 0, 0.9); /* Add semi-transparent background */
+    z-index: 1000; /* Ensure navbar is above other content */
+    flex-direction: column; /* Display nav items vertically */
+    justify-content: center; /* Center nav items vertically */
+    align-items: center; /* Center nav items horizontally */
+  }
+  #js-navbar ul {
+    width: 100%; /* Ensure ul takes full width */
+  }
+  #js-navbar ul li {
+    width: 100%; /* Ensure li takes full width */
+  }
+  #js-navbar ul li a {
+    width: 100%; /* Ensure a takes full width */
+  }
 }
 
 

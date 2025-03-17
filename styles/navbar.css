@@ -1,10 +1,10 @@
-:root{
+:root {
   --background: #04291d;
   --color: rgb(215, 199, 148);
   --brand-font: "Roboto", sans-serif;
-  --banner-color: #2e3a6e ;
+  --banner-color: #2e3a6e;
 }
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -30,11 +30,10 @@ header {
   z-index: 0; /* Ensure the background is below the video */
 }
 
-  /* width: 400px; */
 .brand a {
   text-decoration: none;
   font-size: 26px;
-  font-family: "Roboto",serif;
+  font-family: "Roboto", serif;
   font-weight: 600;
   font-style: normal;
   color: var(--banner-color);
@@ -42,24 +41,30 @@ header {
   align-items: center;
   column-gap: 15px;
 }
-.brand img{
-  width:70px;
+.brand img {
+  width: 70px;
 }
+
 /* 🔥 3D Effect for EDC (Smaller & More Bold Shadow) 🔥 */
 /* ✨ EDC LOGO MOVES UP AND DOWN ✨ */
 /* 🔻 EDC MOVES CONTINUOUSLY 🔻 */
 @keyframes moveEDC {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(150px); } /* Adjust distance */
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(150px); /* Adjust distance */
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .logo {
   font-size: small;
   font-weight: bold;
   color: yellow; /* Changed color to yellow */
-  text-shadow: 4px 4px 6px rgba(82, 13, 40, 0.5), 
-               2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 4px 4px 6px rgba(82, 13, 40, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease-in-out;
   display: inline-block;
   position: relative;
@@ -68,7 +73,8 @@ header {
 }
 
 @keyframes blinkWhite {
-  0%, 100% {
+  0%,
+  100% {
     color: yellow;
     text-shadow: 0 0 10px white;
   }
@@ -92,19 +98,22 @@ header {
 
 /* 🔥 FIRE TRAIL MOVEMENT 🔥 */
 @keyframes fireHover {
-  0% { transform: translateY(5px) scaleX(1); }
-  50% { transform: translateY(10px) scaleX(1.1); }
-  100% { transform: translateY(5px) scaleX(1); }
+  0% {
+    transform: translateY(5px) scaleX(1);
+  }
+  50% {
+    transform: translateY(10px) scaleX(1.1);
+  }
+  100% {
+    transform: translateY(5px) scaleX(1);
+  }
 }
-
-
-
 
 .menu-icon,
-.cancel-icon{
-  display:none;
+.cancel-icon {
+  display: none;
 }
-.menu-icon img{
+.menu-icon img {
   background-color: var(--background);
   width: 400px;
 }
@@ -126,11 +135,11 @@ nav ul {
   padding: 0;
   margin: 0;
 }
-nav li{
+nav li {
   color: var(--banner-color);
   margin-bottom: 10px; /* Add spacing between nav buttons */
 }
-nav ul li a{
+nav ul li a {
   color: yellow; /* Changed text color to yellow */
   text-decoration: none;
   padding: 10px 15px;
@@ -142,8 +151,8 @@ nav ul li a{
   border-radius: 5px; /* Added border-radius for button effect */
 }
 
-nav ul li a:hover{
-  padding:10px 20px;
+nav ul li a:hover {
+  padding: 10px 20px;
   background-color: #ff4500; /* Fire color */
   color: white;
   border-radius: 5px;
@@ -152,7 +161,8 @@ nav ul li a:hover{
   animation: blinkFire 1s infinite; /* Added blink animation */
 }
 @keyframes blinkFire {
-  0%, 100% {
+  0%,
+  100% {
     background-color: #ff4500;
     text-shadow: 0 0 20px rgba(255, 69, 0, 1);
     box-shadow: 0 0 20px rgba(255, 69, 0, 1);
@@ -163,7 +173,7 @@ nav ul li a:hover{
     box-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
   }
 }
-.active{
+.active {
   background-color: red; /* Changed background color to red */
   color: yellow; /* Changed text color to yellow */
   border-radius: 5px;
@@ -173,7 +183,8 @@ nav ul li a:hover{
 }
 
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     background-color: red;
     text-shadow: 0 0 20px rgba(165, 42, 42, 1);
     box-shadow: 0 0 20px rgba(165, 42, 42, 1);
@@ -185,158 +196,13 @@ nav ul li a:hover{
   }
 }
 
-/* tablet screen size for navigation */
-@media screen and (max-width: 768px) {
-  header {
-    padding: 1rem 2rem; /* Adjust padding for mobile view */
-    height: 80px; /* Adjust height for mobile view */
-  }
-  .menu-icon,
-  .cancel-icon {
-    display: flex;
-    width: 40px;
-    position: fixed;
-    right: 35px;
-  }
-  .cancel-icon {
-    position: fixed;
-    right: 35px;
-    top: -10px;
-  }
-  nav {
-    position: fixed;
-    top: 80px; /* Adjust top position for mobile view */
-    right: 0;
-    left: 0;
-    z-index: 999;
-    background-color: #091652;
-    color: white;
-    text-align: center;
-    display: none;
-    z-index: 999;
-    animation: slideIn 0.9s ease;
-  }
-  nav ul {
-    display: flex;
-    flex-direction: column; /* Display nav buttons vertically */
-    width: 100%;
-    background-color: var(--banner-color);
-    justify-content: center; /* Center the nav buttons */
-  }
-  .active::after {
-    width: 100%;
-    background-color: white;
-  }
-  .nav-menu.active {
-    top: 0;
-  }
-  .menu-icon,
-  .cancel-icon {
-    cursor: pointer;
-    padding: 10px;
-  }
-  nav li {
-    padding: 20px 15px;
-    border-bottom: 1px solid rgba(197, 195, 195, 0.1);
-    width: 100%;
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  nav ul li a {
-    font-size: 24px;
-    width: 100%;
-    color: white;
-  }
-  .nav-video {
-    display: none; /* Hide video on mobile view */
-  }
-}
-
-@media screen and (max-width: 600px){
-  header {
-    padding: 0rem 2rem;
-    height: 80px;
-    width: 100%;
-  }
-  .brand img {
-    width: 160px;
-  }
-  nav {
-    top: 80px;
-    background-color: #051924;
-  }
-  nav ul {
-    flex-direction: column; /* Display nav buttons vertically */
-    justify-content: center; /* Center the nav buttons */
-  }
-  nav li {
-    padding: 20px 15px;
-    margin-bottom: 15px;
-  }
-}
-
-@media screen and (max-width: 478px){
-  header {
-    padding: 0rem 2rem;
-  }
-  .brand {
-    width: 600px;
-  }
-  .brand img {
-    width: 50px;
-  }
-  .brand a {
-    font-size: 20px;
-    column-gap: 10px;
-  }
-  .menu-icon img{
-    width: 30px;
-  }
-  .cancel-icon {
-    position: fixed;
-    right: 35px;
-    top: -15px;
-  }
-  nav ul {
-    flex-direction: column; /* Display nav buttons vertically */
-    justify-content: center; /* Center the nav buttons */
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  nav ul {
-    flex-direction: column; /* Display nav buttons vertically */
-    align-items: center; /* Center the nav buttons */
-  }
-  nav ul li {
-    margin-bottom: 10px; /* Add spacing between nav buttons */
-  }
-}
-
-@media only screen and (max-width: 1024px) {
-  nav {
-    background-color: brown; /* Changed background color to brown */
-  }
-  nav ul {
-    flex-direction: column; /* Display nav buttons vertically */
-    align-items: center; /* Center the nav buttons */
-  }
-  nav ul li {
-    margin-bottom: 10px; /* Add spacing between nav buttons */
-    text-align: center; /* Center the text inside the buttons */
-  }
-  nav ul li a {
-    background-color: #ffffff; /* White background color */
-  }
-}
-
 nav {
   position: relative; /* Ensure the nav is positioned relative for the pseudo-element */
   border-radius: 20px; /* Added border radius */
 }
 
 nav::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -20%; /* Adjusted position to be 20% lower */
   left: 0;
@@ -348,9 +214,15 @@ nav::after {
 }
 
 @keyframes glowing {
-  0% { box-shadow: 0 0 5px rgba(13, 202, 101, 0.5); } /* Changed color to #0dca65 */
-  50% { box-shadow: 0 0 20px rgba(13, 202, 101, 1); } /* Changed color to #0dca65 */
-  100% { box-shadow: 0 0 5px rgba(13, 202, 101, 0.5); } /* Changed color to #0dca65 */
+  0% {
+    box-shadow: 0 0 5px rgba(13, 202, 101, 0.5); /* Changed color to #0dca65 */
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(13, 202, 101, 1); /* Changed color to #0dca65 */
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(13, 202, 101, 0.5); /* Changed color to #0dca65 */
+  }
 }
 
 .nav-video {
@@ -382,23 +254,74 @@ nav::after {
   }
 }
 
-.mobile-nav ul {
-  flex-direction: column; /* Display nav buttons vertically */
-  width: 100%;
-  background-color: var(--banner-color);
-  justify-content: center; /* Center the nav buttons */
+/* Tablet Screen size */
+@media only screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column; /* Display nav buttons vertically on small screens */
+    align-items: center; /* Center the nav buttons */
+  }
+  nav ul li {
+    margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
+  }
+  .menu-icon, .cancel-icon {
+    display: block; /* Ensure menu and cancel icons are visible */
+  }
+  #js-navbar {
+    display: none; /* Hide navbar by default */
+    position: fixed; /* Fix navbar position */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure navbar takes full width */
+    height: 100%; /* Ensure navbar takes full height */
+    background-color: rgba(0, 0, 0, 0.9); /* Add semi-transparent background */
+    z-index: 1000; /* Ensure navbar is above other content */
+    flex-direction: column; /* Display nav items vertically */
+    justify-content: center; /* Center nav items vertically */
+    align-items: center; /* Center nav items horizontally */
+  }
+  #js-navbar ul {
+    width: 100%; /* Ensure ul takes full width */
+  }
+  #js-navbar ul li {
+    width: 100%; /* Ensure li takes full width */
+  }
+  #js-navbar ul li a {
+    width: 100%; /* Ensure a takes full width */
+  }
 }
 
-.mobile-nav li {
-  padding: 20px 15px;
-  border-bottom: 1px solid rgba(197, 195, 195, 0.1);
-  width: 100%;
-  margin-bottom: 15px;
-  text-align: left;
-}
-
-.mobile-nav ul li a {
-  font-size: 24px;
-  width: 100%;
-  color: white;
+/* Phone screen size */
+@media only screen and (max-width: 600px) {
+  nav ul {
+    flex-direction: column; /* Display nav buttons vertically on small screens */
+    align-items: center; /* Center the nav buttons */
+  }
+  nav ul li {
+    margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
+  }
+  .menu-icon, .cancel-icon {
+    display: block; /* Ensure menu and cancel icons are visible */
+  }
+  #js-navbar {
+    display: none; /* Hide navbar by default */
+    position: fixed; /* Fix navbar position */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure navbar takes full width */
+    height: 100%; /* Ensure navbar takes full height */
+    background-color: rgba(0, 0, 0, 0.9); /* Add semi-transparent background */
+    z-index: 1000; /* Ensure navbar is above other content */
+    flex-direction: column; /* Display nav items vertically */
+    justify-content: center; /* Center nav items vertically */
+    align-items: center; /* Center nav items horizontally */
+  }
+  #js-navbar ul {
+    width: 100%; /* Ensure ul takes full width */
+  }
+  #js-navbar ul li {
+    width: 100%; /* Ensure li takes full width */
+  }
+  #js-navbar ul li a {
+    width: 100%; /* Ensure a takes full width */
+  }
 }

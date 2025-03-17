@@ -22,6 +22,7 @@
       background-color: #011406; /* Changed background color */
       max-width: 100%;
       overflow-x: hidden; /* Added overflow-x hidden */
+      min-width: 1024px; /* Ensure desktop view on mobile */
     }
 
     .three-d-effect {
@@ -88,6 +89,31 @@
       nav ul li {
         margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
       }
+      .menu-icon, .cancel-icon {
+        display: block; /* Ensure menu and cancel icons are visible */
+      }
+      #js-navbar {
+        display: none; /* Hide navbar by default */
+        position: fixed; /* Fix navbar position */
+        top: 0;
+        left: 0;
+        width: 100%; /* Ensure navbar takes full width */
+        height: 100%; /* Ensure navbar takes full height */
+        background-color: rgba(0, 0, 0, 0.9); /* Add semi-transparent background */
+        z-index: 1000; /* Ensure navbar is above other content */
+        flex-direction: column; /* Display nav items vertically */
+        justify-content: center; /* Center nav items vertically */
+        align-items: center; /* Center nav items horizontally */
+      }
+      #js-navbar ul {
+        width: 100%; /* Ensure ul takes full width */
+      }
+      #js-navbar ul li {
+        width: 100%; /* Ensure li takes full width */
+      }
+      #js-navbar ul li a {
+        width: 100%; /* Ensure a takes full width */
+      }
     }
     @keyframes blinkFire {
       0%, 100% {
@@ -117,9 +143,6 @@
     </div>
 
     <nav id="js-navbar">
-      <div class="cancel-icon" id="js-cancel-icon">
-        <i class="fa-solid fa-xmark fa-3x" style="color: #051924;"></i>
-      </div>
       <ul>
         <li><a href="index.html" class="footer-btn">Home</a></li>
         <li><a href="about.html" class="footer-btn">About Us</a></li>

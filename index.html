@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,12 +10,10 @@
   <link rel="stylesheet" href="styles/swiper.css">
   <link rel="icon" type="image/x-icon" href="images/g4.ico">
 
-  <!-- for google font  -->
-
+  <!-- for google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
@@ -24,23 +22,21 @@
       position: relative;
       height: 100%;
       scroll-behavior: smooth;
-      background-color: #011406; /* Changed background color */
+      background-color: #011406;
       max-width: 100%;
-      overflow-x: hidden; /* Added overflow-x hidden */
+      overflow-x: hidden;
+      min-width: 1024px; /* Ensure desktop view on mobile */
     }
 
     .swiper {
       width: 100%;
       height: 100%;
       color: white;
-      /* position: absolute; */
-      /* margin-top: 600px; */
     }
 
     .swiper-slide {
       text-align: center;
       font-size: 18px;
-      /* background: #fff0; */
       color: white;
       display: flex;
       justify-content: center;
@@ -51,34 +47,25 @@
     .swiper-slide img {
       display: block;
       width: 100%;
-      height: auto; /* Changed height to auto */
+      height: auto;
       object-fit: cover;
     }
 
-    @media only screen and (max-width: 768px) {
-      /* homepg */
-      /* .swiper-slide h2 {
-        text-align: center;
-        font-size: 30px;
-      } */
+    .logo {
+      animation: moveEDC 6s infinite linear, blinkWhite 1s infinite, glowingCyan 2s infinite;
     }
 
-    .logo {
-      /* ...existing code... */
-      animation: moveEDC 6s infinite linear, blinkWhite 1s infinite, glowingCyan 2s infinite; /* Added glowingCyan animation */
-    }
     nav ul li a {
-      /* ...existing code... */
-      animation: glowingCyan 2s infinite; /* Added glowingCyan animation */
+      animation: glowingCyan 2s infinite;
     }
 
     .three-d-effect {
-      color: #00f; /* Blue color */
+      color: #00f;
       text-shadow: 
         0 0 5px #00f, 
         0 0 10px #00f, 
         0 0 15px #00f, 
-        0 0 20px #00ffff, /* Cyan shadow */
+        0 0 20px #00ffff, 
         0 0 30px #00ffff, 
         0 0 40px #00ffff, 
         0 0 50px #00ffff, 
@@ -86,46 +73,51 @@
       font-size: 2em;
       font-weight: bold;
     }
+
     nav ul {
-      justify-content: center; /* Center the nav buttons */
-      flex-direction: row; /* Display nav buttons horizontally */
-      align-items: center; /* Center the nav buttons */
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
     }
 
     @media only screen and (max-width: 768px) {
       .nav-video {
-        display: none; /* Hide video on mobile view */
+        display: none;
       }
     }
+
     @media only screen and (max-width: 1024px) {
       nav ul {
-        flex-direction: column; /* Display nav buttons vertically */
-        align-items: center; /* Center the nav buttons */
+        flex-direction: column;
+        align-items: center;
       }
       nav ul li {
-        margin-bottom: 10px; /* Add spacing between nav buttons */
+        margin-bottom: 10px;
       }
     }
+
     nav ul li a {
-      color: yellow; /* Changed text color to yellow */
+      color: yellow;
       text-decoration: none;
       padding: 10px 15px;
       position: relative;
       font-family: var(--brand-font);
-      text-shadow: 0 0 10px rgba(255, 69, 0, 0.7), 2px 2px 4px rgba(0, 0, 0, 0.5); /* Enhanced glow effect and added black shadow */
+      text-shadow: 0 0 10px rgba(255, 69, 0, 0.7), 2px 2px 4px rgba(0, 0, 0, 0.5);
       transition: text-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-      box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Added box-shadow for visible fire glow */
-      border-radius: 5px; /* Added border-radius for button effect */
+      box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+      border-radius: 5px;
     }
+
     nav ul li a:hover {
       padding: 10px 20px;
-      background-color: #ff4500; /* Fire color */
+      background-color: #ff4500;
       color: white;
       border-radius: 5px;
-      text-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Fire hover effect */
-      box-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Fire hover effect */
-      animation: blinkFire 1s infinite; /* Added blink animation */
+      text-shadow: 0 0 20px rgba(255, 69, 0, 1);
+      box-shadow: 0 0 20px rgba(255, 69, 0, 1);
+      animation: blinkFire 1s infinite;
     }
+
     @keyframes blinkFire {
       0%, 100% {
         background-color: #ff4500;
@@ -138,44 +130,96 @@
         box-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
       }
     }
+
     nav {
-      position: fixed; /* Fixed position to stay at the top */
+      position: absolute; /* Changed to absolute position to prevent the navbar from being the first thing that shows */
       top: 0;
-      width: 100%; /* Full width */
-      z-index: 1000; /* Ensure nav is above other elements */
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
-      border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+      border-radius: 0 0 10px 10px;
       display: flex;
-      justify-content: center; /* Center the nav buttons */
+      justify-content: center;
+      transition: top 0.3s ease;
     }
+
     nav ul {
       justify-content: center; /* Center the nav buttons */
       flex-direction: row; /* Display nav buttons horizontally */
       align-items: center; /* Center the nav buttons */
     }
+
     nav ul li {
       margin-bottom: 0; /* Remove spacing between nav buttons */
     }
-    nav ul li a.active {
-      background-color: #ff4500; /* Fire color */
-      color: white;
-      border-radius: 5px;
-      text-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Fire hover effect */
-      box-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Fire hover effect */
-      animation: blinkFire 1s infinite; /* Added blink animation */
-    }
+
     @media only screen and (max-width: 768px) {
       nav ul {
         flex-direction: column; /* Display nav buttons vertically on small screens */
+        align-items: center; /* Center the nav buttons */
       }
       nav ul li {
         margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
       }
+      .menu-icon, .cancel-icon {
+        display: none; /* Hide menu and cancel icons on mobile */
+      }
+    }
+
+    nav ul li a.active {
+      background-color: #ff4500;
+      color: white;
+      border-radius: 5px;
+      text-shadow: 0 0 20px rgba(255, 69, 0, 1);
+      box-shadow: 0 0 20px rgba(255, 69, 0, 1);
+      animation: blinkFire 1s infinite;
+    }
+
+    @media only screen and (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li {
+        margin-bottom: 10px;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      nav ul {
+        flex-direction: column; /* Display nav buttons vertically on small screens */
+        align-items: center; /* Center the nav buttons */
+      }
+      nav ul li {
+        margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
+      }
+      .menu-icon, .cancel-icon {
+        display: block; /* Ensure menu and cancel icons are visible */
+      }
+      #js-navbar {
+        display: none; /* Hide navbar by default */
+        position: fixed; /* Fix navbar position */
+        top: 0;
+        left: 0;
+        width: 100%; /* Ensure navbar takes full width */
+        height: 100%; /* Ensure navbar takes full height */
+        background-color: rgba(0, 0, 0, 0.9); /* Add semi-transparent background */
+        z-index: 1000; /* Ensure navbar is above other content */
+        flex-direction: column; /* Display nav items vertically */
+        justify-content: center; /* Center nav items vertically */
+        align-items: center; /* Center nav items horizontally */
+      }
+      #js-navbar ul {
+        width: 100%; /* Ensure ul takes full width */
+      }
+      #js-navbar ul li {
+        width: 100%; /* Ensure li takes full width */
+      }
+      #js-navbar ul li a {
+        width: 100%; /* Ensure a takes full width */
+      }
     }
   </style>
-
-
 </head>
 
 <body>
@@ -183,20 +227,12 @@
   <header>
     <div class="brand">
       <a href="index.html">
-        <!-- <img src="images/dunav logo.svg" alt=""> -->
         <span class="logo"><pre><u>ENTREPRENEURSHIP DEVELOPMENT<br>CENTER, FEDPONEK</u></pre></span>
         <span class="mobile-logo"> </span>
       </a>
     </div>
-
-    <div class="menu-icon" id="js-menu-icon">
-      <i class="fa-solid fa-bars fa-2x " style="color: #051924"></i>
-    </div>
-
+    <!-- Removed menu icon and cancel icon -->
     <nav id="js-navbar">
-      <div class="cancel-icon" id="js-cancel-icon">
-        <i class="fa-solid fa-xmark fa-3x" style="color: #051924;"></i>
-      </div>
       <ul id="navbar">
         <li><a href="index.html" class="footer-btn">Home</a></li>
         <li><a href="about.html" class="footer-btn">About Us</a></li>
@@ -210,16 +246,14 @@
 
   <!-- main content of this work -->
   <main>
-    <!-- Hero Section  -->
+    <!-- Hero Section -->
     <section class="home-page">
-      <!-- Swiper -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <div class="swiper-slide" >
-
-            <div style="width: 100%; height: 100%;"  class="vd-container" style="overflow: hidden;">
-              <video width="100%" height="100%"  autoplay loop muted>
-                <source  src="images/owa.mp4" type="video/mp4">  
+          <div class="swiper-slide">
+            <div style="width: 100%; height: 100%;" class="vd-container">
+              <video width="100%" height="100%" autoplay loop muted>
+                <source src="images/owa.mp4" type="video/mp4">
               </video>
             </div>
           </div>
@@ -227,96 +261,36 @@
       </div>
     </section>
 
-        
-    <!-- Why Choose us Section  -->
+    <!-- Why Choose Us Section -->
     <section class="why-choose-us-container">
       <div class="why-choose-us-row">
         <div class="why-choose-us-col why-choose-us-contents">
           <h2 class="three-d-effect">
             Guiding Students Toward Successful Entrepreneurship
           </h2>
-
-          <p class="p-why-choose-us" >
+          <p class="p-why-choose-us">
             The Entrepreneurship Development Center at Federal Polytechnic Nekede is committed to cultivating entrepreneurial talent and equipping students with the practical skills needed for business success.
           </p>
           <br>
           <br>
           <button onclick="window.location.href='about.html'">Learn More</button>
         </div>
-
-
         <div class="why-choose-us-col">
-          <!-- <div class="refinery-img-div"> -->
-            
-            <div style="width: 100%;" class="shuffle-images">
-              <img src="images/pol2.jpg" class="why-choose-us-img cyan-border">
-              <img src="images/poly1.jpg" class="why-choose-us-img cyan-border">
-            </div>
+          <div style="width: 100%;" class="shuffle-images">
+            <img src="images/pol2.jpg" class="why-choose-us-img cyan-border">
+            <img src="images/poly1.jpg" class="why-choose-us-img cyan-border">
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- Services Section -->
-    <section class="features-container">
-      <div class="features-contents">
-        <h2>Our Key Services</h2>
-        <p class="features-p">Explore the variety of skills and training programs available at the Entrepreneurship Development Center.</p>
-      </div>
-
-      <div class="features-cards">
-        <div class="card1 box-hover-effect">
-          <div class="icon-div">
-            <i class="fa-solid fa-book-open"></i>
-          </div>
-          <h3>Digital Skills Training</h3>
-          <p>Learn modern digital skills including web development, digital marketing, and data analysis to succeed in today's digital economy.
-          </p>
-        </div>
-
-        <div class="card2 box-hover-effect">
-          <div class="icon-div">
-            <i class="fa-solid fa-briefcase"></i>
-          </div>
-          <h3>Business Management</h3>
-          <p>Master the essentials of business management, including planning, marketing, accounting, and operational strategies.</p>
-        </div>
-
-        <div class="card3 box-hover-effect">
-          <div class="icon-div">
-            <i class="fa-solid fa-user"></i>
-          </div>
-          <h3>Entrepreneurship Workshops</h3>
-          <p>Participate in hands-on workshops designed to develop your entrepreneurial mindset and prepare you for business success.</p>
-        </div>
-      </div>
-
-      <div class="services-link">
-        <a href="services.html">View All</a>
-        <!-- <i class="fa-solid fa-arrow-right" fill="#58b7ee"></i> -->
-      </div>
-    </section>
-
-    <!-- section six support page  -->
-    <section class="support-container" id="contact">
-      <div class="support-div">
-        <h2>
-          Ready to Start Your Entrepreneurial Journey?
-        </h2>
-        <button onclick="window.location.href='contact.html'" >
-          <!-- <img src="images/msg.png" alt="" width="15px"> -->
-          <span>Get Started</span>
-        </button>
-      </div>
-    </section>
-
   </main>
 
-  <!-- footer section of this page  -->
+  <!-- footer section of this page -->
   <footer class="footer-container">
     <div class="footer-div">
       <div class="footer-card1">
-        <h1 data-aos="fade-down"> 
-         EDC FPNO
+        <h1 data-aos="fade-down">
+          EDC FPNO
         </h1>
         <p class="footer-contact-p">
           The Entrepreneurship Development Center at Federal Polytechnic Nekede empowers students with practical skills and knowledge for successful business ventures.
@@ -324,7 +298,7 @@
       </div>
 
       <div class="footer-card2">
-        <h1 data-aos="fade-down"> 
+        <h1 data-aos="fade-down">
           Quick Links
         </h1>
         <ul class="footer-links">
@@ -336,88 +310,21 @@
           <li><a href="contact.html" class="footer-btn">Contact</a></li>
         </ul>
       </div>
-
-      <div class="footer-card3">
-        <h1 data-aos="fade-down"> 
-          Our Services
-        </h1>
-        <ul class="footer-links">
-          <li><a href="#" class="footer-btn">Digital Skills Training</a></li>
-          <li><a href="#" class="footer-btn">Web Development</a></li>
-          <li><a href="#" class="footer-btn">Business Management</a></li>
-          <li><a href="#" class="footer-btn">Graphic Design</a></li>
-          <li><a href="#" class="footer-btn">Entrepreneurship Training</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-card4">
-        <h1 data-aos="fade-down"> 
-          Contact Us
-        </h1>
-        <p class="footer-contact-p">
-          <div class="footer-contact-div">
-            <i class="fa-solid fa-location-dot" style="color: rgb(0, 244, 228);"></i> <!-- Changed icon color to brown -->
-            <p>Federal Polytechnic Nekede, Owerri, Imo State, Nigeria</p>
-          </div>
-        </p>
-        <p class="footer-contact-p">
-          <div class="footer-contact-div">
-            <i class="fa-solid fa-phone" style="color: rgb(0, 255, 229);"></i> <!-- Changed icon color to brown -->
-            <p>+234 900 000 0000 </p>
-          </div>
-        </p>
-        <p class="footer-contact-p">
-          <div class="footer-contact-div">
-            <i class="fa-solid fa-message" style="color: rgb(10, 255, 247);"></i> <!-- Changed icon color to brown -->
-            <p>contact@edcfpno.edu.ng</p>
-          </div>
-        </p>
-      </div>
     </div>
     <div>
-
-    </div>
-    <hr style="width: 100%;">
-    <div class="copyright-div">
-      <p class="copyright">
-        © 2025 | All rights reserved.
-      </p>
+      <hr style="width: 100%;">
+      <div class="copyright-div">
+        <p class="copyright">
+          © 2025 | All rights reserved.
+        </p>
+      </div>
     </div>
   </footer>
-
 
   <script src="scripts/navbar.js"></script>
   <script src="scripts/index.js"></script>
 
-
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/67cc8dc96edcd71910a35623/1ilricrij';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
-  <!--End of Tawk.to Script-->
-
-  <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
-  <script src="https://static.elfsight.com/platform/platform.js" async></script>
-
-  <div class="elfsight-app-52ec13b8-24dc-4194-9d05-109fa68e6cb7" data-elfsight-app-lazy></div>
-
   <script>
-    document.getElementById('js-menu-icon').addEventListener('click', function() {
-      document.getElementById('js-navbar').classList.toggle('active');
-    });
-
-    document.getElementById('js-cancel-icon').addEventListener('click', function() {
-      document.getElementById('js-navbar').classList.remove('active');
-    });
-
     document.querySelectorAll('#navbar a').forEach(function(link) {
       link.addEventListener('click', function() {
         document.getElementById('js-navbar').classList.remove('active');
