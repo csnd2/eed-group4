@@ -22,7 +22,6 @@
       background-color: #011406; /* Changed background color */
       max-width: 100%;
       overflow-x: hidden; /* Added overflow-x hidden */
-      min-width: 1024px; /* Ensure desktop view on mobile */
     }
 
     .three-d-effect {
@@ -38,11 +37,13 @@
         0 0 75px #00ffff;
       font-size: 2em;
       font-weight: bold;
+      text-align: center;
     }
 
     .gallery-hero {
       animation: moveUpDown 3s infinite; /* Added up and down animation */
       padding: 20px; /* Added padding for better mobile view */
+      text-align: center;
     }
 
     @keyframes moveUpDown {
@@ -72,6 +73,7 @@
       transition: text-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Added box-shadow for visible fire glow */
       border-radius: 5px; /* Added border-radius for button effect */
+      text-align: center;
     }
     nav ul li a.active {
       background-color: #ff4500; /* Fire color */
@@ -126,6 +128,87 @@
         text-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
         box-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
       }
+    }
+
+    .why-choose-us-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .why-choose-us-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .why-choose-us-col {
+      flex: 1;
+      min-width: 300px;
+      margin: 10px;
+    }
+
+    .why-choose-us-contents {
+      text-align: center;
+    }
+
+    .why-choose-us-img {
+      width: 100%;
+      height: auto;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer-div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .footer-card1, .footer-card2, .footer-card3, .footer-card4 {
+      flex: 1;
+      min-width: 300px;
+      margin: 10px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin: 5px 0;
+    }
+
+    .footer-btn {
+      color: yellow;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .footer-btn:hover {
+      color: white;
+    }
+
+    .copyright-div {
+      text-align: center;
+      width: 100%;
     }
   </style>
 </head>

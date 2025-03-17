@@ -24,6 +24,10 @@
       max-width: 100%;
       overflow-x: hidden; /* Added overflow-x hidden */
       min-width: 1024px; /* Ensure desktop view on mobile */
+      display: flex; /* Added flex display */
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+      flex-direction: column; /* Ensure content stacks vertically */
     }
     .upload-section {
       background: linear-gradient(90deg, orange, red, yellow, orange); /* Fire effect background */
@@ -65,11 +69,13 @@
         0 0 75px #00ffff;
       font-size: 2em;
       font-weight: bold;
+      text-align: center;
     }
 
     .gallery-hero {
       animation: moveUpDown 3s infinite; /* Added up and down animation */
       padding: 20px; /* Added padding for better mobile view */
+      text-align: center;
     }
 
     @keyframes moveUpDown {
@@ -87,6 +93,26 @@
     }
     nav ul li {
       margin-bottom: 0; /* Remove spacing between nav buttons */
+    }
+    nav ul li a {
+      color: yellow; /* Changed text color to yellow */
+      text-decoration: none;
+      padding: 10px 15px;
+      position: relative;
+      font-family: var(--brand-font);
+      text-shadow: 0 0 10px rgba(255, 69, 0, 0.7), 2px 2px 4px rgba(0, 0, 0, 0.5); /* Enhanced glow effect and added black shadow */
+      transition: text-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Added box-shadow for visible fire glow */
+      border-radius: 5px; /* Added border-radius for button effect */
+      text-align: center;
+    }
+    nav ul li a.active {
+      background-color: #ff4500; /* Fire color */
+      color: white;
+      border-radius: 5px;
+      text-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Fire hover effect */
+      box-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Fire hover effect */
+      animation: blinkFire 1s infinite; /* Added blink animation */
     }
     @media only screen and (max-width: 768px) {
       nav ul {
@@ -121,6 +147,99 @@
       #js-navbar ul li a {
         width: 100%; /* Ensure a takes full width */
       }
+    }
+    @keyframes blinkFire {
+      0%, 100% {
+        background-color: #ff4500;
+        text-shadow: 0 0 20px rgba(255, 69, 0, 1);
+        box-shadow: 0 0 20px rgba(255, 69, 0, 1);
+      }
+      50% {
+        background-color: #ff6347;
+        text-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
+        box-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
+      }
+    }
+
+    .why-choose-us-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .why-choose-us-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .why-choose-us-col {
+      flex: 1;
+      min-width: 300px;
+      margin: 10px;
+    }
+
+    .why-choose-us-contents {
+      text-align: center;
+    }
+
+    .why-choose-us-img {
+      width: 100%;
+      height: auto;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer-div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .footer-card1, .footer-card2, .footer-card3, .footer-card4 {
+      flex: 1;
+      min-width: 300px;
+      margin: 10px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin: 5px 0;
+    }
+
+    .footer-btn {
+      color: yellow;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .footer-btn:hover {
+      color: white;
+    }
+
+    .copyright-div {
+      text-align: center;
+      width: 100%;
     }
   </style>
 </head>

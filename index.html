@@ -25,7 +25,7 @@
       background-color: #011406;
       max-width: 100%;
       overflow-x: hidden;
-      min-width: 1024px; /* Ensure desktop view on mobile */
+      /* min-width: 1024px; */ /* Removed to allow responsiveness */
     }
 
     .swiper {
@@ -53,6 +53,9 @@
 
     .logo {
       animation: moveEDC 6s infinite linear, blinkWhite 1s infinite, glowingCyan 2s infinite;
+      text-align: center;
+      display: block;
+      margin: 0 auto;
     }
 
     nav ul li a {
@@ -72,6 +75,7 @@
         0 0 75px #00ffff;
       font-size: 2em;
       font-weight: bold;
+      text-align: center;
     }
 
     nav ul {
@@ -106,6 +110,7 @@
       transition: text-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
       box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
       border-radius: 5px;
+      text-align: center;
     }
 
     nav ul li a:hover {
@@ -218,6 +223,88 @@
       #js-navbar ul li a {
         width: 100%; /* Ensure a takes full width */
       }
+    }
+
+    /* Additional styles for responsiveness */
+    .why-choose-us-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .why-choose-us-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .why-choose-us-col {
+      flex: 1;
+      min-width: 300px;
+      margin: 10px;
+    }
+
+    .why-choose-us-contents {
+      text-align: center;
+    }
+
+    .why-choose-us-img {
+      width: 100%;
+      height: auto;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer-div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .footer-card1, .footer-card2 {
+      flex: 1;
+      min-width: 300px;
+      margin: 10px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin: 5px 0;
+    }
+
+    .footer-btn {
+      color: yellow;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .footer-btn:hover {
+      color: white;
+    }
+
+    .copyright-div {
+      text-align: center;
+      width: 100%;
     }
   </style>
 </head>
