@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- for google font  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -260,6 +260,126 @@
       100% {
         box-shadow: 0 0 20px red, 0 0 30px orange, 0 0 40px yellow;
         text-shadow: 0 0 20px red, 0 0 30px orange, 0 0 40px yellow;
+      }
+    }
+
+    /* Adjustments for better screen fitting */
+    .gallery-hero-section {
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .gallery-hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .gallery-hero p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #ccc;
+    }
+
+    .faq-section {
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .faq-container {
+      width: 100%;
+      max-width: 800px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+    }
+
+    .faq-question {
+      font-size: 1.2rem;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-answer {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .faq-answer.active {
+      display: block;
+    }
+
+    .upload-section {
+      padding: 2rem 1rem;
+      text-align: center;
+      background: #2e3a6e;
+      color: white;
+    }
+
+    .upload-container h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .upload-container p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .upload-container button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      background: #ffc107;
+      color: #2e3a6e;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .upload-container button:hover {
+      background: #e0a800;
+    }
+
+    @media (max-width: 768px) {
+      .gallery-hero h2 {
+        font-size: 2rem;
+      }
+
+      .gallery-hero p {
+        font-size: 0.9rem;
+      }
+
+      .faq-container {
+        padding: 1rem;
+      }
+
+      .faq-question {
+        font-size: 1rem;
+      }
+
+      .faq-answer {
+        font-size: 0.9rem;
+      }
+
+      .upload-container h2 {
+        font-size: 1.8rem;
+      }
+
+      .upload-container p {
+        font-size: 0.9rem;
+      }
+
+      .upload-container button {
+        font-size: 0.9rem;
       }
     }
   </style>
