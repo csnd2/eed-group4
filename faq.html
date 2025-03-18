@@ -19,6 +19,85 @@
   <link rel="icon" type="image/x-icon" href="images/g4.ico">
   <title>FAQ - Entrepreneurship Development Centre, FEDPONEK, owerri, Imo State</title>
   <link rel="stylesheet" href="styles/about.css"> <!-- Added external CSS file -->
+  <style>
+    nav {
+      position: fixed; /* Ensure the nav is fixed at the top */
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+      display: flex;
+      justify-content: center;
+      transition: top 0.3s ease;
+    }
+    .gallery-hero-section {
+      padding-top: 80px; /* Add padding to accommodate the fixed nav */
+    }
+    @media (min-width: 769px) {
+      .menu-icon {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      #js-navbar {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 128, 0, 0.9); /* Green background */
+        z-index: 1000;
+        flex-direction: column;
+        justify-content: flex-start; /* Align items to the top */
+        align-items: center;
+        padding-top: 100px; /* Space below the cancel button (20% more down) */
+      }
+
+      #js-navbar.active {
+        display: flex;
+      }
+
+      #js-navbar ul {
+        width: 100%;
+        text-align: center;
+        flex-direction: column; /* Display nav buttons vertically */
+      }
+
+      #js-navbar ul li {
+        width: auto; /* Adjust width to fit content */
+        margin: 5px 0; /* Space between buttons */
+      }
+
+      #js-navbar ul li a {
+        display: inline-block; /* Adjust display to fit content */
+        padding: 5px 10px; /* Smaller padding */
+        font-size: 10px; /* Smaller font size */
+      }
+
+      .cancel-icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      .content {
+        display: none; /* Hide content when menu is active */
+      }
+
+      #js-navbar.active ~ .content {
+        display: none; /* Hide content when menu is active */
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -31,8 +110,13 @@
         <span class="mobile-logo"> FPNO</span>
       </a>
     </div>
-
-    <nav id="js-navbar" >
+    <div class="menu-icon" id="js-menu-icon">
+      <i class="fa-solid fa-bars fa-2x" style="color: #051924"></i>
+    </div>
+    <nav id="js-navbar">
+      <div class="cancel-icon" id="js-cancel-icon">
+        <i class="fa-solid fa-xmark fa-3x" style="color: #051924;"></i>
+      </div>
       <ul id="navbar">
         <li><a href="index.html" class="footer-btn">Home</a></li>
         <li><a href="about.html" class="footer-btn">About Us</a></li>
@@ -44,7 +128,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="content">
     <!-- FAQ Hero section  -->
     <section class="gallery-hero-section">
       <div class="gallery-hero">
@@ -133,7 +217,7 @@
   </main>
 
   <!-- footer section of this page  -->
-  <footer class="footer-container">
+  <footer class="footer-container content">
     <div class="footer-div">
       <div class="footer-card1">
         <h1 data-aos="fade-down"> 
@@ -208,5 +292,20 @@
   
   <script src="scripts/navbar.js" defer></script> <!-- Added defer attribute -->
   <script src="scripts/faq.js"></script>
+  <script>
+    document.getElementById('js-menu-icon').addEventListener('click', function() {
+      document.getElementById('js-navbar').classList.add('active');
+      document.querySelectorAll('.content').forEach(function(content) {
+        content.style.display = 'none';
+      });
+    });
+
+    document.getElementById('js-cancel-icon').addEventListener('click', function() {
+      document.getElementById('js-navbar').classList.remove('active');
+      document.querySelectorAll('.content').forEach(function(content) {
+        content.style.display = 'block';
+      });
+    });
+  </script>
 </body>
 </html>
