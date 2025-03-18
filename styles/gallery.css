@@ -12,9 +12,8 @@
 html,
 body{
   max-width: 100%;
-  overflow-x: hidden; /* Changed from none to hidden */
+  overflow-x: none;
   color: white;
-  /* Removed zoom */
 }
 section,
 footer{
@@ -28,12 +27,11 @@ footer{
       #2e3a6e, #000000
     );
   box-sizing: border-box ;
-  height: auto; /* Changed height to auto for better responsiveness */
+  height: 60vh;
   margin-top: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px; /* Ensure padding for better mobile view */
 }
 .gallery-hero{
   text-align: center;
@@ -45,16 +43,15 @@ footer{
 }
 .gallery-hero h2,
 .upload-container h2{
-  font-size: 2.5rem; /* Adjusted font size for better responsiveness */
+  font-size: 45px;
   font-family: var(--font);
   font-weight: 600;
   font-size: normal;
 }
 .gallery-hero p,
 .upload-container p{
-  width: 100%; /* Ensure width is 100% for better mobile view */
-  max-width: 600px; /* Adjusted max-width for better responsiveness */
-  font-size: 1rem; /* Adjusted font size for better readability */
+  width: 730px;
+  font-size: 1.1em;
   letter-spacing: 0.025rem;  
   font-weight: 400; 
   color: var(--bg);
@@ -109,8 +106,9 @@ footer{
 
 .gallery-cards{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for better responsiveness */
-  gap: 1rem; /* Adjusted gap for better spacing */
+  grid-template-columns: repeat(3, 1fr); 
+  /* grid-template-rows: repeat(4, 1fr);    */
+  gap: 10px; 
 }
 .card{
   text-align: left;
@@ -119,21 +117,21 @@ footer{
   overflow: hidden;  
   position: relative;
   border-radius: 10px;
-  width: 100%; /* Ensure the div takes the full width */
-  height: auto; /* Changed height to auto for better responsiveness */
 }
 .img-div img{
   object-fit: cover;
   object-position: center;
-  width: 100%; /* Ensure the image takes the full width */
-  height: auto; /* Ensure image height is auto for better responsiveness */
-  border-radius: 10px; /* Apply border-radius to the image */
+  width: 450px;
+  height: 260px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   transition: transform 0.3s ease;
   transform-origin: center;
 }
 .img-div img:hover{
   transform: scale(1.2); 
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .card-content{
   background-color: var(--banner-color);
@@ -175,8 +173,7 @@ footer{
 @media screen and (max-width: 768px){
   
   .gallery-hero p, .upload-container p {
-    width: 100%; /* Changed width to 100% for better mobile view */
-    max-width: 500px; /* Adjusted max-width for better responsiveness */
+    width: 630px;
   }
 
   .gallery-filler button, 
@@ -186,62 +183,9 @@ footer{
   }
 
   .gallery-cards {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted for better responsiveness */
-  }
-
-  nav ul {
-    flex-direction: column; /* Display nav buttons vertically on small screens */
-    align-items: center; /* Center the nav buttons */
-    width: 100%; /* Ensure nav takes full width */
-  }
-  nav ul li {
-    margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
-    width: 100%; /* Ensure each nav item takes full width */
-    text-align: center; /* Center text in nav items */
-  }
-  nav ul li a {
-    display: block; /* Ensure links are block elements */
-    width: 100%; /* Ensure links take full width */
-    padding: 15px 0; /* Add padding for better touch targets */
-  }
-  .menu-icon, .cancel-icon {
-    display: block; /* Ensure menu and cancel icons are visible */
-  }
-  #js-navbar {
-    display: none; /* Hide navbar by default */
-    position: fixed; /* Fix navbar position */
-    top: 0;
-    left: 0;
-    width: 100%; /* Ensure navbar takes full width */
-    height: 100%; /* Ensure navbar takes full height */
-    background-color: rgba(0, 0, 0, 0.9); /* Add semi-transparent background */
-    z-index: 1000; /* Ensure navbar is above other content */
-    flex-direction: column; /* Display nav items vertically */
-    justify-content: center; /* Center nav items vertically */
-    align-items: center; /* Center nav items horizontally */
-  }
-  #js-navbar ul {
-    width: 100%; /* Ensure ul takes full width */
-  }
-  #js-navbar ul li {
-    width: 100%; /* Ensure li takes full width */
-  }
-  #js-navbar ul li a {
-    width: 100%; /* Ensure a takes full width */
-  }
-
-  .gallery-hero h2,
-  .upload-container h2 {
-    font-size: 2rem; /* Adjusted font size for better responsiveness */
-  }
-
-  .img-div img {
-    height: auto; /* Ensure image height is auto for better responsiveness */
-  }
-
-  body {
-    width: 100%; /* Ensure width is 100% for better mobile view */
-    height: auto; /* Ensure auto height on mobile */
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    gap: 10px;
   }
 }
 
@@ -255,16 +199,14 @@ footer{
   .gallery-hero-section,
   .gallery-hero{
     width: 100%;
-    height: auto; /* Changed height to auto */
+    height: 35vh;
     margin-top: 80px;
     justify-content: flex-start;
-    padding: 20px; /* Added padding for better mobile view */
   }
   .gallery-hero p, 
   .upload-container p {
     width: 300px;
     font-size: 14px;
-    max-width: 400px; /* Adjusted max-width for better responsiveness */
   }
   .gallery-filler button, 
   .upload-container button {
@@ -278,7 +220,9 @@ footer{
   }
 
   .gallery-cards {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjusted for better responsiveness */
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
   }
 
   .card,
@@ -287,17 +231,12 @@ footer{
   }
   .img-div img {
     width: 100%;
-    height: auto; /* Ensure image height is auto for better responsiveness */
+    height: 260px;
   }
 
   .gallery-hero h2, 
   .upload-container h2 {
-    font-size: 1.5rem; /* Adjusted font size for better responsiveness */
+    font-size: 25px;
     text-align: center;
-  }
-
-  body {
-    width: 100%; /* Ensure width is 100% for better mobile view */
-    height: auto; /* Ensure auto height on mobile */
-  }
+}
 }
