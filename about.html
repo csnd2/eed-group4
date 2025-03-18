@@ -407,6 +407,31 @@
     color: yellow; /* Make "2025" yellow */
   }
 </style>
+<style>
+    /* Center align all content for mobile/zoomed views */
+    @media only screen and (max-width: 768px) {
+      body, nav ul, .footer-div, .why-choose-us-container, .features-container {
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin: 0 5px;
+      }
+
+      nav ul li a {
+        display: inline-block;
+        padding: 10px 15px;
+        text-align: center;
+      }
+
+      .footer-contact-p a {
+        display: inline-block;
+        text-align: center;
+        margin: 5px 0;
+      }
+    }
+  </style>
 </head>
 <body>
   
@@ -535,26 +560,26 @@
       </div>
 
       <div class="footer-card2">
-        <h1 style="color: rgb(238, 255, 0);text-shadow: 0 0 10px rgb(183, 245, 13), 0 0 20px rgb(237, 249, 6), 0 0 30px rgb(222, 237, 9);"> 
+        <h1 style="color: rgb(238, 255, 0); text-shadow: 0 0 10px rgb(183, 245, 13);">
           Quick Links
         </h1>
         <p class="footer-contact-p">
-          <a href="/index.html"> Home</a>
+          <a href="/index.html">Home</a>
         </p>
         <p class="footer-contact-p">
-          <a href="/about.html"> About Us</a>
+          <a href="/about.html">About Us</a>
         </p>
         <p class="footer-contact-p">
-          <a href="/services.html"> Services</a>
+          <a href="/services.html">Services</a>
         </p>
         <p class="footer-contact-p">
-          <a href="/gallery.html"> Gallery</a>
+          <a href="/gallery.html">Gallery</a>
         </p>
         <p class="footer-contact-p">
-          <a href="/faq.html"> FAQ</a>
+          <a href="/faq.html">FAQ</a>
         </p>
         <p class="footer-contact-p">
-          <a href="/contact.html"> Contact</a>
+          <a href="/contact.html">Contact</a>
         </p>
       </div>
 
