@@ -1,39 +1,39 @@
-:root {
-  --background: #04291d;
-  --color: rgb(215, 199, 148);
+:root{
+  --background: #290929;
+  --color: rgb(0, 0, 0);
   --brand-font: "Roboto", sans-serif;
-  --banner-color: #2e3a6e;
+  --banner-color: #2e3a6e ;
 }
-* {
+*{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 /* the header/navigation of this website */
-header {
+header{
   display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
   align-items: center;
-  justify-content: space-between; /* Ensure space between logo and nav button */
-  column-gap: 20px; /* Adjust gap as needed */
-  position: fixed;
+  column-gap: 350px;
+  position:fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
-  padding: 1rem 2rem; /* Adjust padding as needed */
+  padding: 3rem 4rem;
   width: 100%;
-  height: 80px; /* Adjust height as needed */
+  height: 120px;
   background-color: var(--background);
   color: var(--banner-color);
-  position: relative;
-  z-index: 0; /* Ensure the background is below the video */
 }
 
+  /* width: 400px; */
 .brand a {
   text-decoration: none;
   font-size: 26px;
-  font-family: "Roboto", serif;
+  font-family: "Roboto",serif;
   font-weight: 600;
   font-style: normal;
   color: var(--banner-color);
@@ -41,47 +41,33 @@ header {
   align-items: center;
   column-gap: 15px;
 }
-.brand img {
-  width: 70px;
+.brand img{
+  width:70px;
 }
-
 /* 🔥 3D Effect for EDC (Smaller & More Bold Shadow) 🔥 */
 /* ✨ EDC LOGO MOVES UP AND DOWN ✨ */
 /* 🔻 EDC MOVES CONTINUOUSLY 🔻 */
 @keyframes moveEDC {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(150px); /* Adjust distance */
-  }
-  100% {
-    transform: translateX(0);
-  }
+  0% { transform: translateX(0); }
+  50% { transform: translateX(150px); } /* Adjust distance */
+  100% { transform: translateX(0); }
+}
+
+@keyframes fireBlink {
+  0% { text-shadow: 0 0 5px orange, 0 0 10px red, 0 0 15px yellow; }
+  50% { text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow; }
+  100% { text-shadow: 0 0 5px orange, 0 0 10px red, 0 0 15px yellow; }
 }
 
 .logo {
-  font-size: small;
+  font-size:small;
   font-weight: bold;
-  color: yellow; /* Changed color to yellow */
-  text-shadow: 4px 4px 6px rgba(82, 13, 40, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  text-shadow: 0 0 5px orange, 0 0 10px red, 0 0 15px yellow;
   transition: transform 0.3s ease-in-out;
   display: inline-block;
   position: relative;
-  animation: moveEDC 6s infinite linear, blinkWhite 1s infinite; /* Added blinkWhite animation */
-  text-shadow: #21084b;
-}
-
-@keyframes blinkWhite {
-  0%,
-  100% {
-    color: yellow;
-    text-shadow: 0 0 10px white;
-  }
-  50% {
-    color: white;
-    text-shadow: 0 0 20px white;
-  }
+  animation: moveEDC 6s infinite linear, fireBlink 1s infinite alternate;
 }
 
 /* 🔥 FIRE TRAIL HOVERS AROUND NAV 🔥 */
@@ -98,252 +84,201 @@ header {
 
 /* 🔥 FIRE TRAIL MOVEMENT 🔥 */
 @keyframes fireHover {
-  0% {
-    transform: translateY(5px) scaleX(1);
-  }
-  50% {
-    transform: translateY(10px) scaleX(1.1);
-  }
-  100% {
-    transform: translateY(5px) scaleX(1);
-  }
+  0% { transform: translateY(5px) scaleX(1); }
+  50% { transform: translateY(10px) scaleX(1.1); }
+  100% { transform: translateY(5px) scaleX(1); }
 }
 
+
+
+
 .menu-icon,
-.cancel-icon {
-  display: none;
+.cancel-icon{
+  display:none;
 }
-.menu-icon img {
+.menu-icon img{
   background-color: var(--background);
   width: 400px;
 }
-nav {
+nav ul{
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: row; /* Display nav buttons horizontally */
-  background-color: transparent; /* Make background transparent */
-  padding: 0;
-  margin: 0;
-}
-nav ul {
-  display: flex;
-  flex-direction: row; /* Display nav buttons horizontally */
-  align-items: center;
-  justify-content: center; /* Center the nav buttons */
+  justify-content: flex-end;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 15px;
+  column-gap: 10px;
 }
-nav li {
+nav li{
   color: var(--banner-color);
-  margin-bottom: 10px; /* Add spacing between nav buttons */
 }
-nav ul li a {
-  color: yellow; /* Changed text color to yellow */
+nav ul li a{
+  color: var(--banner-color);
   text-decoration: none;
   padding: 10px 15px;
   position: relative;
   font-family: var(--brand-font);
-  text-shadow: 0 0 10px rgba(255, 69, 0, 0.7), 2px 2px 4px rgba(0, 0, 0, 0.5); /* Enhanced glow effect and added black shadow */
-  transition: text-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Added box-shadow for visible fire glow */
-  border-radius: 5px; /* Added border-radius for button effect */
-  background-color: green; /* Changed background color to green */
 }
 
-nav ul li a:hover {
-  padding: 10px 20px;
-  background-color: darkgreen; /* Changed hover background color to dark green */
+nav ul li a:hover{
+  padding:10px 20px;
+  background-color: var(--banner-color);
   color: white;
   border-radius: 5px;
-  text-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Fire hover effect */
-  box-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Fire hover effect */
-  animation: blinkFire 1s infinite; /* Added blink animation */
 }
-@keyframes blinkFire {
-  0%,
-  100% {
-    background-color: #ff4500;
-    text-shadow: 0 0 20px rgba(255, 69, 0, 1);
-    box-shadow: 0 0 20px rgba(255, 69, 0, 1);
-  }
-  50% {
-    background-color: #ff6347;
-    text-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
-    box-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
-  }
-}
-.active {
-  background-color: green; /* Changed active background color to green */
-  color: yellow; /* Changed text color to yellow */
+.active{
+  background-color: var(--banner-color);
+  color: white;
   border-radius: 5px;
-  text-shadow: 0 0 20px rgba(165, 42, 42, 1); /* Brown glow effect for active state */
-  box-shadow: 0 0 20px rgba(165, 42, 42, 1); /* Brown glow effect for active state */
-  animation: blink 1s infinite; /* Added blink animation */
+
 }
 
-@keyframes blink {
-  0%,
-  100% {
-    background-color: red;
-    text-shadow: 0 0 20px rgba(165, 42, 42, 1);
-    box-shadow: 0 0 20px rgba(165, 42, 42, 1);
-  }
-  50% {
-    background-color: darkred;
-    text-shadow: 0 0 40px rgba(165, 42, 42, 0.5);
-    box-shadow: 0 0 40px rgba(165, 42, 42, 0.5);
-  }
+nav ul li a.active {
+  animation: glowBlink 1s infinite alternate;
 }
 
-nav {
-  position: relative; /* Ensure the nav is positioned relative for the pseudo-element */
-  border-radius: 20px; /* Added border radius */
-}
-
-nav::after {
-  content: "";
-  position: absolute;
-  bottom: -20%; /* Adjusted position to be 20% lower */
-  left: 0;
-  width: 100vw; /* Make the width touch each edge of the screen */
-  height: 4.4px; /* Increased line height by 10% */
-  background: linear-gradient(90deg, rgba(13, 202, 101, 0.5), rgba(13, 202, 101, 1), rgba(13, 202, 101, 0.5)); /* Changed color to #0dca65 */
-  box-shadow: 0 0 10px rgba(13, 202, 101, 0.8); /* Changed color to #0dca65 */
-  animation: glowing 2s infinite;
-}
-
-@keyframes glowing {
+@keyframes glowBlink {
   0% {
-    box-shadow: 0 0 5px rgba(13, 202, 101, 0.5); /* Changed color to #0dca65 */
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(13, 202, 101, 1); /* Changed color to #0dca65 */
+    text-shadow: 0 0 5px orange, 0 0 10px red, 0 0 15px yellow;
   }
   100% {
-    box-shadow: 0 0 5px rgba(13, 202, 101, 0.5); /* Changed color to #0dca65 */
+    text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow;
   }
 }
 
-.nav-video {
-  width: 200px; /* Adjust width as needed */
-  height: 100px; /* Adjust height as needed */
-  overflow: hidden;
-  border-radius: 10px; /* Match the border radius */
-  margin: 0 20px; /* Add some spacing */
-  position: relative;
-  top: -30%; /* Move the video up by 30% */
-  z-index: 1; /* Ensure the video is above the background */
+nav ul li a.active {
+  background-color: var(--banner-color);
+  color: white;
+  border-radius: 5px;
+  animation: fireGlow 1s infinite alternate;
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
+@keyframes fireGlow {
+  0% {
+    box-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+    text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
   }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideOut {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
+  100% {
+    box-shadow: 0 0 20px red, 0 0 30px orange, 0 0 40px yellow;
+    text-shadow: 0 0 20px red, 0 0 30px orange, 0 0 40px yellow;
   }
 }
 
-/* Tablet Screen size */
-@media only screen and (max-width: 768px) {
-  nav ul {
-    flex-direction: column; /* Display nav buttons vertically on small screens */
-    align-items: center; /* Center the nav buttons */
+/* tablet screen size for navigation */
+@media screen and (max-width: 768px){
+  header {
+    /* padding: 4rem 2rem; */
+    max-width: 768px;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
   }
-  nav ul li {
-    margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
+  /* .mobile-logo{
+    display: block;
+  } */
+  .contact-logo{
+    display: none;
+  }
+  .logo{
+    font: 30px;
+  }
+  .menu-icon,
+  .cancel-icon{
+    display: flex;
+    width: 40px;
+    position: fixed;
+    right: 35px;
+  }
+  .cancel-icon{
+    position: fixed;
+    right: 35px;
+    top: -10px;
+
+  }
+  nav  {
+    position: fixed;
+    /* width: 300px; */
+    top: 100px;
+    right: 0;
+    left: 0;
+    /* height: 100vh; */
+    z-index: 999;
+    background-color:#091652;
+    color: white;
+    text-align: center;
+    display: none;
+    z-index: 999;
+    animation: slideIn  0.9s ease ; 
+  }
+  nav ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color:var(--banner-color);
+  }
+  .active::after {
+    width: 100%;
+    background-color: white;
+  }
+  .nav-menu.active {
+    top: 0;
   }
   .menu-icon, .cancel-icon {
-    display: block; /* Ensure menu and cancel icons are visible */
+    cursor: pointer;
+    padding: 10px;
   }
-  #js-navbar {
-    display: none; /* Hide navbar by default */
-    position: fixed; /* Fix navbar position */
-    top: 0;
-    left: 0;
-    width: 100%; /* Ensure navbar takes full width */
-    height: 100%; /* Ensure navbar takes full height */
-    background-color: rgba(0, 0, 0, 0.9); /* Add semi-transparent background */
-    z-index: 1000; /* Ensure navbar is above other content */
-    flex-direction: column; /* Display nav items vertically */
-    justify-content: flex-start; /* Align items to the top */
-    align-items: center; /* Center nav items horizontally */
-    padding-top: 100px; /* Space below the cancel button */
+  nav li {
+    padding:20px 15px;
+    border-bottom: 1px solid rgba(197, 195, 195, 0.1);
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
   }
-  #js-navbar.active {
-    display: flex;
+  nav ul li a {
+   font-size: 24px;
+   width: 100%;
+   color: white;
   }
-  #js-navbar ul {
-    width: 100%; /* Ensure ul takes full width */
-    text-align: center;
-    flex-direction: column; /* Display nav buttons vertically */
+}
+
+@media screen and (max-width: 600px){
+  header {
+    padding: 0rem 2rem;
+    height: 80px;
+    width: 100%;
   }
-  #js-navbar ul li {
-    width: auto; /* Adjust width to fit content */
-    margin: 5px 0; /* Space between buttons */
+  .brand img {
+    width: 160px;
   }
-  #js-navbar ul li a {
-    display: inline-block; /* Adjust display to fit content */
-    padding: 5px 10px; /* Smaller padding */
-    font-size: 10px; /* Smaller font size */
+  nav {
+    top: 80px;
+    background-color: #051924;
+  }
+  nav li {
+    padding: 20px 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 478px){
+  header {
+    padding: 0rem 2rem;
+  }
+  .brand {
+    width: 600px;
+  }
+  .brand img {
+    width: 50px;
+  }
+  .brand a {
+    font-size: 20px;
+    column-gap: 10px;
+  }
+  .menu-icon img{
+    width: 30px;
   }
   .cancel-icon {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-  .content {
-    display: none; /* Hide content when menu is active */
-  }
-  #js-navbar.active ~ .content {
-    display: none; /* Hide content when menu is active */
-  }
-}
-
-/* Phone screen size */
-@media only screen and (max-width: 600px) {
-  nav ul {
-    flex-direction: column; /* Display nav buttons vertically on small screens */
-    align-items: center; /* Center the nav buttons */
-  }
-  nav ul li {
-    margin-bottom: 10px; /* Add spacing between nav buttons on small screens */
-  }
-  .menu-icon, .cancel-icon {
-    display: block; /* Ensure menu and cancel icons are visible */
-  }
-  #js-navbar {
-    display: none; /* Hide navbar by default */
-    position: fixed; /* Fix navbar position */
-    top: 0;
-    left: 0;
-    width: 100%; /* Ensure navbar takes full width */
-    height: 100%; /* Ensure navbar takes full height */
-    background-color: rgba(0, 0, 0, 0.9); /* Add semi-transparent background */
-    z-index: 1000; /* Ensure navbar is above other content */
-    flex-direction: column; /* Display nav items vertically */
-    justify-content: center; /* Center nav items vertically */
-    align-items: center; /* Center nav items horizontally */
-  }
-  #js-navbar ul {
-    width: 100%; /* Ensure ul takes full width */
-  }
-  #js-navbar ul li {
-    width: 100%; /* Ensure li takes full width */
-  }
-  #js-navbar ul li a {
-    width: 100%; /* Ensure a takes full width */
+    position: fixed;
+    right: 35px;
+    top: -15px;
   }
 }

@@ -18,83 +18,248 @@
   <link rel="stylesheet" href="styles/faq.css">
   <link rel="icon" type="image/x-icon" href="images/g4.ico">
   <title>FAQ - Entrepreneurship Development Centre, FEDPONEK, owerri, Imo State</title>
-  <link rel="stylesheet" href="styles/about.css"> <!-- Added external CSS file -->
+
   <style>
-    nav {
-      position: fixed; /* Ensure the nav is fixed at the top */
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-      padding: 10px;
-      border-radius: 0 0 10px 10px;
-      display: flex;
-      justify-content: center;
-      transition: top 0.3s ease;
-    }
-    .gallery-hero-section {
-      padding-top: 80px; /* Add padding to accommodate the fixed nav */
-    }
-    @media (min-width: 769px) {
-      .menu-icon {
-        display: none;
-      }
+    nav ul li a {
+      position: relative;
+      display: inline-block;
+      padding: 10px 15px;
+      color: yellow; /* Yellow text */
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+      overflow: hidden;
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgb(0, 255, 255); /* Cyan shadow at border edges */
+      background: rgb(66, 4, 45); /* Same color as nav button */
     }
 
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: block;
+    nav ul li a.active {
+      color: white; /* White text */
+      text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+      box-shadow: 0 6px 12px rgba(0, 255, 255, 0.8); /* Brighter cyan shadow for active state */
+      animation: flicker 0.2s infinite alternate;
+    }
+
+    nav ul li a:hover {
+      color: white; /* White text */
+      text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+      animation: flicker 0.2s infinite alternate;
+      box-shadow: 0 6px 12px rgba(0, 255, 255, 0.8); /* Brighter cyan shadow on hover */
+    }
+
+    nav ul li a::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 200%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+      transform: translateX(-50%) scale(0.8);
+      border-radius: 50%;
+      opacity: 0;
+      transition: 0.2s ease-out;
+    }
+
+    nav ul li a:hover::before,
+    nav ul li a.active::before {
+      top: -50%;
+      opacity: 1;
+      animation: fireBurn 0.5s forwards ease-out;
+    }
+
+    @keyframes fireBurn {
+      0% {
+        transform: translateX(-50%) scale(0.8);
+        filter: blur(2px);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(-50%) scale(1);
+        filter: blur(4px);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateX(-50%) scale(1.2);
+        filter: blur(6px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes flicker {
+      0% { text-shadow: 0 0 5px orange, 0 0 10px red; }
+      100% { text-shadow: 0 0 10px yellow, 0 0 15px orange; }
+    }
+
+    .nav-button {
+      position: relative;
+      display: inline-block;
+      padding: 10px 15px;
+      color: yellow; /* Yellow text */
+      background: rgb(66, 4, 45); /* Brown background */
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      overflow: hidden;
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgb(0, 255, 255); /* Cyan shadow at border edges */
+      animation: flicker 1s infinite alternate; /* Add this line */
+    }
+
+    .nav-button:hover {
+      color: white; /* White text */
+      text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+      animation: flicker 0.2s infinite alternate;
+      box-shadow: 0 6px 12px rgba(0, 255, 255, 0.8); /* Brighter cyan shadow on hover */
+      transform: translateY(-2px); /* 3D effect */
+    }
+
+    .nav-button::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 200%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+      transform: translateX(-50%) scale(0.8);
+      border-radius: 50%;
+      opacity: 0;
+      transition: 0.2s ease-out;
+    }
+
+    .nav-button:hover::before {
+      top: -50%;
+      opacity: 1;
+      animation: fireBurn 0.5s forwards ease-out;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00ffff; /* Cyan color */
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    }
+
+    .fpno-effect {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #000000; /* Black text */
+      text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange; /* Orange glow effect */
+      position: relative;
+      animation: continuousUpDown 3s infinite linear;
+    }
+
+    .fpno-effect::before,
+    .fpno-effect::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      height: 2px;
+      width: 50px;
+      background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+      transform: translateY(-50%);
+      opacity: 0.8;
+      animation: fireTrail 3s infinite linear;
+    }
+
+    .fpno-effect::before {
+      left: -60px; /* Fire trail to the left */
+    }
+
+    .fpno-effect::after {
+      right: -60px; /* Fire trail to the right */
+    }
+
+    @keyframes continuousUpDown {
+      0% {
+        transform: translateY(100%); /* Start below the rectangle */
+      }
+      50% {
+        transform: translateY(-100%); /* Move above the rectangle */
+      }
+      100% {
+        transform: translateY(100%); /* Return below the rectangle */
+      }
+    }
+
+    @keyframes fireTrail {
+      0%, 100% {
+        width: 50px;
+        opacity: 0.8;
+      }
+      50% {
+        width: 70px;
+        opacity: 1;
+      }
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #00ffff; /* Cyan color */
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+      transform: perspective(500px) rotateX(10deg);
+      animation: zoomInOut 5s infinite ease-in-out;
+    }
+
+    @keyframes zoomInOut {
+      0%, 100% {
+        transform: perspective(500px) rotateX(10deg) scale(1);
+      }
+      50% {
+        transform: perspective(500px) rotateX(10deg) scale(1.2);
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      nav ul li {
+        text-align: center; /* Center the nav links */
       }
 
-      #js-navbar {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 128, 0, 0.9); /* Green background */
-        z-index: 1000;
-        flex-direction: column;
-        justify-content: flex-start; /* Align items to the top */
-        align-items: center;
-        padding-top: 100px; /* Space below the cancel button (20% more down) */
+      nav ul li a {
+        position: relative;
+        display: inline-block;
+        padding: 10px 15px;
+        color: yellow; /* Yellow text */
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.3s;
+        overflow: hidden;
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgb(0, 255, 255); /* Cyan shadow at border edges */
+        background: rgb(66, 4, 45); /* Same color as nav button */
       }
 
-      #js-navbar.active {
-        display: flex;
+      nav ul li a.active {
+        color: white; /* White text */
+        text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+        box-shadow: 0 6px 12px rgba(0, 255, 255, 0.8); /* Brighter cyan shadow for active state */
+        animation: flicker 0.2s infinite alternate;
       }
 
-      #js-navbar ul {
-        width: 100%;
-        text-align: center;
-        flex-direction: column; /* Display nav buttons vertically */
+      nav ul li a:hover {
+        color: white; /* White text */
+        text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+        animation: flicker 0.2s infinite alternate;
+        box-shadow: 0 6px 12px rgba(0, 255, 255, 0.8); /* Brighter cyan shadow on hover */
       }
+    }
 
-      #js-navbar ul li {
-        width: auto; /* Adjust width to fit content */
-        margin: 5px 0; /* Space between buttons */
+    nav ul li a.active {
+      animation: fireGlow 1s infinite alternate;
+    }
+
+    @keyframes fireGlow {
+      0% {
+        box-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+        text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
       }
-
-      #js-navbar ul li a {
-        display: inline-block; /* Adjust display to fit content */
-        padding: 5px 10px; /* Smaller padding */
-        font-size: 10px; /* Smaller font size */
-      }
-
-      .cancel-icon {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-      }
-
-      .content {
-        display: none; /* Hide content when menu is active */
-      }
-
-      #js-navbar.active ~ .content {
-        display: none; /* Hide content when menu is active */
+      100% {
+        box-shadow: 0 0 20px red, 0 0 30px orange, 0 0 40px yellow;
+        text-shadow: 0 0 20px red, 0 0 30px orange, 0 0 40px yellow;
       }
     }
   </style>
@@ -107,47 +272,48 @@
       <a href="index.html">
         <!-- <img src="images/dunav logo.svg" alt=""> -->
         <span class="logo">EDC</span>
-        <span class="mobile-logo"> FPNO</span>
+        <span class="mobile-logo fpno-effect"> FPNO</span>
       </a>
     </div>
+
     <div class="menu-icon" id="js-menu-icon">
-      <i class="fa-solid fa-bars fa-2x" style="color: #051924"></i>
+      <i class="fa-solid fa-bars fa-2x " style="color: #051924"></i>
     </div>
+
     <nav id="js-navbar">
-      <div class="cancel-icon" id="js-cancel-icon">
-        <i class="fa-solid fa-xmark fa-3x" style="color: #051924;"></i>
-      </div>
       <ul id="navbar">
-        <li><a href="index.html" class="footer-btn">Home</a></li>
-        <li><a href="about.html" class="footer-btn">About Us</a></li>
-        <li><a href="services.html" class="footer-btn">Services</a></li>
-        <li><a href="gallery.html" class="footer-btn">Gallery</a></li>
-        <li><a href="faq.html" class="footer-btn active">FAQ</a></li>
-        <li><a href="contact.html" class="footer-btn">Contact</a></li>
+        <li><a href="index.html" class="nav-button">Home</a></li>
+        <li><a href="about.html" class="nav-button">About</a></li>
+        <li><a href="services.html" class="nav-button">Services</a></li>
+        <li><a href="gallery.html" class="nav-button">Gallery</a></li>
+        <li><a href="faq.html" class="nav-button active">FAQ</a></li>
+        <li><a href="contact.html" class="nav-button">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="content">
+  <main>
     <!-- FAQ Hero section  -->
     <section class="gallery-hero-section">
       <div class="gallery-hero">
-        <h2 class="three-d-effect">FAQ</h2>
-        <p>Find answers to the most frequently asked questions about the Entrepreneurship Development Center at Federal Polytechnic Nekede.</p>
+        <h2 class="hero-title">FAQ</h2>
+        <p>Discover answers to frequently asked questions regarding the Entrepreneurship Development Center and our offerings.</p>
       </div>
     </section>
 
     <section class="faq-section">
       <div class="faq-container">
-        <div class="faq-question">
-          <span>What is the Entrepreneurship Development Center?</span>
+        <div class="faq-question"> 
+          What is the Entrepreneurship Development Center ?
+
           <div class="icon-container">
-            <i class="fa-solid fa-chevron-down"></i>
+            <i class="fa-solid fa-plus"></i>
           </div>
         </div>
-        <div class="faq-answer">
-          <p>The Entrepreneurship Development Center (EDC) at Federal Polytechnic Nekede is dedicated to equipping students with the skills and knowledge needed for successful business ventures.</p>
-        </div>
+        <p class="faq-answer"> 
+          The Entrepreneurship Development Center at Federal Polytechnic Nekede is a specialized facility dedicated to equipping students with entrepreneurial skills, practical training, and resources needed to start and manage successful businesses. We offer training in various skills, mentorship, and support for student entrepreneurs.
+        </p>
+
       </div>
 
       <div class="faq-container">
@@ -209,19 +375,19 @@
 
     <section class="upload-section">
       <div class="upload-container">
-        <h2>Still Have a Question?</h2>
-        <p>Contact us today if you have any further questions or need more information about our programs.</p>
+        <h2>Still Have Question ?</h2>
+        <p>Can't find the answer you're looking for? Please reach out to our team.</p>
         <button onclick="window.location.href='/contact.html'">Contact Us</button>
       </div>
     </section>
   </main>
 
   <!-- footer section of this page  -->
-  <footer class="footer-container content">
+  <footer class="footer-container">
     <div class="footer-div">
       <div class="footer-card1">
         <h1 data-aos="fade-down"> 
-         EDC FPNO
+        EDC FPNO
         </h1>
         <p class="footer-contact-p">
           The Entrepreneurship Development Center at Federal Polytechnic Nekede empowers students with practical skills and knowledge for successful business ventures.
@@ -232,27 +398,46 @@
         <h1 data-aos="fade-down"> 
           Quick Links
         </h1>
-        <ul class="footer-links">
-          <li><a href="index.html" class="footer-btn">Home</a></li>
-          <li><a href="about.html" class="footer-btn">About Us</a></li>
-          <li><a href="services.html" class="footer-btn">Services</a></li>
-          <li><a href="gallery.html" class="footer-btn">Gallery</a></li>
-          <li><a href="faq.html" class="footer-btn">FAQ</a></li>
-          <li><a href="contact.html" class="footer-btn">Contact</a></li>
-        </ul>
+        <p class="footer-contact-p">
+          <a href="index.html"> Home</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="about.html"> About Us</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="services.html"> Services</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="gallery.html"> Gallery</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="faq.html"> FAQ</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="contact.html"> Contact</a>
+        </p>
       </div>
 
       <div class="footer-card3">
         <h1 data-aos="fade-down"> 
           Our Services
         </h1>
-        <ul class="footer-links">
-          <li><a href="#" class="footer-btn">Digital Skills Training</a></li>
-          <li><a href="#" class="footer-btn">Web Development</a></li>
-          <li><a href="#" class="footer-btn">Business Management</a></li>
-          <li><a href="#" class="footer-btn">Graphic Design</a></li>
-          <li><a href="#" class="footer-btn">Entrepreneurship Training</a></li>
-        </ul>
+        <p class="footer-contact-p">
+          <a href="#"> Digital Skills Training</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Web Development</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Business Management
+          </a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Graphic Design</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Entrepreneurship Training</a>
+        </p>
       </div>
 
       <div class="footer-card4">
@@ -261,19 +446,19 @@
         </h1>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
-            <i class="fa-solid fa-location-dot" style="color: rgb(0, 244, 228);"></i> <!-- Changed icon color to brown -->
+            <i class="fa-solid fa-location-dot"></i>
             <p>Federal Polytechnic Nekede, Owerri, Imo State, Nigeria</p>
           </div>
         </p>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
-            <i class="fa-solid fa-phone" style="color: rgb(0, 255, 229);"></i> <!-- Changed icon color to brown -->
+            <i class="fa-solid fa-phone"></i>
             <p>+234 900 000 0000 </p>
           </div>
         </p>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
-            <i class="fa-solid fa-message" style="color: rgb(10, 255, 247);"></i> <!-- Changed icon color to brown -->
+            <i class="fa-solid fa-message"></i>
             <p>contact@edcfpno.edu.ng</p>
           </div>
         </p>
@@ -290,22 +475,7 @@
     </div>
   </footer>
   
-  <script src="scripts/navbar.js" defer></script> <!-- Added defer attribute -->
+  <script src="scripts/navbar.js"></script>
   <script src="scripts/faq.js"></script>
-  <script>
-    document.getElementById('js-menu-icon').addEventListener('click', function() {
-      document.getElementById('js-navbar').classList.add('active');
-      document.querySelectorAll('.content').forEach(function(content) {
-        content.style.display = 'none';
-      });
-    });
-
-    document.getElementById('js-cancel-icon').addEventListener('click', function() {
-      document.getElementById('js-navbar').classList.remove('active');
-      document.querySelectorAll('.content').forEach(function(content) {
-        content.style.display = 'block';
-      });
-    });
-  </script>
 </body>
 </html>

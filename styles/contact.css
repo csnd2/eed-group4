@@ -3,9 +3,9 @@
   padding: 0;
 }
 :root{
-  --color: orange; /* Changed main text color to orange */
-  --bg: #041212 ;
-  --banner-color: hsl(221, 61%, 11%)  ;
+  --color: #34495E ;
+  --bg: #F4F6F6 ;
+  --banner-color: hsl(221, 83%, 53%)  ;
   --font: "Ubuntu", sans-serif;
 }
 .main{
@@ -13,7 +13,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(8, 24, 11);
+  background-color: var(--bg);
   color: var(--color);
   padding: 3rem 0;
   position: relative;
@@ -100,7 +100,6 @@ form{
   border-radius: 0.5rem;
   width: 400px;
   outline: none;
-  background-color: rgb(196, 196, 196); /* Changed background color to green */
 }
 .error-message{
   color: red;
@@ -129,7 +128,6 @@ form{
   resize: vertical;
   outline: none;
   width: 400px;
-  background-color: white; /* Changed background color to white */
 }
 .name-input-div input:focus,
 .email-input-div input:focus,

@@ -18,66 +18,148 @@
   <title>Gallery - Entrepreneurship Development Centre, FEDPONEK, owerri, Imo State</title>
 
   <style>
-    @media (min-width: 769px) {
-      .menu-icon {
-        display: none;
+    .nav-button {
+      position: relative;
+      display: inline-block;
+      padding: 10px 15px;
+      color: yellow; /* Yellow text */
+      background: rgb(66, 4, 45); /* Brown background */
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      overflow: hidden;
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgb(0, 255, 255); /* Cyan shadow at border edges */
+      animation: flicker 1s infinite alternate; /* Add this line */
+    }
+
+    .nav-button:hover {
+      color: white; /* White text */
+      text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+      animation: flicker 0.2s infinite alternate;
+      box-shadow: 0 6px 12px rgba(0, 255, 255, 0.8); /* Brighter cyan shadow on hover */
+      transform: translateY(-2px); /* 3D effect */
+    }
+
+    .nav-button::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 200%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+      transform: translateX(-50%) scale(0.8);
+      border-radius: 50%;
+      opacity: 0;
+      transition: 0.2s ease-out;
+    }
+
+    .nav-button:hover::before {
+      top: -50%;
+      opacity: 1;
+      animation: fireBurn 0.5s forwards ease-out;
+    }
+
+    @keyframes flicker {
+      0% { text-shadow: 0 0 5px orange, 0 0 10px red; }
+      100% { text-shadow: 0 0 10px yellow, 0 0 15px orange; }
+    }
+
+    @keyframes fireBurn {
+      0% {
+        transform: translateX(-50%) scale(0.8);
+        filter: blur(2px);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(-50%) scale(1);
+        filter: blur(4px);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateX(-50%) scale(1.2);
+        filter: blur(6px);
+        opacity: 1;
       }
     }
 
-    @media (max-width: 768px) {
-      .menu-icon {
-        display: block;
-      }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00ffff; /* Cyan color */
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    }
 
-      #js-navbar {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 128, 0, 0.9); /* Green background */
-        z-index: 1000;
-        flex-direction: column;
-        justify-content: flex-start; /* Align items to the top */
-        align-items: center;
-        padding-top: 100px; /* Space below the cancel button (20% more down) */
-      }
+    .fpno-effect {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #000000; /* Black text */
+      text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange; /* Orange glow effect */
+      position: relative;
+      animation: continuousUpDown 3s infinite linear;
+    }
 
-      #js-navbar.active {
-        display: flex;
-      }
+    .fpno-effect::before,
+    .fpno-effect::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      height: 2px;
+      width: 50px;
+      background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+      transform: translateY(-50%);
+      opacity: 0.8;
+      animation: fireTrail 3s infinite linear;
+    }
 
-      #js-navbar ul {
-        width: 100%;
-        text-align: center;
-        flex-direction: column; /* Display nav buttons vertically */
-      }
+    .fpno-effect::before {
+      left: -60px; /* Fire trail to the left */
+    }
 
-      #js-navbar ul li {
-        width: auto; /* Adjust width to fit content */
-        margin: 5px 0; /* Space between buttons */
-      }
+    .fpno-effect::after {
+      right: -60px; /* Fire trail to the right */
+    }
 
-      #js-navbar ul li a {
-        display: inline-block; /* Adjust display to fit content */
-        padding: 5px 10px; /* Smaller padding */
-        font-size: 10px; /* Smaller font size */
+    @keyframes continuousUpDown {
+      0% {
+        transform: translateY(100%); /* Start below the rectangle */
       }
-
-      .cancel-icon {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
+      50% {
+        transform: translateY(-100%); /* Move above the rectangle */
       }
-
-      .content {
-        display: none; /* Hide content when menu is active */
+      100% {
+        transform: translateY(100%); /* Return below the rectangle */
       }
+    }
 
-      #js-navbar.active ~ .content {
-        display: none; /* Hide content when menu is active */
+    @keyframes fireTrail {
+      0%, 100% {
+        width: 50px;
+        opacity: 0.8;
+      }
+      50% {
+        width: 70px;
+        opacity: 1;
+      }
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #00ffff; /* Cyan color */
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+      transform: perspective(500px) rotateX(10deg);
+      animation: zoomInOut 5s infinite ease-in-out;
+    }
+
+    @keyframes zoomInOut {
+      0%, 100% {
+        transform: perspective(500px) rotateX(10deg) scale(1);
+      }
+      50% {
+        transform: perspective(500px) rotateX(10deg) scale(1.2);
       }
     }
   </style>
@@ -89,7 +171,7 @@
       <a href="index.html">
         <!-- <img src="images/dunav logo.svg" alt=""> -->
         <span class="logo">EDC</span>
-        <span class="mobile-logo"> FPNO</span>
+        <span class="mobile-logo fpno-effect">FPNO</span>
       </a>
     </div>
 
@@ -97,26 +179,23 @@
       <i class="fa-solid fa-bars fa-2x " style="color: #051924"></i>
     </div>
 
-    <nav id="js-navbar" >
-      <div class="cancel-icon" id="js-cancel-icon">
-        <i class="fa-solid fa-xmark fa-3x" style="color: #051924;" ></i>
-      </div>
+    <nav id="js-navbar">
       <ul id="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html" id="product-link"> Services</a></li>
-        <li><a href="gallery.html" id="product-link" class="active">Gallery</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" class="nav-button">Home</a></li>
+        <li><a href="about.html" class="nav-button">About</a></li>
+        <li><a href="services.html" class="nav-button">Services</a></li>
+        <li><a href="gallery.html" class="nav-button active">Gallery</a></li>
+        <li><a href="faq.html" class="nav-button">FAQ</a></li>
+        <li><a href="contact.html" class="nav-button">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="content">
+  <main>
     <!-- Gallery Hero section  -->
     <section class="gallery-hero-section">
       <div class="gallery-hero">
-        <h2>Our Gallery</h2>
+        <h2 class="hero-title">Our Gallery</h2>
         <p>Explore photos and videos from our training sessions, workshops, and student projects at the Entrepreneurship Development Center.</p>
       </div>
     </section>
@@ -229,7 +308,7 @@
   </main>
 
   <!-- footer section of this page  -->
-  <footer class="footer-container content">
+  <footer class="footer-container">
     <div class="footer-div">
       <div class="footer-card1">
         <h1> 
@@ -323,20 +402,5 @@
 
   <script src="scripts/navbar.js"></script>
   <script src="scripts/gallery.js"></script>
-  <script>
-    document.getElementById('js-menu-icon').addEventListener('click', function() {
-      document.getElementById('js-navbar').classList.add('active');
-      document.querySelectorAll('.content').forEach(function(content) {
-        content.style.display = 'none';
-      });
-    });
-
-    document.getElementById('js-cancel-icon').addEventListener('click', function() {
-      document.getElementById('js-navbar').classList.remove('active');
-      document.querySelectorAll('.content').forEach(function(content) {
-        content.style.display = 'block';
-      });
-    });
-  </script>
 </body>
 </html>

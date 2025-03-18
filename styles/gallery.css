@@ -169,42 +169,6 @@ footer{
   color: var(--color);
 }
 
-nav ul li a {
-  color: yellow;
-  text-decoration: none;
-  padding: 5px 10px; /* Smaller padding */
-  font-size: 10px; /* Smaller font size */
-  position: relative;
-  font-family: var(--font);
-  text-shadow: 0 0 10px rgba(255, 69, 0, 0.7), 2px 2px 4px rgba(0, 0, 0, 0.5);
-  transition: text-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
-  border-radius: 5px;
-  text-align: center;
-}
-
-nav ul li a:hover {
-  padding: 5px 15px; /* Smaller padding */
-  background-color: #ff4500;
-  color: white;
-  border-radius: 5px;
-  text-shadow: 0 0 20px rgba(255, 69, 0, 1);
-  box-shadow: 0 0 20px rgba(255, 69, 0, 1);
-  animation: blinkFire 1s infinite;
-}
-
-@keyframes blinkFire {
-  0%, 100% {
-    background-color: #ff4500;
-    text-shadow: 0 0 20px rgba(255, 69, 0, 1);
-    box-shadow: 0 0 20px rgba(255, 69, 0, 1);
-  }
-  50% {
-    background-color: #ff6347;
-    text-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
-    box-shadow: 0 0 40px rgba(255, 69, 0, 0.5);
-  }
-}
 
 @media screen and (max-width: 768px){
   
@@ -225,46 +189,7 @@ nav ul li a:hover {
   }
 }
 
-@media (min-width: 769px) {
-  .menu-icon {
-    display: none;
-  }
-}
 
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
-
-  #js-navbar {
-    background-color: rgba(0, 128, 0, 0.9); /* Green background */
-    justify-content: flex-start; /* Align items to the top */
-    padding-top: 100px; /* Space below the cancel button (20% more down) */
-  }
-
-  #js-navbar ul {
-    flex-direction: column; /* Display nav buttons vertically */
-  }
-
-  #js-navbar ul li {
-    width: auto; /* Adjust width to fit content */
-    margin: 5px 0; /* Space between buttons */
-  }
-
-  #js-navbar ul li a {
-    display: inline-block; /* Adjust display to fit content */
-    padding: 5px 10px; /* Smaller padding */
-    font-size: 10px; /* Smaller font size */
-  }
-
-  .content {
-    display: none; /* Hide content when menu is active */
-  }
-
-  #js-navbar.active ~ .content {
-    display: none; /* Hide content when menu is active */
-  }
-}
 
 @media screen and (max-width: 600px) {
   .gallery-section, .upload-section {
