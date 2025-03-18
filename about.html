@@ -18,6 +18,9 @@
   <link rel="icon" type="image/x-icon" href="images/g4.ico">
   <title>About Us -Entrepreneurship Development Centre, FEDPONEK, owerri, Imo State</title>
   <style>
+    body {
+      background-color: #2c0c20; /* Example light gray background */
+    }
     nav ul li a {
       position: relative;
       display: inline-block;
@@ -29,6 +32,7 @@
       overflow: hidden;
       border-radius: 5px; /* Rounded corners */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Black shadow */
+      background-color: #2c0c20; /* Updated button background */
     }
 
     /* Fire Animation */
@@ -192,6 +196,7 @@
       50% {
         transform: translateY(-10px);
       }
+   
     }
   </style>
   <style>
@@ -255,6 +260,153 @@
     }
   }
 </style>
+<style>
+  .card1 p, .card3 p, .card2 p, .card3 ul li {
+    color: yellow; /* Make text yellow */
+  }
+</style>
+<style>
+  .card1, .card2, .card3 {
+    border-style:groove;/* Add inset border style */
+    background-color: rgb(43, 26, 7); /* Set background to brown */
+  }
+</style>
+<style>
+  .card1 h3, .card3 h3, .card2 h3 {
+    color: cyan; /* Set text color to cyan */
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan; /* Add glowing effect */
+  }
+</style>
+<style>
+  @keyframes blinkGlowYellow {
+    0%, 100% {
+      text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+      opacity: 1;
+    }
+    50% {
+      text-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow;
+      opacity: 0.5;
+    }
+  }
+
+  .card1 .icon-div i, .card3 .icon-div i, .card2 .icon-div i {
+    color: yellow;
+    text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+    animation: blinkGlowYellow 1.5s infinite;
+  }
+</style>
+<style>
+  .card1 .icon-div, .card3 .icon-div, .card2 .icon-div {
+    background-color: rgb(80, 20, 76); /* Set background to pink */
+  }
+</style>
+<style>
+  @keyframes blinkYellow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .footer-card2 {
+    animation: blinkYellow 1s infinite; /* Make footer-card2 blink yellow infinitely */
+  }
+</style>
+<style>
+  @keyframes blinkYellow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .footer-card3 h1 {
+    animation: blinkYellow 1s infinite; /* Make "Our Services" blink yellow */
+  }
+
+</style>
+<style>
+  @keyframes blinkOrange  {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    } 
+    } 
+    .footer-card4 h1 {
+      animation: blinkOrange 1s infinite;
+    }
+    .footer-card1 h1 {
+      animation: blinkOrange 1s infinite;
+    }
+         /* Make "Contact Us" blink orange */
+    
+</style>
+<style>
+  .footer-container {
+    background-color: #2c0c20; /* Example background color for the footer */
+  }
+</style>
+<style>
+  .footer-contact-p a {
+    display: inline-block;
+    padding: 10px 15px;
+    color: rgb(0, 247, 255);
+    text-decoration: none;
+    font-size: 16px;
+    background-color: rgb(77, 51, 17); /* Updated button background to blue */
+    border-radius: 5px; /* Rounded corners */
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black; /* Black shadow */
+  }
+
+  .footer-contact-p a:hover {
+    color: yellow; /* Text color on hover */
+    text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+    box-shadow: 0 4px 8px rgba(255, 140, 0, 0.8); /* Orange shadow */
+  }
+
+  .footer-contact-p a::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 200%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+    transform: translateX(-50%) scale(0.8);
+    border-radius: 50%;
+    opacity: 0;
+    transition: 0.3s ease-out;
+  }
+
+  .footer-contact-p a:hover::before {
+    top: -50%;
+    opacity: 1;
+  }
+</style>
+<style>
+  .footer-contact-div p {
+    color: rgb(157, 97, 28);
+    text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black; /* Make the text red */
+    text-decoration: underline; /* Underline the text */
+  }
+</style>
+<style>
+  .copyright {
+    color: white; /* Default color for "All rights reserved" */
+  }
+  .copyright span {
+    color: yellow; /* Make "2025" yellow */
+  }
+</style>
 </head>
 <body>
   
@@ -300,11 +452,11 @@
       <div class="why-choose-us-row our-story-row">
 
         <div class="why-choose-us-col why-choose-us-contents">
-          <h2>
+          <h2 style="color: rgb(255, 234, 0); text-shadow: 0 0 10px red, 0 0 20px red">
             Know More.
           </h2>
 
-          <p class="p-why-choose-us" >
+          <p class="p-why-choose-us" style="color: aliceblue;" >
             The Entrepreneurship Development Center (EDC) at Federal Polytechnic Nekede was created to meet the increasing demand for practical entrepreneurial skills among Group 4 students in EED Practical. As an institution dedicated to fostering job creators instead of job seekers, the Federal Polytechnic Nekede established this center to provide students with the hands-on skills and knowledge essential for successful business ventures.
             <br>
             <br>
@@ -326,8 +478,8 @@
     <!-- Features Services Section -->
     <section class="features-container">
       <div class="features-contents">
-        <h2>Our Goals, Vision, & Core Beliefs </h2>
-        <p class="features-p">Driven by core principles and a distinct purpose, we strive to make a meaningful difference through entrepreneurial education.</p>
+        <h2 style="color: yellow; text-shadow: 0 0 10px red, 0 0 20px red">Our Goals, Vision, & Core Beliefs </h2>
+        <p class="features-p" style="color: aliceblue;">Driven by core principles and a distinct purpose, we strive to make a meaningful difference through entrepreneurial education.</p>
       </div>
 
       <div class="features-cards">
@@ -374,7 +526,7 @@
   <footer class="footer-container">
     <div class="footer-div">
       <div class="footer-card1">
-        <h1> 
+        <h1 style="color: rgb(218, 15, 32); text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;"> 
         EDC FPNO
         </h1>
         <p class="footer-contact-p">
@@ -383,7 +535,7 @@
       </div>
 
       <div class="footer-card2">
-        <h1> 
+        <h1 style="color: rgb(238, 255, 0);text-shadow: 0 0 10px rgb(183, 245, 13), 0 0 20px rgb(237, 249, 6), 0 0 30px rgb(222, 237, 9);"> 
           Quick Links
         </h1>
         <p class="footer-contact-p">
@@ -407,9 +559,7 @@
       </div>
 
       <div class="footer-card3">
-        <h1> 
-          Our Services
-        </h1>
+        <h1 style="color: yellow;text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;">Our Services</h1>
         <p class="footer-contact-p">
           <a href="#"> Digital Skills Training</a>
         </p>
@@ -429,7 +579,7 @@
       </div>
 
       <div class="footer-card4">
-        <h1> 
+        <h1 style="color: rgb(218, 15, 32); text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;"> 
           Contact Us
         </h1>
         <p class="footer-contact-p">
@@ -441,7 +591,7 @@
         <p class="footer-contact-p">
           <div class="footer-contact-div">
             <i class="fa-solid fa-phone"></i>
-            <p>+234 900 000 0000 </p>
+            <p>+234 900 000 0000</p>
           </div>
         </p>
         <p class="footer-contact-p">
@@ -458,11 +608,8 @@
     <hr style="width: 100%;">
     <div class="copyright-div">
       <p class="copyright">
-        © 2025 | All rights reserved.
+        © <span>2025</span> | All rights reserved.
       </p>
     </div>
   </footer>
-
-  <script src="scripts/navbar.js"></script>
-</body>
 </html>

@@ -159,6 +159,9 @@ button:active{
   padding: 4rem 4rem;
   width: 100%;
 }
+.features-container {
+    background-color: #2c0c20;
+}
 .features-container h2{
   text-align: center;
 }

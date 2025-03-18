@@ -80,10 +80,19 @@ footer{
 @media screen and (max-width: 768px) {
   
   .faq-section {
-    padding: 4rem;
+    padding: 2rem;
+    row-gap: 15px;
   } 
   .faq-container {
     width: 100%;
+    padding: 15px;
+    row-gap: 30px;
+  }
+  .faq-question {
+    font-size: 18px;
+  }
+  .faq-answer {
+    font-size: 14px;
   }
   .gallery-hero h2,
   .upload-container h2 {
@@ -93,13 +102,18 @@ footer{
 
 @media screen and (max-width: 600px) {
   .faq-section {
-    padding: 2rem;
+    padding: 1.5rem;
+    row-gap: 10px;
   } 
+  .faq-container {
+    padding: 10px;
+    row-gap: 20px;
+  }
   .faq-question {
     font-size: 16px;
   }
   .faq-answer {
-    font-size: 14px;
+    font-size: 12px;
   }
   .gallery-hero h2, 
   .upload-container h2 {

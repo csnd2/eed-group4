@@ -388,6 +388,95 @@ nav ul li a:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
   }
 }
+.footer-container {
+  background-color: #2c0c20; /* Example background color for the footer */
+}
+
+.footer-contact-p a {
+  display: inline-block;
+  padding: 10px 15px;
+  color: rgb(0, 247, 255);
+  text-decoration: none;
+  font-size: 16px;
+  background-color: rgb(77, 51, 17); /* Updated button background to blue */
+  border-radius: 5px; /* Rounded corners */
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black; /* Black shadow */
+}
+
+.footer-contact-p a:hover {
+  color: yellow; /* Text color on hover */
+  text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+  box-shadow: 0 4px 8px rgba(255, 140, 0, 0.8); /* Orange shadow */
+}
+
+.footer-contact-p a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 200%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+  transform: translateX(-50%) scale(0.8);
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+
+.footer-contact-p a:hover::before {
+  top: -50%;
+  opacity: 1;
+}
+
+.footer-contact-div p {
+  color: rgb(157, 97, 28);
+  text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black; /* Make the text red */
+  text-decoration: underline; /* Underline the text */
+}
+
+.copyright {
+  color: white; /* Default color for "All rights reserved" */
+}
+.copyright span {
+  color: yellow; /* Make "2025" yellow */
+}
+
+@keyframes blinkYellow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.footer-card2 {
+  animation: blinkYellow 1s infinite; /* Make footer-card2 blink yellow infinitely */
+}
+
+.footer-card3 h1 {
+  animation: blinkYellow 1s infinite; /* Make "Our Services" blink yellow */
+}
+
+@keyframes blinkOrange {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.footer-card4 h1 {
+  animation: blinkOrange 1s infinite; /* Make "Contact Us" blink orange */
+}
+
+.footer-card1 h1 {
+  animation: blinkOrange 1s infinite; /* Make "EDC FPNO" blink orange */
+}
 </style>
 </head>
 
@@ -569,7 +658,7 @@ nav ul li a:hover {
   <footer class="footer-container">
     <div class="footer-div">
       <div class="footer-card1">
-        <h1 data-aos="fade-down"> 
+        <h1 style="color: rgb(218, 15, 32); text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;"> 
          EDC FPNO
         </h1>
         <p class="footer-contact-p">
@@ -578,7 +667,7 @@ nav ul li a:hover {
       </div>
 
       <div class="footer-card2">
-        <h1 data-aos="fade-down"> 
+        <h1 style="color: rgb(238, 255, 0);text-shadow: 0 0 10px rgb(183, 245, 13), 0 0 20px rgb(237, 249, 6), 0 0 30px rgb(222, 237, 9);"> 
           Quick Links
         </h1>
         <p class="footer-contact-p">
@@ -602,9 +691,7 @@ nav ul li a:hover {
       </div>
 
       <div class="footer-card3">
-        <h1 data-aos="fade-down"> 
-          Our Services
-        </h1>
+        <h1 style="color: yellow;text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;">Our Services</h1>
         <p class="footer-contact-p">
           <a href="#"> Digital Skills Training</a>
         </p>
@@ -624,7 +711,7 @@ nav ul li a:hover {
       </div>
 
       <div class="footer-card4">
-        <h1 data-aos="fade-down"> 
+        <h1 style="color: rgb(218, 15, 32); text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;"> 
           Contact Us
         </h1>
         <p class="footer-contact-p">
@@ -653,7 +740,7 @@ nav ul li a:hover {
     <hr style="width: 100%;">
     <div class="copyright-div">
       <p class="copyright">
-        © 2025 | All rights reserved.
+        © <span>2025</span> | All rights reserved.
       </p>
     </div>
   </footer>
