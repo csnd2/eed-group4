@@ -149,11 +149,12 @@ nav ul li a {
   transition: text-shadow 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Added box-shadow for visible fire glow */
   border-radius: 5px; /* Added border-radius for button effect */
+  background-color: green; /* Changed background color to green */
 }
 
 nav ul li a:hover {
   padding: 10px 20px;
-  background-color: #ff4500; /* Fire color */
+  background-color: darkgreen; /* Changed hover background color to dark green */
   color: white;
   border-radius: 5px;
   text-shadow: 0 0 20px rgba(255, 69, 0, 1); /* Fire hover effect */
@@ -174,7 +175,7 @@ nav ul li a:hover {
   }
 }
 .active {
-  background-color: red; /* Changed background color to red */
+  background-color: green; /* Changed active background color to green */
   color: yellow; /* Changed text color to yellow */
   border-radius: 5px;
   text-shadow: 0 0 20px rgba(165, 42, 42, 1); /* Brown glow effect for active state */
@@ -276,17 +277,38 @@ nav::after {
     background-color: rgba(0, 0, 0, 0.9); /* Add semi-transparent background */
     z-index: 1000; /* Ensure navbar is above other content */
     flex-direction: column; /* Display nav items vertically */
-    justify-content: center; /* Center nav items vertically */
+    justify-content: flex-start; /* Align items to the top */
     align-items: center; /* Center nav items horizontally */
+    padding-top: 100px; /* Space below the cancel button */
+  }
+  #js-navbar.active {
+    display: flex;
   }
   #js-navbar ul {
     width: 100%; /* Ensure ul takes full width */
+    text-align: center;
+    flex-direction: column; /* Display nav buttons vertically */
   }
   #js-navbar ul li {
-    width: 100%; /* Ensure li takes full width */
+    width: auto; /* Adjust width to fit content */
+    margin: 5px 0; /* Space between buttons */
   }
   #js-navbar ul li a {
-    width: 100%; /* Ensure a takes full width */
+    display: inline-block; /* Adjust display to fit content */
+    padding: 5px 10px; /* Smaller padding */
+    font-size: 10px; /* Smaller font size */
+  }
+  .cancel-icon {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .content {
+    display: none; /* Hide content when menu is active */
+  }
+  #js-navbar.active ~ .content {
+    display: none; /* Hide content when menu is active */
   }
 }
 

@@ -27,11 +27,15 @@ footer{
   align-content: center;
   justify-content: center;
   height: 100vh;
+  position: relative; /* Ensure the home-page is positioned relative */
+  z-index: 1; /* Set a higher z-index to ensure visibility */
 }
 video{
   width: 100% !important;
   height: 100% !important;
   object-fit: cover; /* Ensure the video covers the entire area */
+  position: relative; /* Ensure the video is positioned relative */
+  z-index: 0; /* Set a lower z-index to ensure it stays behind other elements */
 }
 /* .home-img{
   display: bl;
@@ -57,6 +61,7 @@ video{
   width: 100%;
   height: 85.3vh;
   padding: 4rem;
+  z-index: 2; /* Ensure the overlay is above the video */
 }
 .overlay .hero-h2{
   width: 700px;
@@ -984,6 +989,8 @@ button:active{
   gap: 10px;
   justify-content: center;
   animation: shuffle 10s infinite;
+  position: relative; /* Ensure the shuffle-images is positioned relative */
+  z-index: 1; /* Set a higher z-index to ensure visibility */
 }
 
 @keyframes shuffle {
