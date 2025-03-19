@@ -1,0 +1,285 @@
+:root{
+  --background: #290929;
+  --color: rgb(0, 0, 0);
+  --brand-font: "Roboto", sans-serif;
+  --banner-color: #2e3a6e ;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* the header/navigation of this website */
+header{
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  align-items: center;
+  column-gap: 350px;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 3rem 4rem;
+  width: 100%;
+  height: 120px;
+  background-color: var(--background);
+  color: var(--banner-color);
+}
+
+  /* width: 400px; */
+.brand a {
+  text-decoration: none;
+  font-size: 26px;
+  font-family: "Roboto",serif;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--banner-color);
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+.brand img{
+  width:70px;
+}
+/* 🔥 3D Effect for EDC (Smaller & More Bold Shadow) 🔥 */
+/* ✨ EDC LOGO MOVES UP AND DOWN ✨ */
+/* 🔻 EDC MOVES CONTINUOUSLY 🔻 */
+@keyframes moveEDC {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(150px); } /* Adjust distance */
+  100% { transform: translateX(0); }
+}
+
+@keyframes fireBlink {
+  0% { text-shadow: 0 0 5px orange, 0 0 10px red, 0 0 15px yellow; }
+  50% { text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow; }
+  100% { text-shadow: 0 0 5px orange, 0 0 10px red, 0 0 15px yellow; }
+}
+
+.logo {
+  font-size:small;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 5px orange, 0 0 10px red, 0 0 15px yellow;
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+  position: relative;
+  animation: moveEDC 6s infinite linear, fireBlink 1s infinite alternate;
+}
+
+/* 🔥 FIRE TRAIL HOVERS AROUND NAV 🔥 */
+.fire-trail {
+  position: absolute;
+  top: 80px; /* Adjusted under the nav links */
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, orange, red, yellow, orange);
+  box-shadow: 0 4px 8px rgba(255, 69, 0, 0.8);
+  animation: fireHover 4s infinite alternate ease-in-out;
+}
+
+/* 🔥 FIRE TRAIL MOVEMENT 🔥 */
+@keyframes fireHover {
+  0% { transform: translateY(5px) scaleX(1); }
+  50% { transform: translateY(10px) scaleX(1.1); }
+  100% { transform: translateY(5px) scaleX(1); }
+}
+
+
+
+
+.menu-icon,
+.cancel-icon{
+  display:none;
+}
+.menu-icon img{
+  background-color: var(--background);
+  width: 400px;
+}
+nav ul{
+  display: flex;
+  flex-direction: row; /* Ensure horizontal layout */
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 15px;
+  column-gap: 10px;
+}
+nav li{
+  display: inline-block; /* Ensure horizontal alignment */
+  color: var(--banner-color);
+}
+nav ul li a{
+  color: var(--banner-color);
+  text-decoration: none;
+  padding: 10px 15px;
+  position: relative;
+  font-family: var(--brand-font);
+}
+
+nav ul li a:hover{
+  padding:10px 20px;
+  background-color: var(--banner-color);
+  color: white;
+  border-radius: 5px;
+}
+.active{
+  background-color: var(--banner-color);
+  color: white;
+  border-radius: 5px;
+
+}
+
+nav ul li a.active {
+  animation: glowBlink 1s infinite alternate;
+}
+
+@keyframes glowBlink {
+  0% {
+    text-shadow: 0 0 5px orange, 0 0 10px red, 0 0 15px yellow;
+  }
+  100% {
+    text-shadow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow;
+  }
+}
+
+nav ul li a.active {
+  background-color: var(--banner-color);
+  color: white;
+  border-radius: 5px;
+  animation: fireGlow 1s infinite alternate;
+}
+
+@keyframes fireGlow {
+  0% {
+    box-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+    text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+  }
+  100% {
+    box-shadow: 0 0 20px red, 0 0 30px orange, 0 0 40px yellow;
+    text-shadow: 0 0 20px red, 0 0 30px orange, 0 0 40px yellow;
+  }
+}
+
+/* tablet screen size for navigation */
+@media screen and (max-width: 768px){
+  header {
+    /* padding: 4rem 2rem; */
+    max-width: 768px;
+    flex-direction:row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* .mobile-logo{
+    display: block;
+  } */
+  .contact-logo{
+    display: none;
+  }
+  .logo{
+    font: 30px;
+  }
+  .menu-icon,
+  .cancel-icon{
+    display: flex;
+    width: 40px;
+    position: fixed;
+    right: 35px;
+  }
+  .cancel-icon{
+    position: fixed;
+    right: 35px;
+    top: -10px;
+
+  }
+  nav  {
+    position: fixed;
+    /* width: 300px; */
+    top: 100px;
+    right: 0;
+    left: 0;
+    /* height: 100vh; */
+    z-index: 999;
+    background-color:#091652;
+    color: white;
+    text-align: center;
+    display: none;
+    z-index: 999;
+    animation: slideIn  0.9s ease ; 
+  }
+  nav ul{
+    flex-direction: column; /* Switch to vertical layout for smaller screens */
+    width: 100%;
+    background-color:var(--banner-color);
+  }
+  .active::after {
+    width: 100%;
+    background-color: white;
+  }
+  .nav-menu.active {
+    top: 0;
+  }
+  .menu-icon, .cancel-icon {
+    cursor: pointer;
+    padding: 10px;
+  }
+  nav li {
+    padding:20px 15px;
+    border-bottom: 1px solid rgba(197, 195, 195, 0.1);
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  nav ul li a {
+   font-size: 24px;
+   width: 100%;
+   color: white;
+  }
+}
+
+@media screen and (max-width: 600px){
+  header {
+    padding: 0rem 2rem;
+    height: 80px;
+    width: 100%;
+  }
+  .brand img {
+    width: 160px;
+  }
+  nav {
+    top: 80px;
+    background-color: #051924;
+  }
+  nav li {
+    padding: 20px 15px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 478px){
+  header {
+    padding: 0rem 2rem;
+  }
+  .brand {
+    width: 600px;
+  }
+  .brand img {
+    width: 50px;
+  }
+  .brand a {
+    font-size: 20px;
+    column-gap: 10px;
+  }
+  .menu-icon img{
+    width: 30px;
+  }
+  .cancel-icon {
+    position: fixed;
+    right: 35px;
+    top: -15px;
+  }
+}
