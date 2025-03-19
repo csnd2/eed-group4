@@ -488,6 +488,75 @@
     .blinking-question {
       animation: blinkText 1.5s infinite;
     }
+
+    @keyframes blinkOrange {
+      0%, 100% {
+        text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;
+        opacity: 1;
+      }
+      50% {
+        text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px orange;
+        opacity: 0.8;
+      }
+    }
+
+    .faq-container {
+      background-color: rgb(86, 54, 10); /* Initial background color */
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      animation: moveLeftRightPause 15s infinite; /* Continuous movement with pause */
+      transition: background-color 0.5s ease, color 0.5s ease; /* Smooth color and background transition */
+    }
+
+    .faq-container h2, .faq-container p {
+      color: white; /* Default text color */
+      transition: color 0.5s ease; /* Smooth text color transition */
+    }
+
+    .faq-container:hover {
+      animation: hoverColors 2s infinite; /* Add hover animation for colors */
+    }
+
+    .faq-container:hover h2, .faq-container:hover p {
+      color: yellow; /* Change text color on hover */
+    }
+
+    @keyframes moveLeftRightPause {
+      0% {
+        transform: translateX(0); /* Original position */
+      }
+      25% {
+        transform: translateX(100%); /* Move off-screen to the right */
+      }
+      50% {
+        transform: translateX(0); /* Return to original position */
+      }
+      75% {
+        transform: translateX(-100%); /* Move off-screen to the left */
+      }
+      100% {
+        transform: translateX(0); /* Return to original position */
+      }
+    }
+
+    @keyframes hoverColors {
+      0% {
+        background-color: rgb(255, 0, 0); /* Red */
+      }
+      25% {
+        background-color: rgb(0, 255, 0); /* Green */
+      }
+      50% {
+        background-color: rgb(0, 0, 255); /* Blue */
+      }
+      75% {
+        background-color: rgb(255, 255, 0); /* Yellow */
+      }
+      100% {
+        background-color: rgb(255, 0, 0); /* Red */
+      }
+    }
   </style>
 </head>
 <body style="background-color: #2c0c20;">
@@ -503,7 +572,7 @@
     </div>
 
     <div class="menu-icon" id="js-menu-icon">
-      <i class="fa-solid fa-bars fa-2x " style="color: #051924"></i>
+      <i class="fa-solid fa-bars fa-2x" style="color: yellow; text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange; animation: blinkOrange 1.5s infinite;"></i>
     </div>
 
     <nav id="js-navbar">
@@ -599,12 +668,18 @@
       </div>
     </section>
 
-    <section class="upload-section">
+    <section class="upload-section" style="background-color: #2c0c20;">
       <div class="upload-container">
         <h2>Still Have Question ?</h2>
         <p>Can't find the answer you're looking for? Please reach out to our team.</p>
         <button onclick="window.location.href='/contact.html'">Contact Us</button>
       </div>
+    </section>
+
+    <section class="faq-container">
+      <h2>Have More Questions?</h2>
+      <p>Contact us today to get answers to all your questions and learn more about our programs and services.</p>
+      <button onclick="window.location.href='contact.html'">Contact Us</button>
     </section>
   </main>
 

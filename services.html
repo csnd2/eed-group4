@@ -233,6 +233,87 @@
       90% { transform: translate(1px, 2px) rotate(0deg); }
       100% { transform: translate(1px, -2px) rotate(-1deg); }
     }
+
+    .upload-container {
+      background-color: rgb(86, 54, 10); /* Initial background color */
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      animation: moveLeftRightPause 15s infinite; /* Continuous movement with pause */
+      transition: background-color 0.5s ease, color 0.5s ease; /* Smooth color and background transition */
+    }
+
+    .upload-container h2, .upload-container p {
+      color: rgb(255, 255, 255); /* Default text color */
+      transition: color 0.5s ease; /* Smooth text color transition */
+    }
+
+    .upload-container:hover {
+      animation: hoverColors 2s infinite; /* Add hover animation for colors */
+    }
+
+    .upload-container:hover h2, .upload-container:hover p {
+      color: yellow; /* Change text color on hover */
+    }
+
+    @keyframes moveLeftRightPause {
+      0% {
+        transform: translateX(0); /* Original position */
+      }
+      25% {
+        transform: translateX(100%); /* Move off-screen to the right */
+      }
+      50% {
+        transform: translateX(0); /* Return to original position */
+      }
+      75% {
+        transform: translateX(-100%); /* Move off-screen to the left */
+      }
+      100% {
+        transform: translateX(0); /* Return to original position */
+      }
+    }
+
+    @keyframes hoverColors {
+      0% {
+        background-color: rgb(255, 0, 0); /* Red */
+      }
+      25% {
+        background-color: rgb(0, 255, 0); /* Green */
+      }
+      50% {
+        background-color: rgb(0, 0, 255); /* Blue */
+      }
+      75% {
+        background-color: rgb(255, 255, 0); /* Yellow */
+      }
+      100% {
+        background-color: rgb(255, 0, 0); /* Red */
+      }
+    }
+
+    .why-choose-us-container {
+      background-color: #5f3a11; /* Example background color */
+      /* Add other styles as needed */
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #00ffff; /* Cyan color */
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+      transform: perspective(500px) rotateX(10deg);
+      animation: zoomInOut 5s infinite ease-in-out;
+    }
+
+    @keyframes zoomInOut {
+      0%, 100% {
+        transform: perspective(500px) rotateX(10deg) scale(1);
+      }
+      50% {
+        transform: perspective(500px) rotateX(10deg) scale(1.2);
+      }
+    }
   </style>
 </head>
 <body>
@@ -249,7 +330,7 @@
     </div>
 
     <div class="menu-icon" id="js-menu-icon">
-      <i class="fa-solid fa-bars fa-2x " style="color: #051924"></i>
+      <i class="fa-solid fa-bars fa-2x" style="color: yellow; text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange; animation: blinkOrange 1.5s infinite;"></i>
     </div>
 
     <nav id="js-navbar">
@@ -268,7 +349,7 @@
     <!-- FAQ Hero section  -->
     <section class="gallery-hero-section">
       <div class="gallery-hero">
-        <h2>Our Services</h2>
+        <h2 class="hero-title">Our Services</h2>
         <p>Explore the comprehensive range of skills training and services offered at the Entrepreneurship Development Center.</p>
       </div>
     </section>
@@ -363,55 +444,46 @@
       </div>
     </section>
 
-    <!-- Why Choose us Section  -->
+    <!-- Our Training Strategy Section -->
     <section class="why-choose-us-container">
       <div class="why-choose-us-row">
         <div class="why-choose-us-col why-choose-us-contents">
-          <h2>
-            Our Training Strategy
-          </h2>
-
-          <p class="p-why-choose-us" >
+          <h2 style="color: yellow; text-shadow: 0 0 10px red;">Our Training Strategy</h2>
+          <p class="p-why-choose-us" style="color: aliceblue;">
             At the Entrepreneurship Development Center, we advocate for an experiential, hands-on learning style that readies students for genuine business challenges. Our method integrates theoretical concepts with practical experiences, ensuring that graduates are adequately prepared to launch and expand successful enterprises.
           </p>
-
           <div class="reasons-div">
             <div class="reasons-contents">
-              <h4>Concepts & Basics</h4>
-              <p>Building strong foundational knowledge through expert-led classes and comprehensive learning materials..</p>
+              <h4 style="color: rgba(215, 194, 0, 0.913);">Concepts & Basics</h4>
+              <p style="color: aliceblue;">Building strong foundational knowledge through expert-led classes and comprehensive learning materials.</p>
             </div>
           </div>
-
           <div class="reasons-div">
             <div class="reasons-contents">
-              <h4>Interactive Workshops</h4>
-              <p>Hands-on sessions where students apply theoretical knowledge through real-world projects and exercises.</p>
+              <h4 style="color: rgb(189, 171, 9);">Interactive Workshops</h4>
+              <p style="color: aliceblue;">Hands-on sessions where students apply theoretical knowledge through real-world projects and exercises.</p>
             </div>
           </div>
-
           <div class="reasons-div">
             <div class="reasons-contents">
-              <h4>Coaching & Support</h4>
-              <p>One-on-one support from industry professionals and experienced entrepreneurs to guide student progress.</p>
+              <h4 style="color: rgb(185, 143, 28);">Coaching & Support</h4>
+              <p style="color: aliceblue;">One-on-one support from industry professionals and experienced entrepreneurs to guide student progress.</p>
             </div>
           </div>
-
           <div class="reasons-div">
             <div class="reasons-contents">
-              <h4>Entrepreneurship Development</h4>
-              <p>port for promising business ideas through resource access, networking, and growth opportunities.</p>
+              <h4 style="color: rgb(211, 208, 0);">Entrepreneurship Development</h4>
+              <p style="color: aliceblue;">Support for promising business ideas through resource access, networking, and growth opportunities.</p>
             </div>
           </div>
         </div>
-
-
         <div class="why-choose-us-col">
-          <!-- <div class="refinery-img-div"> -->
-            <div style="width: 100%; height: 100%;" style="overflow: hidden;">
-              <video width="100%" height="100%"  autoplay loop controls style="object-fit: cover; border-radius: 10px;">
-                <source  src="images/services.mp4" type="video/mp4">  
-              </video>
-            </div>
+          <div style="width: 100%; height: 100%; overflow: hidden;">
+            <video width="100%" height="100%" autoplay loop muted controls style="object-fit: cover; border-radius: 10px;">
+              <source src="images/farah.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
       </div>
     </section>
 

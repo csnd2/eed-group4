@@ -1,0 +1,19 @@
+/* ...existing code... */
+
+@media (max-width: 768px) {
+    .menu-bar {
+        background-color: yellow;
+        animation: blink-orange 1s infinite;
+    }
+}
+
+@keyframes blink-orange {
+    0%, 100% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: orange;
+    }
+}
+
+/* ...existing code... */

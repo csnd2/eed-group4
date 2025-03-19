@@ -102,6 +102,7 @@ header{
 }
 nav ul{
   display: flex;
+  flex-direction: row; /* Ensure horizontal layout */
   align-items: center;
   justify-content: flex-end;
   list-style: none;
@@ -109,6 +110,7 @@ nav ul{
   column-gap: 10px;
 }
 nav li{
+  display: inline-block; /* Ensure horizontal alignment */
   color: var(--banner-color);
 }
 nav ul li a{
@@ -210,8 +212,7 @@ nav ul li a.active {
     animation: slideIn  0.9s ease ; 
   }
   nav ul{
-    display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Switch to vertical layout for smaller screens */
     width: 100%;
     background-color:var(--banner-color);
   }

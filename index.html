@@ -477,6 +477,201 @@ nav ul li a:hover {
 .footer-card1 h1 {
   animation: blinkOrange 1s infinite; /* Make "EDC FPNO" blink orange */
 }
+
+@keyframes blinkOrange {
+  0%, 100% {
+    text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px orange;
+    opacity: 0.8;
+  }
+}
+
+.features-cards .card1, 
+.features-cards .card2, 
+.features-cards .card3 {
+  background-color: rgb(50, 47, 11); /* Set card background to black */
+}
+
+.features-cards .card1 h3, 
+.features-cards .card2 h3, 
+.features-cards .card3 h3 {
+  color: cyan; /* Set text color to cyan */
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan; /* Add glowing effect */
+  animation: blinkCyan 1.5s infinite; /* Add blinking effect */
+}
+
+@keyframes blinkCyan {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.features-cards .card1 .icon-div i, 
+.features-cards .card2 .icon-div i, 
+.features-cards .card3 .icon-div i {
+  color: yellow;
+  text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+  animation: blinkGlowYellow 1.5s infinite; /* Add blinking effect */
+}
+
+@keyframes blinkGlowYellow {
+  0%, 100% {
+    text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow;
+    opacity: 0.5;
+  }
+}
+
+.features-cards .card1 .icon-div, 
+.features-cards .card2 .icon-div, 
+.features-cards .card3 .icon-div {
+  background-color: rgb(80, 20, 76); /* Set background to pink */
+}
+
+.features-contents p.features-p {
+  color: aliceblue; /* Set text color to Alice Blue */
+}
+
+.why-choose-us-container .p-why-choose-us {
+  color: aliceblue; /* Set text color to Alice Blue */
+}
+
+.why-choose-us-container h2 {
+  color: yellow; /* Set text color to yellow */
+  text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red; /* Add red text shadow */
+}
+
+.why-choose-us-container {
+  background-color: #2c0c20; /* Update background color */
+}
+
+.features-contents h2 {
+  color: yellow; /* Set text color to yellow */
+  text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red; /* Add red text shadow */
+}
+
+.services-link a {
+  color: peachpuff; /* Set text color to peach */
+}
+
+.support-div h2 {
+  color: blue; /* Set text color to blue */
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan; /* Add glowing cyan text shadows */
+}
+
+.why-choose-us-container button {
+  background-color: rgb(79, 18, 18); /* Set background color to brown */
+  color: white; /* Set text color to white */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.why-choose-us-container button:hover {
+  background-color: rgb(255, 98, 0); /* Set hover background color to orange */
+}
+
+.support-div button {
+  background-color: rgb(79, 18, 18); /* Set background color to brown */
+  color: white; /* Set text color to white */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.support-div button:hover {
+  background-color: rgb(255, 68, 0); /* Set hover background color to orange */
+}
+
+.support-container {
+  background-color: rgb(86, 54, 10); /* Initial background color */
+  animation: moveLeftRightPause 15s infinite; /* Continuous movement with pause */
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth color and background transition */
+}
+
+.support-container h2, .support-container button {
+  color: white; /* Default text color */
+  transition: color 0.5s ease; /* Smooth text color transition */
+}
+
+.support-container:hover {
+  animation: hoverColors 2s infinite; /* Add hover animation for colors */
+}
+
+.support-container:hover h2, .support-container:hover button {
+  color: yellow; /* Change text color on hover */
+}
+
+@keyframes moveLeftRightPause {
+  0% {
+    transform: translateX(0); /* Original position */
+  }
+  25% {
+    transform: translateX(100%); /* Move off-screen to the right */
+  }
+  50% {
+    transform: translateX(0); /* Return to original position */
+  }
+  75% {
+    transform: translateX(-100%); /* Move off-screen to the left */
+  }
+  100% {
+    transform: translateX(0); /* Return to original position */
+  }
+}
+
+@keyframes hoverColors {
+  0% {
+    background-color: rgb(255, 0, 0); /* Red */
+  }
+  25% {
+    background-color: rgb(0, 255, 0); /* Green */
+  }
+  50% {
+    background-color: rgb(0, 0, 255); /* Blue */
+  }
+  75% {
+    background-color: rgb(255, 255, 0); /* Yellow */
+  }
+  100% {
+    background-color: rgb(255, 0, 0); /* Red */
+  }
+}
+
+/* Add shuffle effect and glowing border */
+.why-choose-us-img {
+  border: 5px solid transparent;
+  border-radius: 10px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  animation: shuffleEffect 3s infinite alternate;
+}
+
+.why-choose-us-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan;
+  border-color: cyan;
+}
+
+@keyframes shuffleEffect {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-10px, 10px) rotate(-5deg); }
+  50% { transform: translate(10px, -10px) rotate(5deg); }
+  75% { transform: translate(-5px, -5px) rotate(-3deg); }
+  100% { transform: translate(5px, 5px) rotate(3deg); }
+}
 </style>
 </head>
 
@@ -492,7 +687,7 @@ nav ul li a:hover {
     </div>
 
     <div class="menu-icon" id="js-menu-icon">
-      <i class="fa-solid fa-bars fa-2x " style="color: #051924"></i>
+      <i class="fa-solid fa-bars fa-2x" style="color: yellow; text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange; animation: blinkOrange 1.5s infinite;"></i>
     </div>
 
     <nav id="js-navbar">
@@ -612,7 +807,7 @@ nav ul li a:hover {
             <i class="fa-solid fa-book-open"></i>
           </div>
           <h3>Digital Skills Training</h3>
-          <p>Learn modern digital skills including web development, digital marketing, and data analysis to succeed in today's digital economy.
+          <p style="color: yellow;">Learn modern digital skills including web development, digital marketing, and data analysis to succeed in today's digital economy.
           </p>
         </div>
 
@@ -621,7 +816,7 @@ nav ul li a:hover {
             <i class="fa-solid fa-briefcase"></i>
           </div>
           <h3>Business Management</h3>
-          <p>Master the essentials of business management, including planning, marketing, accounting, and operational strategies.</p>
+          <p style="color: yellow;">Master the essentials of business management, including planning, marketing, accounting, and operational strategies.</p>
         </div>
 
         <div class="card3">
@@ -629,7 +824,7 @@ nav ul li a:hover {
             <i class="fa-solid fa-user"></i>
           </div>
           <h3>Entrepreneurship Workshops</h3>
-          <p>Participate in hands-on workshops designed to develop your entrepreneurial mindset and prepare you for business success.</p>
+          <p style="color: yellow;">Participate in hands-on workshops designed to develop your entrepreneurial mindset and prepare you for business success.</p>
         </div>
       </div>
 
