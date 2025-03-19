@@ -557,6 +557,63 @@
         background-color: rgb(255, 0, 0); /* Red */
       }
     }
+
+    /* Responsive adjustments for FAQ page */
+    @media screen and (max-width: 768px) {
+      .gallery-hero-section, .faq-section {
+        padding: 2rem 1rem;
+        text-align: left;
+      }
+
+      .gallery-hero h2, .faq-container h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .gallery-hero p, .faq-container p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #ccc;
+      }
+
+      .faq-container {
+        padding: 1rem;
+      }
+
+      .faq-question {
+        font-size: 1rem;
+      }
+
+      .faq-answer {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .gallery-hero-section, .faq-section {
+        padding: 1rem;
+      }
+
+      .gallery-hero h2, .faq-container h2 {
+        font-size: 1.8rem;
+      }
+
+      .gallery-hero p, .faq-container p {
+        font-size: 0.8rem;
+      }
+
+      .faq-container {
+        padding: 0.8rem;
+      }
+
+      .faq-question {
+        font-size: 0.9rem;
+      }
+
+      .faq-answer {
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body style="background-color: #2c0c20;">
