@@ -3,17 +3,33 @@ const menuIcon = document.getElementById('js-menu-icon');
 const cancelIcon = document.getElementById('js-cancel-icon');
 const nav = document.getElementById('js-navbar');
 
+// Function to close nav and navigate
+function closeNavAndNavigate(path) {
+  nav.classList.remove('active');
+  menuIcon.style.display = 'block';
+  cancelIcon.style.display = 'none';
+  document.body.style.overflow = 'auto';
+  setTimeout(() => {
+    nav.style.display = 'none';
+    window.location.href = path;
+  }, 300);
+}
+
 menuIcon.addEventListener('click', () => {
   nav.style.display = 'block';
   nav.classList.add('active');
+  menuIcon.style.display = 'none';
+  cancelIcon.style.display = 'block';
   document.body.style.overflow = 'hidden'; // Prevent background scrolling
 });
 
 cancelIcon.addEventListener('click', () => {
   nav.classList.remove('active');
+  menuIcon.style.display = 'block';
+  cancelIcon.style.display = 'none';
+  document.body.style.overflow = 'auto'; // Re-enable scrolling
   setTimeout(() => {
     nav.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Re-enable scrolling
   }, 300);
 });
 
@@ -23,9 +39,11 @@ document.addEventListener('click', (e) => {
       !nav.contains(e.target) && 
       !menuIcon.contains(e.target)) {
     nav.classList.remove('active');
+    menuIcon.style.display = 'block';
+    cancelIcon.style.display = 'none';
+    document.body.style.overflow = 'auto';
     setTimeout(() => {
       nav.style.display = 'none';
-      document.body.style.overflow = 'auto';
     }, 300);
   }
 });
@@ -63,13 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle sign in button clicks
   if (signInMobileBtn) {
     signInMobileBtn.addEventListener('click', () => {
-      window.location.href = 'sign-in.html';
+      closeNavAndNavigate('sign-in.html');
     });
   }
 
   if (signInBtn) {
     signInBtn.addEventListener('click', () => {
-      window.location.href = 'sign-in.html';
+      closeNavAndNavigate('sign-in.html');
     });
   }
 
@@ -92,9 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close mobile menu after sign out
     if (nav.classList.contains('active')) {
       nav.classList.remove('active');
+      menuIcon.style.display = 'block';
+      cancelIcon.style.display = 'none';
+      document.body.style.overflow = 'auto';
       setTimeout(() => {
         nav.style.display = 'none';
-        document.body.style.overflow = 'auto';
       }, 300);
     }
     

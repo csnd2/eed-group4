@@ -31,22 +31,22 @@
     </div>
 
     <div class="menu-icon" id="js-menu-icon">
-      <i class="fa-solid fa-bars fa-2x " style="color: #fb1010"></i>
+      <i class="fa-solid fa-bars fa-2x" style="color: #b69b06"></i>
     </div>
 
     <nav id="js-navbar" >
       <div class="cancel-icon" id="js-cancel-icon">
-        <i class="fa-solid fa-xmark fa-3x" style="color: #f52e0b;" ></i>
+        <i class="fa-solid fa-xmark fa-3x" style="color: #b69b06"></i>
       </div>
       <ul id="navbar">
-        <li><button onclick="window.location.href='index.html'" class="active">Home</button></li>
-        <li><button onclick="window.location.href='about.html'">About</button></li>
-        <li><button onclick="window.location.href='skills.html'" id="product-link">Skills</button></li>
-        <li><button onclick="window.location.href='gallery.html'" id="product-link">Gallery</button></li>
-        <li><button onclick="window.location.href='faq.html'">FAQ</button></li>
-        <li><button onclick="window.location.href='contact.html'">Contact</button></li>
+        <li><button onclick="closeNavAndNavigate('index.html')">Home</button></li>
+        <li><button onclick="closeNavAndNavigate('about.html')">About</button></li>
+        <li><button onclick="closeNavAndNavigate('skills.html')" id="product-link" class="active">Skills</button></li>
+        <li><button onclick="closeNavAndNavigate('gallery.html')" id="product-link">Gallery</button></li>
+        <li><button onclick="closeNavAndNavigate('faq.html')">FAQ</button></li>
+        <li><button onclick="closeNavAndNavigate('contact.html')">Contact</button></li>
         
-        <button id="js-sign-in-mobile" class="cta-sign-in-mobile" onclick="window.location.href='sign-in.html'">Sign In</button>
+        <button id="js-sign-in-mobile" class="cta-sign-in-mobile">Sign In</button>
         <button id="js-sign-out-mobile" class="cta-sign-out-mobile">Sign Out</button>
       </ul>
     </nav>
