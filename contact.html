@@ -3,36 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><img src="images/polybay.png" alt="EDC Logo" style="height: 20px; width: auto; vertical-align: middle;"> - Contact Us</title>
   <link rel="icon" href="images/polybay.png" type="image/png">
-  <link rel="stylesheet" href="styles/navbar.css">
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="styles/gallery.css">
-  <link rel="stylesheet" href="styles/contact.css">
+  <!-- for google font  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/gallery.css">
+  <link rel="stylesheet" href="styles/contact.css">
+  <title>Contact - EDC FEDPONEK</title>
 </head>
 <body>
+  <!-- the header/navigation of this website -->
   <header>
     <div class="brand">
       <a href="index.html">
         <img src="images/polybay.png" alt="EDC Logo" style="height: 50px; width: auto;">
       </a>
     </div>
+
     <div class="menu-icon" id="js-menu-icon">
-      <i class="fa-solid fa-bars fa-2x" style="color: #ef0a0a"></i>
+      <i class="fa-solid fa-bars fa-2x " style="color: #ef0a0a"></i>
     </div>
-    <nav id="js-navbar">
+
+    <nav id="js-navbar" >
       <div class="cancel-icon" id="js-cancel-icon">
-        <i class="fa-solid fa-xmark fa-3x" style="color: #ef1509;"></i>
+        <i class="fa-solid fa-xmark fa-3x" style="color: #ef1509;" ></i>
       </div>
       <ul id="navbar">
         <li><button onclick="window.location.href='index.html'">Home</button></li>
         <li><button onclick="window.location.href='about.html'">About</button></li>
-        <li><button onclick="window.location.href='skills.html'">Skills</button></li>
-        <li><button onclick="window.location.href='gallery.html'">Gallery</button></li>
+        <li><button onclick="window.location.href='skills.html'" id="product-link">Skills</button></li>
+        <li><button onclick="window.location.href='gallery.html'" id="product-link">Gallery</button></li>
         <li><button onclick="window.location.href='faq.html'">FAQ</button></li>
         <li><button onclick="window.location.href='contact.html'" class="active">Contact</button></li>
         
@@ -40,94 +45,156 @@
         <button id="js-sign-out-mobile" class="cta-sign-out-mobile">Sign Out</button>
       </ul>
     </nav>
+    
     <button id="js-sign-in" class="cta-sign-in" onclick="window.location.href='sign-in.html'">Sign In</button>
+
+    <div id="js-popped-up" class="profile-pop-up-container">
+      <i class="nav-fa-user fa-solid fa-user" onclick="
+        const profilePopup = document.getElementById('js-pop-up')
+        profilePopup.classList.toggle('pop-up')
+        "></i>
+
+      <div class="profile-pop-up" id="js-pop-up">
+        <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+          <p id="js-user-dispaly-fullname">Full Name</p>
+        </div>
+
+         <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+           <p id="js-user-email">user1@gmaiddddddl.com</p>
+         </div>
+        <button id="js-sign-out" style="display: flex; align-items: center; justify-content: center;">Sign Out</button>
+      </div>
+    </div>
   </header>
   <main>
+    <!-- Hero section  -->
     <section class="gallery-hero-section" style="background: linear-gradient( to bottom, black, rgb(81, 3, 75));">
       <div class="gallery-hero">
         <h2>Contact Us</h2>
         <p style="color: rgb(206, 154, 9);">Reach out to us for inquiries, support, or collaboration opportunities at the Entrepreneurship Development Center.</p>
       </div>
     </section>
-    <section class="contact-container">
-      <div class="location-div">
-        <h3 style="color: yellow;">Location</h3>
-        <p>Federal Polytechnic Nekede, Owerri, Imo State, Nigeria</p>
-        <img src="./images/accc1.jpg" alt="Office Image" class="office-img">
+
+    <div class="main">
+      <div class="contact-container" style="background-color: #2c0c20; width: 100%; margin: 0;">
+        <div class="location-div">
+          <div class="contact-info">
+            <h3 style="color: yellow; text-shadow: 0 0 10px red, 0 0 20px red;">Location</h3>
+            <p class="contact-mail" style="color: aliceblue;">
+              Federal Polytechnic Nekede, Owerri, Imo State, Nigeria
+            </p>
+          </div>
+  
+          <div>
+            <img src="./images/accc1.jpg" alt="Office Image" class="office-img">
+          </div>
+        </div>
+  
+        <div class="contact-div">
+          <div class="contact-info"></div>
+            <h3 data-aos="fade-right" style="color: yellow; text-shadow: 0 0 10px red, 0 0 20px red;">
+              Contact us
+            </h3>
+            <p class="contact-mail" style="color: aliceblue;">
+              contact@edcfpno.edu.ng
+            </p>
+            <p class="contact-mail" style="color: aliceblue;">
+              +234 900 000 0000
+            </p>
+          </div>
+  
+          <div class="contact-form">
+            <form action="#" id="contact-form">
+              <div class="name-input-div">
+                <input placeholder="Name" id="from_name" name="from_name" required>
+                <span id="name-error" class="error-message"></span>
+              </div>
+  
+              <div class="email-input-div">
+                <input placeholder="Email" id="email_id" name="email_id" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <span id="email-error" class="error-message"></span>
+              </div>
+              
+              <div class="textarea-input-div">
+                <textarea placeholder="Message" id="message" name="message" required></textarea>
+                <span id="message-error" class="error-message"></span>
+              </div>
+            </form>
+  
+            <button id="js-send-msg" data-aos="fade-up">Send Message</button>
+          </div>
+        </div>
       </div>
-      <div class="contact-div">
-        <h3 style="color: yellow;">Contact Us</h3>
-        <p>contact@edcfpno.edu.ng</p>
-        <p>+234 900 000 0000</p>
-        <form id="contact-form">
-          <div class="name-input-div">
-            <input placeholder="Name" id="from_name" required>
-            <span id="name-error" class="error-message"></span>
-          </div>
-          <div class="email-input-div">
-            <input placeholder="Email" id="email_id" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-            <span id="email-error" class="error-message"></span>
-          </div>
-          <div class="textarea-input-div">
-            <textarea placeholder="Message" id="message" required></textarea>
-            <span id="message-error" class="error-message"></span>
-          </div>
-          <button id="js-send-msg">Send Message</button>
-        </form>
+  
+      <div style="width: 100%;">
+        <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Federal%20polytechnic%20nekede+(Entrepreneur%20Development%20Center%20)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed&amp;style=element:geometry%7Ccolor:0x212121&amp;style=element:labels.icon%7Cvisibility:off&amp;style=element:labels.text.fill%7Ccolor:0x757575&amp;style=element:labels.text.stroke%7Ccolor:0x212121&amp;style=feature:administrative%7Celement:geometry%7Ccolor:0x757575&amp;style=feature:administrative.country%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&amp;style=feature:administrative.land_parcel%7Cvisibility:off&amp;style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xbdbdbd&amp;style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x757575&amp;style=feature:poi.park%7Celement:geometry%7Ccolor:0x181818&amp;style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x616161&amp;style=feature:poi.park%7Celement:labels.text.stroke%7Ccolor:0x1b1b1b&amp;style=feature:road%7Celement:geometry.fill%7Ccolor:0x2c2c2c&amp;style=feature:road%7Celement:labels.text.fill%7Ccolor:0x8a8a8a&amp;style=feature:road.arterial%7Celement:geometry%7Ccolor:0x373737&amp;style=feature:road.highway%7Celement:geometry%7Ccolor:0x3c3c3c&amp;style=feature:road.highway.controlled_access%7Celement:geometry%7Ccolor:0x4e4e4e&amp;style=feature:road.local%7Celement:labels.text.fill%7Ccolor:0x616161&amp;style=feature:transit%7Celement:labels.text.fill%7Ccolor:0x757575&amp;style=feature:water%7Celement:geometry%7Ccolor:0x000000&amp;style=feature:water%7Celement:labels.text.fill%7Ccolor:0x3d3d3d"><a href="https://www.gps.ie/">gps trackers</a></iframe></div>
       </div>
-    </section>
+    </div>
   </main>
-  <footer class="footer-container" style="background: linear-gradient( to bottom, black, rgb(81, 3, 75));">
+
+  <!-- footer section of this page  -->
+  <footer class="footer-container" style="background: linear-gradient(to left, rgb(74, 1, 61), rgb(0, 2, 18));">
     <div class="footer-div">
       <div class="footer-card1">
         <h1 data-aos="fade-down" style="color: rgb(235, 70, 5);">
           <img src="images/polybay.png" alt="EDC Logo" style="height: 30px; width: auto; vertical-align: middle;">
         </h1>
-        <p class="footer-contact-p" style="color: rgb(255, 255, 255);">
+        <p class="footer-contact-p"  style="color: rgb(255, 255, 255);">
           The Entrepreneurship Development Center at Federal Polytechnic Nekede empowers students with practical skills and knowledge for successful business ventures.
         </p>
       </div>
+
       <div class="footer-card2">
-        <h1 data-aos="fade-down" style="color: rgb(235, 70, 5);">Quick Links</h1>
-        <p class="footer-contact-p">
-          <a href="index.html" style="color: rgb(2, 168, 218);">Home</a>
+        <h1 data-aos="fade-down"  style="color: rgb(235, 70, 5);"> 
+          Quick Links
+        </h1>
+        <p class="footer-contact-p" style="color: rgb(218, 207, 2);">
+          <a href="index.html"  style="color: rgb(209, 212, 212);text-decoration: underline;"> Home</a>
         </p>
         <p class="footer-contact-p">
-          <a href="about.html" style="color: rgb(2, 168, 218);">About Us</a>
+          <a href="about.html"  style="color: rgb(209, 212, 212);text-decoration: underline;"> About Us</a>
         </p>
         <p class="footer-contact-p">
-          <a href="skills.html" style="color: rgb(2, 168, 218);">Skills</a>
+          <a href="skills.html"  style="color: rgb(209, 212, 212);text-decoration: underline;"> Skills</a>
         </p>
         <p class="footer-contact-p">
-          <a href="gallery.html" style="color: rgb(2, 168, 218);">Gallery</a>
+          <a href="gallery.html"  style="color: rgb(209, 212, 212);text-decoration: underline;"> Gallery</a>
         </p>
         <p class="footer-contact-p">
-          <a href="faq.html" style="color: rgb(2, 168, 218);">FAQ</a>
+          <a href="faq.html"  style="color: rgb(209, 212, 212);text-decoration: underline;"> FAQ</a>
         </p>
         <p class="footer-contact-p">
-          <a href="contact.html" style="color: rgb(2, 168, 218);">Contact</a>
+          <a href="contact.html"  style="color: rgb(209, 212, 212);text-decoration: underline;"> Contact</a>
         </p>
       </div>
+
       <div class="footer-card3">
-        <h1 data-aos="fade-down"  style="color: rgb(235, 70, 5);">Available Skills</h1>
+        <h1 data-aos="fade-down"  style="color: rgb(235, 70, 5);"> 
+          Available Skills
+        </h1>
         <p class="footer-contact-p">
-          <a href="skills.html#digital-skills" style="color: rgb(2, 168, 218);">Digital Skills Training</a>
+          <a href="skills.html#digital-skills" style="color: rgb(209, 212, 212);text-decoration: underline;">Digital Skills Training</a>
         </p>
         <p class="footer-contact-p">
-          <a href="skills.html#web-dev" style="color: rgb(2, 168, 218);">Web Development</a>
+          <a href="skills.html#web-dev" style="color: rgb(209, 212, 212);text-decoration: underline;">Web Development</a>
         </p>
         <p class="footer-contact-p">
-          <a href="skills.html#business-management" style="color: rgb(2, 168, 218);">Business Management</a>
+          <a href="skills.html#business-management" style="color: rgb(209, 212, 212);text-decoration: underline;">Business Management</a>
         </p>
         <p class="footer-contact-p">
-          <a href="skills.html#graphic-design" style="color: rgb(2, 168, 218);">Graphic Design</a>
+          <a href="skills.html#graphic-design" style="color: rgb(209, 212, 212);text-decoration: underline;">Graphic Design</a>
         </p>
         <p class="footer-contact-p">
-          <a href="skills.html#entrepreneurship" style="color: rgb(2, 168, 218);">Entrepreneurship Training</a>
+          <a href="skills.html#entrepreneurship" style="color: rgb(209, 212, 212);text-decoration: underline;">Entrepreneurship Training</a>
         </p>
       </div>
+
       <div class="footer-card4">
-        <h1 data-aos="fade-down" style="color: rgb(235, 70, 5);">Contact Us</h1>
+        <h1 data-aos="fade-down"  style="color: rgb(235, 70, 5);"> 
+          Contact Us
+        </h1>
         <p class="footer-contact-p">
           <div class="footer-contact-div">
             <i class="fa-solid fa-location-dot"></i>
@@ -148,14 +215,22 @@
         </p>
       </div>
     </div>
+    <div>
+    </div>
     <hr style="width: 100%;">
     <div class="copyright-div">
       <p class="copyright">
-        © 2025 Entrepreneurship Development Center, Federal Polytechnic Nekede. All rights reserved.
+        © 2025 Entrepreneurship Development Centre, Federal Polytechnic Nekede. All rights reserved.
       </p>
     </div>
   </footer>
+  
   <script src="scripts/contact.js"></script>
   <script src="scripts/navbar.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      document.body.style.zoom = "70%";
+    });
+  </script>
 </body>
 </html>

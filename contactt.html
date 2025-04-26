@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact - Entrepreneurship Development Centre, FEDPONEK, owerri, Imo State</title>
+  <link rel="stylesheet" href="styles/contact.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/gallery.css">
+  <link rel="icon" type="image/x-icon" href="images/g4.ico">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+
+
+  <script src="https://kit.fontawesome.com/1c8247bb1b.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  
+  <style>
+    .nav-button {
+      position: relative;
+      display: inline-block;
+      padding: 10px 15px;
+      color: yellow; /* Yellow text */
+      background: rgb(66, 4, 45); /* Brown background */
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      overflow: hidden;
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0 4px 8px rgb(0, 255, 255); /* Cyan shadow at border edges */
+      animation: flicker 1s infinite alternate; /* Add this line */
+    }
+
+    .nav-button:hover {
+      color: white; /* White text */
+      text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+      animation: flicker 0.2s infinite alternate;
+      box-shadow: 0 6px 12px rgba(0, 255, 255, 0.8); /* Brighter cyan shadow on hover */
+      transform: translateY(-2px); /* 3D effect */
+    }
+
+    .nav-button::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 200%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+      transform: translateX(-50%) scale(0.8);
+      border-radius: 50%;
+      opacity: 0;
+      transition: 0.2s ease-out;
+    }
+
+    .nav-button:hover::before {
+      top: -50%;
+      opacity: 1;
+      animation: fireBurn 0.5s forwards ease-out;
+    }
+
+    @keyframes flicker {
+      0% { text-shadow: 0 0 5px orange, 0 0 10px red; }
+      100% { text-shadow: 0 0 10px yellow, 0 0 15px orange; }
+    }
+
+    @keyframes fireBurn {
+      0% {
+        transform: translateX(-50%) scale(0.8);
+        filter: blur(2px);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(-50%) scale(1);
+        filter: blur(4px);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateX(-50%) scale(1.2);
+        filter: blur(6px);
+        opacity: 1;
+      }
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #00ffff; /* Cyan color */
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+    }
+
+    .fpno-effect {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #000000; /* Black text */
+      text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange; /* Orange glow effect */
+      position: relative;
+      animation: continuousUpDown 3s infinite linear;
+    }
+
+    .fpno-effect::before,
+    .fpno-effect::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      height: 2px;
+      width: 50px;
+      background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+      transform: translateY(-50%);
+      opacity: 0.8;
+      animation: fireTrail 3s infinite linear;
+    }
+
+    .fpno-effect::before {
+      left: -60px; /* Fire trail to the left */
+    }
+
+    .fpno-effect::after {
+      right: -60px; /* Fire trail to the right */
+    }
+
+    @keyframes continuousUpDown {
+      0% {
+        transform: translateY(100%); /* Start below the rectangle */
+      }
+      50% {
+        transform: translateY(-100%); /* Move above the rectangle */
+      }
+      100% {
+        transform: translateY(100%); /* Return below the rectangle */
+      }
+    }
+
+    @keyframes fireTrail {
+      0%, 100% {
+        width: 50px;
+        opacity: 0.8;
+      }
+      50% {
+        width: 70px;
+        opacity: 1;
+      }
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #00ffff; /* Cyan color */
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+      transform: perspective(500px) rotateX(10deg);
+      animation: zoomInOut 5s infinite ease-in-out;
+    }
+
+    @keyframes zoomInOut {
+      0%, 100% {
+        transform: perspective(500px) rotateX(10deg) scale(1);
+      }
+      50% {
+        transform: perspective(500px) rotateX(10deg) scale(1.2);
+      }
+    }
+
+    .footer-container {
+      background-color: #2c0c20; /* Example background color for the footer */
+    }
+
+    .footer-contact-p a {
+      display: inline-block;
+      padding: 10px 15px;
+      color: rgb(0, 247, 255);
+      text-decoration: none;
+      font-size: 16px;
+      background-color: rgb(77, 51, 17); /* Updated button background to blue */
+      border-radius: 5px; /* Rounded corners */
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+      text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black; /* Black shadow */
+    }
+
+    .footer-contact-p a:hover {
+      color: yellow; /* Text color on hover */
+      text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+      box-shadow: 0 4px 8px rgba(255, 140, 0, 0.8); /* Orange shadow */
+    }
+
+    .footer-contact-p a::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 200%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8), transparent);
+      transform: translateX(-50%) scale(0.8);
+      border-radius: 50%;
+      opacity: 0;
+      transition: 0.3s ease-out;
+    }
+
+    .footer-contact-p a:hover::before {
+      top: -50%;
+      opacity: 1;
+    }
+
+    .footer-contact-div p {
+      color: rgb(157, 97, 28);
+      text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black; /* Make the text red */
+      text-decoration: underline; /* Underline the text */
+    }
+
+    .copyright {
+      color: white; /* Default color for "All rights reserved" */
+    }
+    .copyright span {
+      color: yellow; /* Make "2025" yellow */
+    }
+
+    @keyframes blinkYellow {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    .footer-card2 {
+      animation: blinkYellow 1s infinite; /* Make footer-card2 blink yellow infinitely */
+    }
+
+    .footer-card3 h1 {
+      animation: blinkYellow 1s infinite; /* Make "Our Services" blink yellow */
+    }
+
+    @keyframes blinkOrange {
+      0%, 100% {
+        text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;
+        opacity: 1;
+      }
+      50% {
+        text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 15px orange;
+        opacity: 0.8;
+      }
+    }
+
+    .footer-card4 h1 {
+      animation: blinkOrange 1s infinite; /* Make "Contact Us" blink orange */
+    }
+
+    .footer-card1 h1 {
+      animation: blinkOrange 1s infinite; /* Make "EDC FPNO" blink orange */
+    }
+
+    @keyframes blinkRed {
+      0%, 100% {
+        text-shadow: 0 0 10px red, 0 0 20px red;
+      }
+      50% {
+        text-shadow: 0 0 5px red, 0 0 10px red;
+      }
+    }
+
+    /* Responsive adjustments for Contact page */
+    @media screen and (max-width: 768px) {
+      .contact-hero-section, .contact-container {
+        padding: 2rem 1rem;
+        text-align: left;
+      }
+
+      .contact-hero h2, .contact-info h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact-hero p, .contact-info p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #ccc;
+      }
+
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .location-div, .contact-div {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .office-img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .contact-form {
+        padding: 1rem;
+      }
+
+      .contact-form input, .contact-form textarea {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .contact-hero-section, .contact-container {
+        padding: 1rem;
+      }
+
+      .contact-hero h2, .contact-info h3 {
+        font-size: 1.8rem;
+      }
+
+      .contact-hero p, .contact-info p {
+        font-size: 0.8rem;
+      }
+
+      .office-img {
+        height: auto;
+      }
+
+      .contact-form {
+        padding: 0.8rem;
+      }
+
+      .contact-form input, .contact-form textarea {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+      }
+
+      .contact-info h3 {
+        font-size: 1.5rem;
+      }
+
+      .contact-info p {
+        font-size: 0.9rem;
+      }
+
+      .contact-form input, .contact-form textarea {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+      }
+
+      .contact-form button {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-info h3 {
+        font-size: 1.2rem;
+      }
+
+      .contact-info p {
+        font-size: 0.8rem;
+      }
+
+      .contact-form input, .contact-form textarea {
+        font-size: 0.8rem;
+        padding: 0.7rem;
+      }
+
+      .contact-form button {
+        font-size: 0.8rem;
+        padding: 0.7rem;
+      }
+    }
+
+    /* Adjust the header and navigation for mobile view */
+    .menu-icon {
+      display: block;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    #js-navbar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: rgb(66, 4, 45);
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+    }
+
+    #js-navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #js-navbar ul li {
+      margin: 10px 0;
+    }
+
+    #js-navbar ul li a {
+      padding: 10px 15px;
+      display: block;
+      color: yellow;
+      text-decoration: none;
+      text-align: center;
+      background: rgb(66, 4, 45);
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    #js-navbar ul li a:hover {
+      color: white;
+      text-shadow: 0 0 10px orange, 0 0 20px red, 0 0 30px yellow;
+    }
+
+    /* Ensure the Contact section is responsive */
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+
+    .contact-info {
+      flex: 1 1 45%;
+      margin-bottom: 1rem;
+    }
+
+    .contact-form {
+      flex: 1 1 45%;
+      padding: 1rem;
+      background: rgb(86, 54, 10);
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      background: #ffc107;
+      color: #2e3a6e;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #e0a800;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-info, .contact-form {
+        flex: 1 1 100%;
+      }
+
+      .contact-form input, .contact-form textarea {
+        font-size: 0.9rem;
+      }
+
+      .contact-form button {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-form input, .contact-form textarea {
+        font-size: 0.8rem;
+      }
+
+      .contact-form button {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body style="background-color: blue;">
+
+  <!-- the header/navigation of this website -->
+  <header>
+    <div class="brand">
+      <a href="home.html">
+        <!-- <img src="images/dunav logo.svg" alt=""> -->
+        <span class="logo" style="margin-right: 40px;">EDC</span>
+        <span class="mobile-logo fpno-effect"> FPNO</span>
+      </a>
+    </div>
+
+    <div class="menu-icon" id="js-menu-icon">
+      <i class="fa-solid fa-bars fa-2x" style="color: yellow; text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange; animation: blinkOrange 1.5s infinite;"></i>
+    </div>
+
+    <nav id="js-navbar">
+      <ul id="navbar">
+        <li><a href="home.html" class="nav-button">Home</a></li>
+        <li><a href="about.html" class="nav-button">About</a></li>
+        <li><a href="services.html" class="nav-button">Services</a></li>
+        <li><a href="gallery.html" class="nav-button">Gallery</a></li>
+        <li><a href="faq.html" class="nav-button">FAQ</a></li>
+        <li><a href="contact.html" class="nav-button active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- FAQ Hero section  -->
+    <section class="contact-hero-section">
+      <div class="contact-hero">
+        <h2 class="hero-title">Contact Us</h2>
+        <p>Reach out to us for inquiries, support, or collaboration opportunities at the Entrepreneurship Development Center.</p>
+      </div>
+    </section>
+
+    <div class="main">
+      <div class="contact-container" style="background-color: #2c0c20; width: 100%; margin: 0;">
+        <div class="location-div">
+          <div class="contact-info">
+            <h3 style="color: yellow; text-shadow: 0 0 10px red, 0 0 20px red; animation: blinkRed 1.5s infinite;">Location</h3>
+            <p class="contact-mail" style="color: aliceblue;">
+            Federal Polytechnic Nekede, Owerri, Imo State, Nigeria
+            </p>
+          </div>
+  
+          <div>
+            <img src="./images/accc1.jpg" alt="Office Image" class="office-img">
+          </div>
+        </div>
+  
+        <div class="contact-div">
+          <div class="contact-info">
+            <h3 
+            data-aos="fade-right" 
+            style="color: yellow; text-shadow: 0 0 10px red, 0 0 20px red; animation: blinkRed 1.5s infinite;">
+            Contact us
+            </h3>
+            <p class="contact-mail" style="color: aliceblue;">
+              contact@edcfpno.edu.ng
+            </p>
+            <p class="contact-mail" style="color: aliceblue;">
+              +234 900 000 0000
+            </p>
+          </div>
+  
+          <div class="contact-form" >
+            <form action="#" id="contact-form">
+              <div class="name-input-div">
+                <input placeholder="Name" id="from_name" name="from_name" required>
+                <span id="name-error" class="error-message"></span>
+              </div>
+  
+              <div class="email-input-div">
+                <input placeholder="Email" id="email_id" name="email_id" required  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <span id="email-error" class="error-message"></span>
+              </div>
+              
+              <div class="textarea-input-div">
+                <textarea placeholder="Message" id="message" name="message" required></textarea>
+                <span id="message-error" class="error-message"></span>
+              </div>
+            </form>
+  
+            <button id="js-send-msg" 
+            data-aos="fade-up"
+            >Send Message</button>
+          </div>
+        </div>
+      </div>
+  
+      <div style="width: 100%;">
+        <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Federal%20polytechnic%20nekede+(Entrepreneur%20Development%20Center%20)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/collections/drones/">drones ireland</a></iframe></div>
+      </div>
+    </div>
+
+
+  </main>
+
+  <!-- footer section of this page  -->
+  <footer class="footer-container">
+    <div class="footer-div">
+      <div class="footer-card1">
+        <h1 style="color: rgb(218, 15, 32); text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;"> 
+          EDC FPNO
+        </h1>
+        <p class="footer-contact-p">
+          The Entrepreneurship Development Center at Federal Polytechnic Nekede empowers students with practical skills and knowledge for successful business ventures.
+        </p>
+      </div>
+
+      <div class="footer-card2">
+        <h1 style="color: rgb(238, 255, 0);text-shadow: 0 0 10px rgb(183, 245, 13), 0 0 20px rgb(237, 249, 6), 0 0 30px rgb(222, 237, 9);"> 
+          Quick Links
+        </h1>
+        <p class="footer-contact-p">
+          <a href="/home.html"> Home</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="/about.html"> About Us</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="/services.html"> Services</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="/gallery.html"> Gallery</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="/faq.html"> FAQ</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="/contact.html"> Contact</a>
+        </p>
+      </div>
+
+      <div class="footer-card3">
+        <h1 style="color: yellow;text-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;">Our Services</h1>
+        <p class="footer-contact-p">
+          <a href="#"> Digital Skills Training</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Web Development</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Business Management
+          </a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Graphic Design</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="#"> Entrepreneurship Training</a>
+        </p>
+      </div>
+
+      <div class="footer-card4">
+        <h1 style="color: rgb(218, 15, 32); text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;"> 
+          Contact Us
+        </h1>
+        <p class="footer-contact-p">
+          <div class="footer-contact-div">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Federal Polytechnic Nekede, Owerri, Imo State, Nigeria</p>
+          </div>
+        </p>
+        <p class="footer-contact-p">
+          <div class="footer-contact-div">
+            <i class="fa-solid fa-phone"></i>
+            <p>+234 900 000 0000</p>
+          </div>
+        </p>
+        <p class="footer-contact-p">
+          <div class="footer-contact-div">
+            <i class="fa-solid fa-message"></i>
+            <p>contact@edcfpno.edu.ng</p>
+          </div>
+        </p>
+      </div>
+    </div>
+    <div>
+
+    </div>
+    <hr style="width: 100%;">
+    <div class="copyright-div">
+      <p class="copyright">
+        © <span>2025</span> | All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="scripts/contact.js"></script>
+  <script src="scripts/navbar.js"></script>
+  <script type="module" src="scripts/login.js"></script>
+  <script>
+    document.getElementById('register-form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('register-email').value;
+      const password = document.getElementById('register-password').value;
+      signUp(email, password);
+    });
+  </script>
+  <script>
+    window.addEventListener('load', function() {
+      document.body.style.zoom = "70%";
+    });
+  </script>
+
+</body>
+</html>
+```html
