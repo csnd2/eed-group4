@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDC FedpoNek</title>
+  <link rel="icon" href="images/dunav logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/swiper.css">
+
+  <!-- for google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+      color: white;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .swiper-slide h2 {
+        text-align: center;
+        font-size: 30px;
+      }
+    }
+
+    .slideshow-container {
+      position: relative;
+      margin: auto;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .mySlides {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: slideRightToLeft 3s forwards;
+      background: rgb(29, 1, 30); /* Set blue background behind images */
+    }
+
+    .mySlides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mySlides.active {
+      display: block;
+    }
+
+    @keyframes slideRightToLeft {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .footer-contact-p a {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- the header/navigation of this website -->
+  <header>
+    <div class="brand">
+      <a href="index.html">
+        <span class="mobile-logo" style="color: rgb(192, 115, 0); text-shadow: 1px 1px 2px rgb(183, 183, 183);">Entrepreneurship Development <br>Center....</span>
+      </a>
+    </div>
+
+    <div class="menu-icon" id="js-menu-icon">
+      <i class="fa-solid fa-bars fa-2x " style="color: #f11010"></i>
+    </div>
+
+    <nav id="js-navbar" >
+      <div class="cancel-icon" id="js-cancel-icon">
+        <i class="fa-solid fa-xmark fa-3x" style="color: #f30f0f;" ></i>
+      </div>
+      <ul id="navbar">
+        <li><button onclick="window.location.href='index.html'" class="active">Home</button></li>
+        <li><button onclick="window.location.href='about.html'">About</button></li>
+        <li><button onclick="window.location.href='skills.html'" id="product-link">Skills</button></li>
+        <li><button onclick="window.location.href='gallery.html'" id="product-link">Gallery</button></li>
+        <li><button onclick="window.location.href='faq.html'">FAQ</button></li>
+        <li><button onclick="window.location.href='contact.html'">Contact</button></li>
+        
+        <button id="js-sign-in-mobile" class="cta-sign-in-mobile">Sign In</button>
+        <button id="js-sign-out-mobile" class="cta-sign-out-mobile">Sign Out</button>
+      </ul>
+    </nav>
+    <button id="js-sign-in" class="cta-sign-in">🗝 Sign In</button>
+
+    <div id="js-popped-up" class="profile-pop-up-container">
+      <i class="nav-fa-user fa-solid fa-user" onclick="
+        const profilePopup = document.getElementById('js-pop-up')
+        profilePopup.classList.toggle('pop-up')
+        "></i>
+
+      <div class="profile-pop-up" id="js-pop-up">
+        <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+          <p id="js-user-dispaly-fullname"></p>
+        </div>
+
+         <div class="pop-up-details">
+          <i class="fa-solid fa-user" style="font-size: 20px;"></i>
+           <p id="js-user-email"></p>
+         </div>
+        <button id="js-sign-out" style="display: flex; align-items: center; justify-content: center;">Sign Out</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- main content of this work -->
+  <main>
+    <!-- Hero Section  -->
+    <section class="home-page" style="position: relative;">
+      <!-- Swiper -->
+      <div class="swiper mySwiper" style="z-index: 1;">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slideshow-container">
+              <div class="mySlides fade">
+                <img src="images/digital.jpg" style="width:100%">
+              </div>
+
+              <div class="mySlides fade">
+                <img src="images/serious1.jpg" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+
+              <div class="mySlides fade">
+                <img src="images/seriuu.jpg" style="width:100%; height:100%; object-fit:cover;">
+              </div>
+
+              <div class="mySlides fade">
+                <img src="images/aa1.jpg" style="width:100%">
+              </div>
+              
+              <div class="mySlides fade">
+                <img src="images/aa3.jpg" style="width:100%">
+              </div>
+              <div class="mySlides fade">
+                <img src="images/aa4.jpg" style="width:100%">
+              </div>
+              <div class="mySlides fade">
+                <img src="images/aa5.jpg" style="width:100%">
+              </div>
+              <div class="mySlides fade">
+                <img src="images/aa6.jpg" style="width:100%">
+              </div>
+              <div class="mySlides fade">
+                <img src="images/aa7.jpg" style="width:100%">
+              </div>
+              <div class="mySlides fade">
+                <img src="images/aa8.jpg" style="width:100%">
+              </div>
+              <div class="mySlides fade">
+                <img src="images/aa9.jpg" style="width:100%">
+              </div>
+
+              <div class="overlay" style="background: transparent;">
+                <h2 style="position: relative; left: -5px; color: rgb(234, 180, 4); text-shadow: 2px 2px 4px rgb(8, 8, 10);">Entrepreneurship Development Center <br>
+                  <span style="color: hsl(180, 95%, 51%);">Federal Polytechnic Nekede</span>
+                </h2>
+                <p>Transforming ideas into successful businesses through practical skills, innovation, and hands-on training for students and aspiring entrepreneurs.</p>
+                <!-- <p> Owerri, Imo State</p> -->
+                <div class="btn-container">
+                  <button class="js-abt" id="js-get-started" onclick="window.location.href='sign-in.html'">Get Started</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Training Section -->
+    <section class="features-container" style="background: linear-gradient( to bottom, black, rgb(81, 3, 75));">
+      <div class="features-contents">
+        <h2 style="color: rgb(235, 70, 5);">Featured Skills</h2>
+        <p class="features-p" style="color: aliceblue;">Discover some of our most popular training programs. Visit our Skills page to explore our full range of offerings.</p>
+      </div>
+
+      <div class="features-cards">
+        <div class="card1">
+          <div class="icon-div" style="background-color: rgb(59, 3, 50);">
+            <i class="fa-solid fa-laptop-code" style="color: rgb(249, 241, 9);"></i>
+          </div>
+          <h3 style="color: rgb(150, 150, 19);">Digital Skills</h3>
+          <p style="color: rgb(255, 255, 255);">Master web development, digital marketing, and modern technology skills essential for today's digital economy.</p>
+        </div>
+
+        <div class="card2">
+          <div class="icon-div" style="background-color: rgb(59, 3, 50);">
+            <i class="fa-solid fa-briefcase" style="color: rgb(249, 241, 9);"></i>
+          </div>
+          <h3 style="color: rgb(150, 150, 19);">Business Management</h3>
+          <p style="color: rgb(255, 255, 255);">Learn essential business skills including planning, marketing, finance, and operational strategies.</p>
+        </div>
+
+        <div class="card3">
+          <div class="icon-div" style="background-color: rgb(59, 3, 50);">
+            <i class="fa-solid fa-lightbulb" style="color: rgb(249, 241, 9);"></i>
+          </div>
+          <h3 style="color: rgb(150, 150, 19);">Innovation & Leadership</h3>
+          <p style="color: rgb(255, 255, 255);">Develop entrepreneurial thinking, leadership skills, and learn to turn innovative ideas into successful ventures.</p>
+        </div>
+      </div>
+
+      <div class="skills-link" style="text-align: center; margin-top: 30px;">
+        <a href="skills.html" style="color: rgb(244, 184, 3); font-size: 18px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+          View All Skills
+          <i class="fa-solid fa-arrow-right" style="color: #f5f5f5;"></i>
+        </a>
+      </div>
+    </section>
+
+    
+    <!-- Why Choose us Section  -->
+    <section class="why-choose-us-container" style="background: linear-gradient( to top, black, rgb(81, 3, 75));">
+      <div class="why-choose-us-row">
+        <div class="why-choose-us-col why-choose-u8s-contents">
+          <h2 style="color: rgb(235, 70, 5);">
+            []
+
+            
+            Transforming Students into Successful Entrepreneurs
+          </h2>
+
+          <p class="p-why-choose-us" style="color: rgb(255, 255, 255);">
+            The Entrepreneurship Development Center at Federal Polytechnic Nekede is dedicated to nurturing entrepreneurial talents and providing students with practical skills for business success.
+          </p>
+
+
+
+
+          <div class="reasons-div">
+            <div class="icon-div" style="background-color: rgb(59, 3, 50);">
+              <i class="fa-solid fa-hand-holding-heart" style="color: rgb(249, 241, 9);"></i>
+            </div>
+            <div class="reasons-contents">
+              <h4 style="color: rgb(150, 150, 19);">Expert Instructors</h4>
+              <p style="color: rgb(255, 255, 255);">Learn from industry professionals and experienced entrepreneurs.</p>
+            </div>
+          </div>
+
+          <div class="reasons-div">
+            <div class="icon-div" style="background-color: rgb(59, 3, 50);">
+              <i class="fa-solid fa-book-open"  style="color: rgb(249, 241, 9);"></i>
+            </div>
+            <div class="reasons-contents">
+              <h4 style="color: rgb(150, 150, 19);">Practical Training</h4>
+              <p style="color: rgb(255, 255, 255);">LHands-on experience through practical projects and real-world applications.</p>
+            </div>
+          </div>
+
+          <div class="reasons-div">
+            <div class="icon-div" style="background-color: rgb(59, 3, 50);">
+              <i class="fa-solid fa-briefcase" style="color: rgb(249, 241, 9);"></i>
+            </div>
+            <div class="reasons-contents">
+              <h4 style="color: rgb(150, 150, 19);">Business Support</h4>
+              <p style="color: rgb(255, 255, 255);">Guidance on business planning, funding opportunities, and market entry strategies.</p>
+            </div>
+          </div>
+
+          <br>
+          <br>
+          <button onclick="window.location.href='about.html'">Learn More About Us</button>
+        </div>
+
+
+        <div class="why-choose-us-col">
+          <div style="width: 100%;">
+            <img src="images/abouty.jpg" alt="Why Choose Us" class="why-choose-us-img">
+          </div>
+      </div>
+    </section>
+
+    <!-- section four the surverqur page -->
+    <section class="surverqur">
+      <img src="images/workshop.jpeg" alt="">
+      <div class="resp-over-div">
+        <div class="overlay" id="surverqur-overlay">
+          <div class="contents">
+            <h2 class="contents-h2" style="color: rgb(235, 178, 5);">
+              Ready to Start Your Entrepreneurial Journey?
+            </h2>
+            <p id="contents-p">
+            Join our programs and gain the skills, knowledge, and connections you need to transform your ideas into successful businesses.
+            </p> 
+          </div>
+          <div class="button-div">
+            <button onclick="alert('Create An Account to Get Started !')">Get Started Today</button>
+            <button onclick="window.location.href='gallery.html'">View Gallery</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section six support page  -->
+    <section class="support-container" id="contact" 
+    style="background: linear-gradient( to bottom, black, rgb(81, 3, 75));">
+      <div class="support-div">
+        <h2 style="color: bisque;">
+          Do you have any questions or inquiry?
+        </h2>
+        <button onclick="window.location.href='contact.html'" >
+          <span>Contact Us</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer section of this page  -->
+  <footer class="footer-container" style="background: linear-gradient( to top, black, rgb(81, 3, 75));">
+    <div class="footer-div">
+      <div class="footer-card1">
+        <h1 data-aos="fade-down" style="color: rgb(235, 70, 5);"><u>EDC FedpoNek</u>
+         
+        </h1>
+        <p class="footer-contact-p"  style="color: rgb(255, 255, 255);">
+          The Entrepreneurship Development Center at Federal Polytechnic Nekede empowers students with practical skills and knowledge for successful business ventures.
+        </p>
+      </div>
+
+      <div class="footer-card2">
+        <h1 data-aos="fade-down"  style="color: rgb(235, 70, 5);"> 
+          Quick Links
+        </h1>
+        <p class="footer-contact-p" style="color: rgb(2, 168, 218);">
+          <a href="index.html"  style="color: rgb(2, 168, 218);"> Home</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="about.html"  style="color: rgb(2, 168, 218);"> About Us</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="skills.html"  style="color: rgb(2, 168, 218);"> Skills</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="gallery.html"  style="color: rgb(2, 168, 218);"> Gallery</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="faq.html"  style="color: rgb(2, 168, 218);"> FAQ</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="contact.html"  style="color: rgb(2, 168, 218);"> Contact</a>
+        </p>
+      </div>
+
+      <div class="footer-card3">
+        <h1 data-aos="fade-down"  style="color: rgb(235, 70, 5);"> 
+          Available Skills
+        </h1>
+        <p class="footer-contact-p">
+          <a href="skills.html#digital-skills" style="color: rgb(2, 168, 218);"> Digital Skills Training</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="skills.html#web-dev" style="color: rgb(2, 168, 218);"> Web Development</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="skills.html#business-management" style="color: rgb(2, 168, 218);"> Business Management
+          </a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="skills.html#graphic-design" style="color: rgb(2, 168, 218);"> Graphic Design</a>
+        </p>
+        <p class="footer-contact-p">
+          <a href="skills.html#entrepreneurship" style="color: rgb(2, 168, 218);"> Entrepreneurship Training</a>
+        </p>
+      </div>
+
+      <div class="footer-card4">
+        <h1 data-aos="fade-down"  style="color: rgb(235, 70, 5);"> 
+          Contact Us
+        </h1>
+        <p class="footer-contact-p">
+          <div class="footer-contact-div">
+            <i class="fa-solid fa-location-dot"></i>
+            <p >Federal Polytechnic Nekede, Owerri, Imo State, Nigeria</p>
+          </div>
+        </p>
+        <p class="footer-contact-p">
+          <div class="footer-contact-div">
+            <i class="fa-solid fa-phone"></i>
+            <p>+234 800 000 0000 </p>
+          </div>
+        </p>
+        <p class="footer-contact-p">
+          <div class="footer-contact-div">
+            <i class="fa-solid fa-message"></i>
+            <p  style="color: rgb(2, 168, 218);">contact@edcfedponek.edu.ng</p>
+          </div>
+        </p>
+      </div>
+    </div>
+    <div>
+
+    </div>
+    <hr style="width: 100%;">
+    <div class="copyright-div">
+      <p class="copyright">
+        © 2025 Entrepreneurship Development Center, Federal Polytechnic Nekede. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+
+  <script src="scripts/navbar.js"></script>
+  <script type="module" src="scripts/index.js"></script>
+
+  <script>
+let slideIndex = 0;
+let slides = document.getElementsByClassName("mySlides");
+
+function showSlides() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+
+  slides[slideIndex].classList.add("active");
+
+  slideIndex = (slideIndex + 1) % slides.length;
+
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+
+showSlides();
+  </script>
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/67cc8dc96edcd71910a35623/1ilricrij';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+  <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
+  <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
+  <div class="elfsight-app-52ec13b8-24dc-4194-9d05-109fa68e6cb7" data-elfsight-app-lazy></div>
+</body>
+</html>

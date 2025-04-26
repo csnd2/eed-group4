@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" href="images/icon Alluregold.svg" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Orbitron:wght@400;500&family=Rubik+Puddles&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/signs.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  
+  <title>Sign In - EDC FPN0</title>
+</head>
+
+<body>
+  <a href="index.html" class="back-to-menu">Back to Menu</a>
+  
+  <main>
+    <h1 class="sign-in-wirteUp">
+      Sign in to your account
+    </h1>
+
+    <div class="sign-form-content">
+
+      <form class="form" id="js-form">
+        <div class="main-form">
+
+          <div class="input-div">
+            <label for="email">Email</label>
+            <input type="text" name="email"  id="email" class="mail" placeholder="Type here..."  required>
+          </div>
+
+          <div class="input-div">
+            <label> Password</label>
+            <input type="password" id="password" placeholder="Type here..." required>
+          </div>
+
+          <div class="links">
+            <a href="#" class="fgt-pwd">Forgot your password?</a> 
+            <a href="sign-up.html" class="forgt">Don't have an account? Create an account</a>
+          </div>
+          
+          <button type="submit" id="sign-btn">SIGN IN</button>
+        </div>
+      </form>
+
+      <div class="security-cap">
+        <h3>
+          Your business security always comes first.
+        </h3>
+        <p>
+          We’ve made resources and support for entrepreneurs more accessible, while implementing advanced security technologies to ensure your assets and information remain safe.
+        </p>
+      </div>
+
+    </div>
+  </main>
+  <script type="module" src="scripts/sign-in.js"></script>
+</body>
+</html>
