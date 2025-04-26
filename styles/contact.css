@@ -1,0 +1,180 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+:root{
+  --color: #34495E ;
+  --bg: #2c0c20;;
+  --banner-color: hsl(221, 83%, 53%)  ;
+  --font: "Ubuntu", sans-serif;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg);
+  color: var(--color);
+  padding: 3rem 0;
+  position: relative;
+}
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  background: linear-gradient(to bottom, black, rgb(81, 3, 75));
+}
+.location-div, .contact-div {
+  width: 45%;
+  color: white;
+}
+.location-div img {
+  width: 100%;
+  border-radius: 10px;
+}
+.contact-div h3, .location-div h3 {
+  color: rgb(206, 154, 9);
+  margin-bottom: 20px;
+}
+.contact-div p, .location-div p {
+  margin-bottom: 15px;
+}
+.contact-form {
+  margin-top: 20px;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+.contact-form button {
+  background: rgb(206, 154, 9);
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background: rgb(255, 200, 0);
+}
+.contact-form button:active{
+  scale: 0.95;
+}
+.myButton:disabled {
+  background-color: lightgray;
+}
+
+.office-img{
+  object-fit: cover;
+  object-position: center;
+  width: 620px;
+  border-radius: 10px;
+}
+
+/* Tablet Screen size  */
+@media only screen and (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    row-gap: 40px;
+  }
+  /* main{
+    height: 80vh;
+  } */
+  .logo {
+    width: 50px;
+  }
+  .contact-info h3 {
+    font-size: 2.5em;
+  }
+  .contact-mail {
+    font-size: 1.1em;
+  }
+  .contact-number {
+    font-size: 1em;
+  }
+  .contact-div, 
+  .location-div {
+    width: 100%;
+  }
+  .name-input-div input,
+  .email-input-div input,
+  .textarea-input-div textarea {
+    width: 100%;
+  }
+}
+
+/* Phone screen size */
+@media only screen and (max-width: 600px) {
+  html,
+  body{
+    width: 100%;
+  }
+  .logo {
+    width: 30px;
+  }
+  .main {
+    /* width: 100%; */
+    padding: 4rem 2rem;
+  }
+  .contact-container {
+   width: 100%;
+   padding: 5rem 0;
+   align-items: flex-start;
+   justify-content: flex-start;
+  }
+  .contact-div, .location-div {
+    width: 100%;
+  }
+  .contact-info h3 {
+    font-size: 1.8em;
+  }
+  .contact-mail {
+    font-size: 1em;
+  }
+  .contact-number {
+    font-size: 1em;
+  }
+  .contact-form {
+    width: 100%;
+  }
+  form {
+    width: 100%;
+  }
+  .name-input-div,
+  .email-input-div,
+  .textarea-input-div{
+    width: 100%;
+  }
+  .name-input-div input,
+  .email-input-div input,
+  .textarea-input-div textarea{
+    width: 100%;
+  }
+  .contact-form button {
+    width: 100%;
+  }
+  .office-img {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 414px){
+  .name-input-div, 
+  .email-input-div,
+  .textarea-input-div {
+    width: 100%;
+  }
+  .name-input-div input,
+  .email-input-div input,
+  .textarea-input-div textarea{
+    width: 100%;
+  }
+}
+/* @media only screen and (max-width: 414px){
+  input {
+    width: 350px;
+  }
+} */
