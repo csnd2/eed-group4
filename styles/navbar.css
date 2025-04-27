@@ -14,28 +14,28 @@
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Changed to center to align all elements */
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
-  padding: 2rem 4rem;
+  padding: 1rem 4rem;
   width: 100%;
-  height: 100px;
+  height: 80px; /* Reduced height */
   background: linear-gradient(to right, rgb(0, 0, 30), rgb(17, 0, 20));
   color: black;
 }
 
 .brand a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   font-size: 26px;
   font-family: "Roboto",serif;
   font-weight: 600;
   font-style: normal;
   color: black;
-  display: flex;
-  align-items: center;
   column-gap: 15px;
 }
 .brand img{
@@ -51,11 +51,19 @@ header {
   font-size: 35px;
   color: var(--banner-color); 
 }
-.menu-icon,
-.cancel-icon{
+.menu-icon {
   display: none;
   cursor: pointer;
   z-index: 1000;
+}
+.cancel-icon {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 2000;
+  color: #b69b06;
 }
 .menu-icon img{
   background-color: black;
@@ -64,6 +72,12 @@ header {
 nav {
   display: flex;
   align-items: center;
+  margin: 0; /* Remove top margin */
+  transition: transform 0.3s ease;
+  transform: translateY(0); /* Fixed from -100% to 0 */
+}
+nav.active {
+  transform: translateY(0);
 }
 nav ul {
   display: flex;
@@ -71,7 +85,8 @@ nav ul {
   justify-content: center; /* Center the navigation buttons */
   list-style: none;
   padding: 0;
-  column-gap: 20px;
+  column-gap: 30px; /* Increased spacing between nav items */
+  margin: 0; /* Remove any margin */
 }
 nav li{
   color: black;
@@ -116,7 +131,7 @@ nav ul li button {
   font-family: var(--brand-font);
   font-size: 16px;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 12px 20px; /* Increased padding for better clickability */
   transition: color 0.3s;
 }
 
@@ -133,13 +148,23 @@ nav ul li button.active {
 .active::after{
   width: 100%;
 }
-.cta-sign-in-mobile{
+.cta-sign-in-mobile,
+.cta-sign-out-mobile {
   display: none;
+  background-color: rgb(88, 5, 62);
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid goldenrod;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 200px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
 }
-.cta-sign-out-mobile{
-  display: none; 
-  align-items: center; 
-  justify-content: center;
+.cta-sign-in {
+  margin: 0; /* Remove top margin */
 }
 .profile-pop-up-container{
   display: none;
@@ -162,11 +187,12 @@ nav ul li button.active {
   row-gap: 10px;
   position: absolute;
   right: 0;
-  top: 63.3px;
+  top: 60px; /* Adjusted to align with new header height */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   display: none;
   width: 200px;
+  z-index: 1001; /* Ensure it's above the mobile menu */
 }
 .pop-up-details{
   display: flex; 
@@ -187,99 +213,58 @@ nav ul li button.active {
   max-width: 90px;
 }
 /* tablet screen size for navigation */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   header {
     max-width: 768px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    padding: 1rem 2rem;
+    height: 80px;
   }
-  .contact-logo{
-    display: none;
+  .brand img {
+    width: 120px;
   }
-  .logo{
-    font: 30px;
-  }
-  .menu-icon,
-  .cancel-icon{
+  .menu-icon {
     display: block;
-    cursor: pointer;
     z-index: 1000;
-  }
-  .menu-icon img{
-    width: 40px;
-  }
-  .cancel-icon{
-    position: fixed;
-    right: 35px;
-    top: 20px;
-    display: block;
-    z-index: 1001;
   }
   nav {
     position: fixed;
     top: 0;
-    left: -100%;
+    left: 0;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(to right, black, rgb(81, 3, 75));
-    padding-top: 60px;
-    transition: all 0.3s ease;
-    overflow-y: auto;
-  }
-  nav.active{
-    left: 0;
-  }
-  nav ul{
+    background: linear-gradient(to right, rgb(0, 0, 30), rgb(17, 0, 20));
+    padding: 80px 20px 20px;
     display: flex;
     flex-direction: column;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    z-index: 999;
+  }
+  nav.active {
+    transform: translateY(0);
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    background-color: rgb(57, 4, 50);
-    padding-bottom: 20px;
+    padding: 20px 0;
+    margin-bottom: auto;
   }
-  .active::after {
+  nav ul li {
     width: 100%;
-    background-color: white;
-  }
-  nav li {
-    padding: 20px 35px;
-    border-bottom: 1px solid rgba(197, 195, 195, 0.1);
-    width: 100%;
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  nav ul li a {
-    font-size: 24px;
-    width: 100%;
-    color: white;
-  }
-  .profile-pop-up-container,
-  .cta-sign-in {
-    display: none !important;
-  }
-  .cta-sign-in-mobile {
-    display: block;
-    background-color: transparent;
-    border: 1px solid goldenrod;
-    color: white;
-    padding: 8px 16px;
-    margin: 20px auto 0;
-    width: 90%;
-    max-width: 200px;
     text-align: center;
-    cursor: pointer;
+    padding: 5px 0;
+    margin-bottom: 10px;
   }
-  .cta-sign-out-mobile {
-    display: block;
-    background-color: transparent;
-    border: 1px solid goldenrod;
+  nav ul button {
+    width: 80%;
+    margin: 5px auto;
+    padding: 12px 20px;
     color: white;
-    padding: 8px 16px;
-    margin: 10px auto 0;
-    width: 90%;
-    max-width: 200px;
-    text-align: center;
-    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
   }
   .cancel-icon {
     display: none;
@@ -287,94 +272,95 @@ nav ul li button.active {
     right: 20px;
     top: 20px;
     z-index: 2000;
+    color: #b69b06;
   }
-  nav.active ~ .cancel-icon {
+  nav.active ~ .cancel-icon,
+  nav.active + .cancel-icon {
     display: block;
+  }
+  .profile-pop-up-container,
+  .cta-sign-in {
+    display: none !important;
+  }
+  .cta-sign-in-mobile {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 200px;
+    background-color: rgb(88, 5, 62);
+    color: white;
+    padding: 12px 20px;
+    border: 1px solid goldenrod;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .cta-sign-out-mobile {
+    display: none;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 200px;
+    background-color: rgb(88, 5, 62);
+    color: white;
+    padding: 12px 20px;
+    border: 1px solid goldenrod;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .profile-pop-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 300px;
+    background: rgb(59, 3, 50);
+    border: 1px solid goldenrod;
+    padding: 20px;
+  }
+
+  .profile-pop-up .pop-up-details {
+    justify-content: center;
+  }
+
+  .profile-pop-up .pop-up-details p {
+    color: white;
+    max-width: none;
+    font-size: 16px;
+  }
+
+  .profile-pop-up .pop-up-details i {
+    color: goldenrod;
+  }
+
+  #js-sign-out {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    color: white;
+    background: rgb(88, 5, 62);
+    border: 1px solid goldenrod;
+    border-radius: 10px;
   }
 }
 
-@media (max-width: 768px){
-  .menu-icon{
-    display: none; /* Initially hidden */
+@media screen and (max-width: 478px) {
+  header {
+    padding: 0 1.5rem;
   }
-  .navbar{
-    display: none;
+  .brand img {
+    width: 50px;
   }
-  nav{
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100vh;
-    width: 100%; /* Full width */
-    background: linear-gradient(to right, black, rgb(81, 3, 75));
-    padding-top: 60px; /* Space for the cancel icon */
-    transition: all 0.3s ease;
-    overflow-y: auto; /* Enable scrolling */
+  nav ul button {
+    font-size: 15px;
+    padding: 10px;
   }
-  nav.active{
-    left: 0;
-  }
-  nav ul{
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center buttons */
-    justify-content: center;
-    width: 100%;
-    padding: 20px 0;
-  }
-  nav ul li{
-    width: 100%;
-    text-align: center;
-  }
-  nav ul button{
-    width: 80%; /* Make buttons wider */
-    margin: 10px auto;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 15px 20px;
-  }
-  .cancel-icon{
-    display: none; /* Initially hidden */
-    position: absolute;
-    right: 20px;
+  .cancel-icon {
+    right: 25px;
     top: 20px;
-  }
-  /* Show menu icon when nav is not active */
-  body:not(.nav-active) .menu-icon{
-    display: block;
-  }
-  /* Show cancel icon when nav is active */
-  nav.active + .cancel-icon{
-    display: block;
-  }
-  .cta-sign-in{
-    display: none;
-  }
-  .cta-sign-in-mobile{
-    display: block;
-    background-color: transparent;
-    border: 1px solid goldenrod;
-    color: white;
-    padding: 8px 16px;
-    margin-top: 20px;
-    width: 100%;
-    max-width: 200px;
-    text-align: center;
-  }
-  .cta-sign-out-mobile{
-    display: block;
-    background-color: transparent;
-    border: 1px solid goldenrod;
-    color: white;
-    padding: 8px 16px;
-    margin-top: 10px;
-    width: 100%;
-    max-width: 200px;
-    text-align: center;
-  }
-  .profile-pop-up-container{
-    display: none;
   }
 }
 
@@ -394,28 +380,5 @@ nav ul li button.active {
   nav li {
     padding: 15px 5px;
     margin-bottom: 15px;
-  }
-}
-@media screen and (max-width: 478px){
-  header {
-    padding: 0rem 2rem;
-  }
-  .brand {
-    width: 600px;
-  }
-  .brand img {
-    width: 50px;
-  }
-  .brand a {
-    font-size: 20px;
-    column-gap: 10px;
-  }
-  .menu-icon img{
-    width: 30px;
-  }
-  .cancel-icon {
-    position: fixed;
-    right: 35px;
-    top: -15px;
   }
 }

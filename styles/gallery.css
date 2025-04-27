@@ -28,7 +28,7 @@ footer{
     );
   box-sizing: border-box ;
   height: 60vh;
-  margin-top: 120px;
+  margin-top: 80px; /* Adjusted to match new header height */
   display: flex;
   align-items: center;
   justify-content: center;

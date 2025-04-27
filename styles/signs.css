@@ -36,10 +36,9 @@ body{
 
 .header{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row; /* Changed from column to row */
+  justify-content: flex-start; /* Changed from center to flex-start */
   align-items: center;
-  row-gap: 12px;
   position: fixed;
   top: 0;
   left: 0;
@@ -48,9 +47,11 @@ body{
   height: 80px;
   background-color: var(--header-color);
   border: 1px solid rgb(204, 202, 202);
-  padding: 10px 0;
+  padding: 1rem 4rem; /* Adjusted padding to match main nav */
 }
 .header .logo{
+  display: flex;
+  align-items: center;
   font-size: 26px;
   letter-spacing: 4px;
   font-family: var(--header-font-family);
