@@ -24,7 +24,7 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: linear-gradient(to right, rgb(74, 1, 61), rgb(0, 2, 18));
+  background: linear-gradient(to left, rgb(0, 0, 0), rgb(0, 2, 18));
 }
 
 .brand img {
@@ -233,6 +233,40 @@ iframe {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* Loader Styles */
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  border-top-color: #670458;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-hidden {
+  opacity: 0;
+  transition: all 0.5s;
 }
 
 /* Mobile Navigation Styles */

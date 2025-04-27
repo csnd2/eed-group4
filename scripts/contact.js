@@ -1,39 +1,68 @@
 const msgBtn = document.querySelector('#js-send-msg');
 msgBtn.addEventListener('click', () => {
-  sendMail();
+  const loader = document.querySelector('.loader-container');
+  loader.style.display = 'flex';
+  sendMessage();
 });
 
-function sendMail() {
+function sendMessage() {
   const from_name = document.getElementById('from_name').value;
-  const email_id = document.getElementById('email_id').value;
+  const phone_number = document.getElementById('phone_number').value;
   const message = document.getElementById('message').value;
+  let hasError = false;
 
   if (from_name.trim() === '') {
     document.getElementById('name-error').textContent = 'Name cannot be empty';
+    hasError = true;
   } else {
     document.getElementById('name-error').textContent = '';
   }
 
-  if (email_id.trim() === '') {
-    document.getElementById('email-error').textContent = 'Email cannot be empty';
+  if (!isValidPhoneNumber(phone_number)) {
+    document.getElementById('phone-error').textContent = 'Please enter a valid phone number';
+    hasError = true;
   } else {
-    document.getElementById('email-error').textContent = '';
+    document.getElementById('phone-error').textContent = '';
   }
 
   if (message.trim() === '') {
     document.getElementById('message-error').textContent = 'Message cannot be empty';
+    hasError = true;
   } else {
     document.getElementById('message-error').textContent = '';
   }
 
-  if (from_name.trim() !== '' && email_id.trim() !== '' && message.trim() !== '') {
-    msgBtn.textContent = 'Sending Message...';
-
-    // Simulate email sending for consistency with about.html
+  if (!hasError) {
+    // Format the message for WhatsApp
+    const whatsappMessage = `Good day, Mr. Enoch , ${encodeURIComponent(message)}`;
+    
+    // Create WhatsApp URL with your number
+    const whatsappUrl = `https://wa.me/2349162929586?text=${whatsappMessage}`;
+    
+    // Show loader for 3 seconds before redirecting
     setTimeout(() => {
-      alert('Message sent successfully!');
-      document.getElementById('contact-form').reset();
-      msgBtn.textContent = 'Send Message';
-    }, 2000);
+      const loader = document.querySelector('.loader-container');
+      loader.classList.add('loader-hidden');
+      
+      setTimeout(() => {
+        loader.style.display = 'none';
+        // Open WhatsApp in a new tab
+        window.open(whatsappUrl, '_blank');
+        // Reset the form
+        document.getElementById('contact-form').reset();
+        msgBtn.textContent = 'Send Message';
+      }, 500);
+    }, 3000);
+  } else {
+    // Hide loader if there are errors
+    const loader = document.querySelector('.loader-container');
+    loader.style.display = 'none';
   }
+}
+
+function isValidPhoneNumber(phone) {
+  // Remove any non-digit characters except +
+  const cleanPhone = phone.trim();
+  // Check if it matches basic phone number format (allows + and 10-15 digits)
+  return /^[+]?\d{10,15}$/.test(cleanPhone);
 }

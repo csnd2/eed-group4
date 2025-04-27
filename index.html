@@ -119,10 +119,83 @@
       display: block;
       margin: 0 auto; /* Center the button horizontally */
     }
+
+    .loader-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(59, 3, 50);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(0, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: cyan;
+      position: relative;
+      animation: zoom 1.5s ease-in-out infinite;
+    }
+
+    .loader::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      background: cyan;
+      border-radius: 50%;
+      animation: pulse 1s ease-in-out infinite alternate;
+      box-shadow: 0 0 20px cyan,
+                  0 0 40px cyan,
+                  0 0 60px cyan;
+    }
+
+    @keyframes zoom {
+      0% {
+        transform: scale(0.8) rotate(0deg);
+      }
+      50% {
+        transform: scale(1.2) rotate(180deg);
+      }
+      100% {
+        transform: scale(0.8) rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+    }
+
+    .loader-hidden {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.5s ease-out;
+    }
   </style>
 </head>
 
 <body>
+  <!-- Loader -->
+  <div class="loader-container">
+    <div class="loader"></div>
+  </div>
+
   <!-- the header/navigation of this website -->
   <header>
     <div class="brand">
@@ -499,6 +572,17 @@ function showSlides() {
 }
 
 showSlides();
+
+    // Loader functionality
+    window.addEventListener('load', function() {
+      const loader = document.querySelector('.loader-container');
+      setTimeout(() => {
+        loader.classList.add('loader-hidden');
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 500);
+      }, 3000);
+    });
   </script>
 
 </body>

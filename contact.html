@@ -100,11 +100,15 @@
               contact@edcfpno.edu.ng
             </p>
             <p class="contact-mail" style="color: aliceblue;">
-              +234 900 000 0000
+              +2348065857532
             </p>
           </div>
   
           <div class="contact-form">
+            <!-- Add loader container -->
+            <div class="loader-container">
+              <div class="loader"></div>
+            </div>
             <form action="#" id="contact-form">
               <div class="name-input-div">
                 <input placeholder="Name" id="from_name" name="from_name" required>
@@ -112,8 +116,13 @@
               </div>
   
               <div class="email-input-div">
-                <input placeholder="Email" id="email_id" name="email_id" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                <span id="email-error" class="error-message"></span>
+                <input type="tel" placeholder="Phone Number" id="phone_number" name="phone_number" 
+                  maxlength="11" 
+                  pattern="[0-9]{11}" 
+                  title="Please enter exactly 11 digits"
+                  onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+                  required>
+                <span id="phone-error" class="error-message"></span>
               </div>
               
               <div class="textarea-input-div">
