@@ -33,13 +33,16 @@ function sendMessage() {
   }
 
   if (!hasError) {
-    // Format the message for WhatsApp with proper line breaks and structure
-    const formattedMessage = `Name: ${from_name}%0A
-Phone: ${phone_number}%0A
-Message: ${message}`;
+    // Format the message for WhatsApp
+    const formattedMessage = `Name: ${from_name}\nPhone: ${phone_number}\nMessage: ${message}`;
     
-    // Create WhatsApp URL with the properly encoded message
-    const whatsappUrl = `https://wa.me/2349162919586?text=${encodeURIComponent(formattedMessage)}`;
+    // Determine if user is on mobile
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    // Create WhatsApp URL based on device type
+    const whatsappUrl = isMobile
+      ? `whatsapp://send?phone=2349162919586&text=${encodeURIComponent(formattedMessage)}`
+      : `https://web.whatsapp.com/send?phone=2349162919586&text=${encodeURIComponent(formattedMessage)}`;
     
     // Show loader for 3 seconds before redirecting
     setTimeout(() => {
@@ -48,8 +51,16 @@ Message: ${message}`;
       
       setTimeout(() => {
         loader.style.display = 'none';
-        // Open WhatsApp in a new tab
-        window.open(whatsappUrl, '_blank');
+        
+        // Try to open WhatsApp
+        const newWindow = window.open(whatsappUrl, '_blank');
+        
+        // If window.open was blocked or failed (common on some mobile browsers)
+        if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+          // Fallback to changing location
+          window.location.href = whatsappUrl;
+        }
+        
         // Reset the form
         document.getElementById('contact-form').reset();
         msgBtn.textContent = 'Send Message';
