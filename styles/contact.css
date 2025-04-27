@@ -246,6 +246,7 @@ iframe {
   display: none;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   z-index: 9999;
 }
 
@@ -254,8 +255,15 @@ iframe {
   height: 48px;
   border: 5px solid #fff;
   border-radius: 50%;
-  border-top-color: #670458;
+  border-top-color: cyan;
   animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+.processing-text {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 10px;
 }
 
 @keyframes spin {

@@ -33,11 +33,13 @@ function sendMessage() {
   }
 
   if (!hasError) {
-    // Format the message for WhatsApp
-    const whatsappMessage = `Good day, Mr. Enoch , ${encodeURIComponent(message)}`;
+    // Format the message for WhatsApp with proper line breaks and structure
+    const formattedMessage = `Name: ${from_name}%0A
+Phone: ${phone_number}%0A
+Message: ${message}`;
     
-    // Create WhatsApp URL with your number
-    const whatsappUrl = `https://wa.me/2349162929586?text=${whatsappMessage}`;
+    // Create WhatsApp URL with the properly encoded message
+    const whatsappUrl = `https://wa.me/2349162919586?text=${encodeURIComponent(formattedMessage)}`;
     
     // Show loader for 3 seconds before redirecting
     setTimeout(() => {
