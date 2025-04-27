@@ -117,7 +117,9 @@ footer{
   overflow: hidden;  
   position: relative;
   border-radius: 10px;
+  background-color: rgb(59, 3, 50); /* Add placeholder color */
 }
+
 .img-div img{
   object-fit: cover;
   object-position: center;
@@ -127,8 +129,37 @@ footer{
   border-top-right-radius: 10px;
   transition: transform 0.3s ease;
   transform-origin: center;
-  loading: lazy;
+  will-change: transform; /* Optimize transform animations */
 }
+
+/* Create a loading placeholder */
+.img-div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgb(59, 3, 50) 0%, rgb(81, 3, 75) 50%, rgb(59, 3, 50) 100%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Hide placeholder when image loads */
+.img-div img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img-div img.loaded {
+  opacity: 1;
+}
+
 .img-div img:hover{
   transform: scale(1.2); 
   border-top-left-radius: 10px;

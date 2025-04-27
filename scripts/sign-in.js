@@ -5,7 +5,42 @@ import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/1
 import { ref, onValue } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-database.js";
 
 import updateUI from './index.js';
-const signIn = document.getElementById('js-form');
+
+// Cache DOM elements
+const form = document.getElementById('js-form');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const signInButton = document.getElementById('sign-btn');
+
+// Add loading state
+let isLoading = false;
+
+// Form validation
+function validateForm() {
+  // Clear previous error states
+  email.style.borderColor = '';
+  password.style.borderColor = '';
+  
+  let isValid = true;
+  
+  if (!email.value || !email.value.includes('@')) {
+    email.style.borderColor = 'red';
+    isValid = false;
+  }
+  
+  if (!password.value || password.value.length < 6) {
+    password.style.borderColor = 'red';
+    isValid = false;
+  }
+  
+  return isValid;
+}
+
+// Auto-fill email if available
+const savedEmail = localStorage.getItem('lastLoginEmail');
+if (savedEmail) {
+  email.value = savedEmail;
+}
 
 auth.onAuthStateChanged((user) => {
   if (user) {
@@ -21,16 +56,17 @@ auth.onAuthStateChanged((user) => {
 function handleSignIn(e) {
   e.preventDefault();
 
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  const signInBtn = document.getElementById('sign-btn');
+  if (isLoading || !validateForm()) return;
 
-  signInBtn.disabled = true;
-  signInBtn.innerHTML = 'Signing In...';
+  const emailValue = email.value;
+  const passwordValue = password.value;
 
-  localStorage.setItem('lastLoginEmail', email);
+  signInButton.disabled = true;
+  signInButton.textContent = 'Signing in...';
 
-  signInWithEmailAndPassword(auth, email, password)
+  localStorage.setItem('lastLoginEmail', emailValue);
+
+  signInWithEmailAndPassword(auth, emailValue, passwordValue)
     .then((userCredential) => {
 
       const user = userCredential.user;
@@ -38,8 +74,8 @@ function handleSignIn(e) {
       localStorage.setItem('userId', user.uid);
       window.location.href = 'index.html';
       sessionStorage.setItem('isLoggedIn', 'true');
-      updateUI(user)
-      handleUserData(user)
+      updateUI(user);
+      handleUserData(user);
     })
     .catch((error) => {
       let errorMessage = 'Sign-in failed. Please try again.'; // Default error message
@@ -71,8 +107,9 @@ function handleSignIn(e) {
       alert(errorMessage);
     })
     .finally(() => {
-      signInBtn.disabled = false;
-      signInBtn.innerHTML = 'Sign In';
+      isLoading = false;
+      signInButton.disabled = false;
+      signInButton.textContent = 'SIGN IN';
     });
 }
 
@@ -84,7 +121,7 @@ function handleUserData(user) {
     if (data) {
       localStorage.setItem("userFullname", data.fullname);
       localStorage.setItem("userId", data.uid);
-      console.log(localStorage.setItem("userId", data.uid))
+      console.log(localStorage.setItem("userId", data.uid));
       // sendOTP();
       window.location.replace("index.html");
     } else {
@@ -92,11 +129,11 @@ function handleUserData(user) {
     }
   }, (error) => {
     console.error('Database error:', error);
-  })
+  });
 
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  signIn.addEventListener('submit', handleSignIn);
+  form.addEventListener('submit', handleSignIn);
   document.body.style.zoom = '100%';
 });

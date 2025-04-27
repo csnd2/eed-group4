@@ -829,6 +829,20 @@ button:active{
     font-size: 1.2em;
   }
 
+  /* Use smaller images on mobile */
+  .features-cards img,
+  .why-choose-us-img {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+  }
+  
+  /* Optimize animations for mobile */
+  * {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
 }
 
 /* Phone Screen size  */
@@ -1049,18 +1063,16 @@ button:active{
   }
 }
 
-/* @media only screen and (max-width: 375px){
-  .p-content, 
-  .p-refinery {
-    width: 52vh;
-  }
-  .diesel-pic {
-    width: 52vh;
-  }
-  .table02-col img {
-    width: 52vh;
-  }
-  .refinery-img {
-    width: 52vh;
-  }
-} */
+/* Performance optimizations */
+img {
+  content-visibility: auto;
+  contain: content;
+}
+
+/* Optimize loading of background gradients */
+.features-container,
+.why-choose-us-container,
+.support-container {
+  background-image: none;
+  background-color: rgb(81, 3, 75);
+}

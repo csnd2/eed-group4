@@ -3,7 +3,7 @@
   margin: 0;
 }
 :root{
-  --header-background: hsl(221, 83%, 53%) ;
+  --header-background: hsl(221, 85%, 5%) ;
   --header-color: white;
   --header-font-size: 22px;
   --header-font-weight: 500;
@@ -31,13 +31,13 @@
 
 body{
   padding-top: 80px;
-  background-color: var(--main-background-color);
+  background-color: rgb(35, 35, 32);
 }
 
-.header{
+.header {
   display: flex;
-  flex-direction: row; /* Changed from column to row */
-  justify-content: flex-start; /* Changed from center to flex-start */
+  flex-direction: row;
+  justify-content: center; /* Changed to center */
   align-items: center;
   position: fixed;
   top: 0;
@@ -45,19 +45,30 @@ body{
   right: 0;
   z-index: 999;
   height: 80px;
-  background-color: var(--header-color);
+  background: linear-gradient(to bottom, black, rgb(81, 3, 75));
   border: 1px solid rgb(204, 202, 202);
-  padding: 1rem 4rem; /* Adjusted padding to match main nav */
+  padding: 1rem 4rem;
 }
-.header .logo{
+
+.header .logo {
   display: flex;
   align-items: center;
-  font-size: 26px;
-  letter-spacing: 4px;
-  font-family: var(--header-font-family);
-  color:rgba(196,138,0,1);
-  font-weight: bold;
+  justify-content: center;
+  width: 200px; /* Added fixed width */
+  padding: 10px;
+  transition: transform 0.2s ease;
 }
+
+.header .logo:hover {
+  transform: scale(1.05);
+}
+
+.header .logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
 .header h2{
   font-size: var(--header-font-size);
   font-weight: var(--header-font-weight);
@@ -70,7 +81,7 @@ main{
   justify-content: center;
   align-items: center;
   row-gap: 20px;
-  background-color: var(--main-background-color);
+  background : linear-gradient( to bottom, black, rgb(81, 3, 75));
   height: max-content;
   padding-top: 30px;
 }
@@ -87,18 +98,26 @@ main h1{
   margin: 20px 0;
 }
 
-/* .js-opt-form-hide{
-  display: block;
-} */
 .sign-form-content form,
-.sign-form-content .security-cap{
+.sign-form-content .security-cap {
   display: flex;
   flex-direction: column;
-  background-color: var(--header-color);
+  background : linear-gradient( to bottom, black, rgb(81, 3, 75));
   border: 1px solid rgba(128, 124, 124, 0.15);
   padding: 24px;
   width: 350px;
 }
+
+.sign-form-content form label,
+.sign-form-content form .links a {
+  color: white;
+}
+
+.security-cap h3,
+.security-cap p {
+  color: white;
+}
+
 .confirm-otp{
   text-align: center;
   font-family: var(--header-font-family);
@@ -114,6 +133,14 @@ label{
   color: var(--form-label-color);
   /* line-height: 1.4; */
 }
+
+label[for="email"] {
+  color: white;
+  font-family: var(--header-font-family);
+  font-size: var(--form-label-font-size);
+  font-weight: var(--form-label-font-weight);
+}
+
 .input-div{
   margin-bottom: 27px;
 }

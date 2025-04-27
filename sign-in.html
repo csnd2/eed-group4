@@ -6,11 +6,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="images/polybay.png" type="image/png">
+  <link rel="preload" href="styles/signs.css" as="style">
+  <link rel="preload" href="images/polybay.png" as="image">
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Orbitron:wght@400;500&family=Rubik+Puddles&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/signs.css">
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+  
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
   
   <title><img src="images/polybay.png" alt="EDC Logo" style="height: 20px; width: auto; vertical-align: middle;"> - Sign In</title>
 </head>
@@ -29,19 +32,10 @@
     <div class="cancel-icon" id="js-cancel-icon">
       <i class="fa-solid fa-xmark fa-3x" style="color: #670458"></i>
     </div>
-    <ul id="navbar">
-      <li><button onclick="closeNavAndNavigate('index.html')">Home</button></li>
-      <li><button onclick="closeNavAndNavigate('about.html')">About</button></li>
-      <li><button onclick="closeNavAndNavigate('skills.html')" id="product-link">Skills</button></li>
-      <li><button onclick="closeNavAndNavigate('gallery.html')" id="product-link">Gallery</button></li>
-      <li><button onclick="closeNavAndNavigate('faq.html')">FAQ</button></li>
-      <li><button onclick="closeNavAndNavigate('contact.html')">Contact</button></li>
-    </ul>
-    <button id="js-sign-in-mobile" class="cta-sign-in-mobile">🗝 Sign In</button>
-    <button id="js-sign-out-mobile" class="cta-sign-out-mobile">Sign Out</button>
-  </nav>
 
-  <a href="index.html" class="back-to-menu">Back to Menu</a>
+
+  <a href="index.html" class="back-to-menu" 
+  style="background :linear-gradient( to bottom, black, rgb(81, 3, 75));">Back to Menu</a>
   
   <main>
     <h1 class="sign-in-wirteUp">
@@ -68,7 +62,7 @@
             <a href="sign-up.html" class="forgt">Don't have an account? Create an account</a>
           </div>
           
-          <button type="submit" id="sign-btn">SIGN IN</button>
+          <button type="submit" id="sign-btn"style="background :linear-gradient( to bottom, black, rgb(81, 3, 75));">SIGN IN</button>
         </div>
       </form>
 
