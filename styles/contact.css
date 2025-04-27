@@ -120,13 +120,139 @@ nav ul button.active {
   width: 100%;
 }
 
+/* Contact Form and Page Layout Styles */
+.main {
+  padding-top: 80px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.location-div,
+.contact-div {
+  background-color: rgba(59, 3, 50, 0.8);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.contact-info h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.contact-mail {
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.office-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: rgba(59, 3, 50, 0.8);
+  border-radius: 10px;
+}
+
+.name-input-div,
+.email-input-div,
+.textarea-input-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid goldenrod;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: rgb(235, 70, 5);
+}
+
+.contact-form button {
+  background-color: rgb(88, 5, 62);
+  color: white;
+  padding: 12px 20px;
+  border: 1px solid goldenrod;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: rgb(235, 70, 5);
+}
+
+.error-message {
+  color: rgb(235, 70, 5);
+  font-size: 0.875rem;
+}
+
+/* Make the map responsive */
+.map-container {
+  width: 100%;
+  height: 400px;
+  margin-top: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Mobile Navigation Styles */
 @media screen and (max-width: 768px) {
   header {
-    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, rgb(74, 1, 61), rgb(0, 2, 18));
+    z-index: 999;
   }
 
   .menu-icon {
     display: block;
+    z-index: 1000;
   }
 
   nav {
@@ -136,17 +262,17 @@ nav ul button.active {
     height: 100vh;
     width: 100%;
     background: linear-gradient(to right, rgb(0, 0, 30), rgb(17, 0, 20));
-    padding: 80px 20px 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    overflow-y: auto;
-    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    z-index: 998;
   }
 
   nav.active {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
   nav ul {
@@ -154,23 +280,62 @@ nav ul button.active {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 20px 0;
-    margin-bottom: auto;
+    margin: 0;
+    padding: 40px 0 0 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    margin: 2px 0;
   }
 
   nav ul button {
     width: 80%;
-    margin: 5px auto;
-    padding: 12px 20px;
+    padding: 8px;
     color: white;
-    font-size: 16px;
     background: none;
     border: none;
+    font-size: 16px;
+  }
+
+  nav ul button:hover {
+    color: rgb(206, 154, 9);
   }
 
   nav ul button.active {
     color: rgb(206, 154, 9);
+    font-weight: bold;
     border-bottom: 2px solid rgb(206, 154, 9);
+  }
+
+  .cta-sign-in-mobile {
+    display: block;
+    width: 80%;
+    margin: 5px auto;
+    padding: 8px;
+    background-color: rgb(88, 5, 62);
+    color: white;
+    border: 1px solid goldenrod;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+
+  .cta-sign-in-mobile:hover,
+  .cta-sign-out-mobile:hover {
+    background-color: rgb(88, 5, 62);
+    color: white;
+  }
+
+  .cta-sign-out-mobile {
+    display: none;
+    width: 80%;
+    margin: 5px auto;
+    padding: 8px;
+    background-color: rgb(88, 5, 62);
+    color: white;
+    border: 1px solid goldenrod;
+    border-radius: 10px;
+    font-size: 16px;
   }
 
   .profile-pop-up-container,
@@ -178,72 +343,26 @@ nav ul button.active {
     display: none !important;
   }
 
-  .cta-sign-in-mobile {
-    display: block;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 200px;
-    background-color: rgb(88, 5, 62);
-    color: white;
-    padding: 12px 20px;
-    border: 1px solid goldenrod;
-    border-radius: 10px;
-    font-size: 16px;
+  .cancel-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
     cursor: pointer;
-    text-align: center;
   }
 
-  .cta-sign-out-mobile {
-    display: none;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 200px;
-    background-color: rgb(88, 5, 62);
-    color: white;
-    padding: 12px 20px;
-    border: 1px solid goldenrod;
-    border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
+  body {
+    padding-top: 80px;
   }
 
-  /* Profile popup mobile styles */
-  .profile-pop-up {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 300px;
-    background: rgb(59, 3, 50);
-    border: 1px solid goldenrod;
-    padding: 20px;
-    z-index: 1001;
-  }
-
-  .profile-pop-up .pop-up-details {
-    justify-content: center;
-  }
-
-  .profile-pop-up .pop-up-details p {
-    color: white;
-    max-width: none;
-    font-size: 16px;
-  }
-
-  .profile-pop-up .pop-up-details i {
-    color: goldenrod;
-  }
-
-  #js-sign-out {
-    width: 100%;
-    margin-top: 10px;
-    padding: 12px;
-    color: white;
-    background: rgb(88, 5, 62);
-    border: 1px solid goldenrod;
-    border-radius: 10px;
+  /* Ensure all interactive elements in mobile nav don't have hover effects */
+  @media (hover: none) {
+    nav ul button:hover,
+    .cta-sign-in-mobile:hover,
+    .cta-sign-out-mobile:hover {
+      color: inherit;
+      background-color: inherit;
+    }
   }
 
   .contact-container {
